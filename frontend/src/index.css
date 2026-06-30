@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-slate-950 text-slate-100 font-sans antialiased overflow-x-hidden;
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.15) 0px, transparent 50%),
+      radial-gradient(at 50% 0%, rgba(6, 182, 212, 0.12) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, rgba(244, 63, 94, 0.08) 0px, transparent 50%);
+    background-attachment: fixed;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-slate-900/40;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-700/60 rounded-full hover:bg-indigo-500/60 transition-all;
+  }
+}
+
+/* Glassmorphism Styles */
+.glass-panel {
+  @apply bg-slate-900/65 backdrop-blur-md border border-slate-800/60 rounded-2xl shadow-xl shadow-black/10;
+}
+
+.glass-panel-hover {
+  @apply transition-all duration-300 hover:bg-slate-900/80 hover:border-slate-700/80 hover:shadow-indigo-500/5 hover:-translate-y-0.5;
+}
+
+.glass-input {
+  @apply bg-slate-950/50 border border-slate-800/80 rounded-xl px-4 py-2.5 text-slate-100 focus:outline-none focus:border-indigo-500/80 focus:ring-1 focus:ring-indigo-500/30 transition-all placeholder:text-slate-500;
+}
+
+.glass-btn-primary {
+  @apply bg-gradient-to-r from-indigo-600 to-cyan-500 text-white font-medium px-5 py-2.5 rounded-xl shadow-lg shadow-indigo-600/20 hover:shadow-cyan-500/20 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.glass-btn-secondary {
+  @apply bg-slate-800/70 border border-slate-700/60 text-slate-200 font-medium px-5 py-2.5 rounded-xl hover:bg-slate-700/60 hover:text-white hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 cursor-pointer;
+}
+
+/* Status Colors & Badges */
+.badge-success {
+  @apply bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2.5 py-0.5 rounded-full text-xs font-semibold;
+}
+.badge-warning {
+  @apply bg-amber-500/10 text-amber-400 border border-amber-500/20 px-2.5 py-0.5 rounded-full text-xs font-semibold;
+}
+.badge-danger {
+  @apply bg-rose-500/10 text-rose-400 border border-rose-500/20 px-2.5 py-0.5 rounded-full text-xs font-semibold;
+}
+
+/* Health Score Glow Ring */
+.glow-ring {
+  filter: drop-shadow(0 0 8px rgba(99, 102, 241, 0.4));
+}
+
+/* Simulated maps container details */
+.dots-grid {
+  background-size: 20px 20px;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+}
