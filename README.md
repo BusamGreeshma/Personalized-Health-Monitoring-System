@@ -1,6 +1,13 @@
 # Aura Health - AI-Powered Personalized Health Monitoring System
 
-Aura Health is a production-ready, clinical-grade digital wellness dashboard built for college project expos and portfolios. The application mimics a premium commercial product (inspired by Apple Health, Fitbit, and Stripe) and runs on a robust MERN stack with native Google Gemini AI integration.
+Aura Health is a production-ready, clinical-grade digital wellness dashboard built for college project expos and portfolios. The application mimics a premium commercial product (inspired by Apple Health, Fitbit, and Stripe) and runs on a robust MERN stack with native Groq Cloud (Llama-3) AI integration.
+
+---
+
+## Live Deployments
+
+- **Frontend Client Web App**: [https://aura-health-six.vercel.app](https://aura-health-six.vercel.app)
+- **Backend Serverless API**: [https://aura-health-api-gamma.vercel.app](https://aura-health-api-gamma.vercel.app)
 
 ---
 
