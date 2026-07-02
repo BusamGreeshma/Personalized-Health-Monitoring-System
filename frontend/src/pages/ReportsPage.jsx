@@ -89,9 +89,9 @@ const ReportsPage = () => {
           <div>
             <div className="flex items-center gap-2">
               <div className="w-6 h-6 rounded bg-indigo-600 flex items-center justify-center print:bg-indigo-600">
-                <span className="text-white font-black text-xs">A</span>
+                <span className="text-slate-800 dark:text-white font-black text-xs">A</span>
               </div>
-              <span className="font-extrabold text-sm tracking-tight text-white print:text-black">AURA CLINICAL SUMMARIES</span>
+              <span className="font-extrabold text-sm tracking-tight text-slate-800 dark:text-white print:text-black">AURA CLINICAL SUMMARIES</span>
             </div>
             <p className="text-[10px] text-slate-500 mt-1 uppercase tracking-widest font-semibold">Weekly Telemetry Report</p>
           </div>
@@ -134,19 +134,19 @@ const ReportsPage = () => {
             {/* Steps */}
             <div className="p-4 rounded-xl bg-slate-950/20 border border-slate-900 print:border-slate-200">
               <span className="text-[9px] uppercase font-bold text-slate-500">Steps Average</span>
-              <p className="text-lg font-extrabold text-white mt-1 print:text-black">{summary.avgSteps} steps / day</p>
+              <p className="text-lg font-extrabold text-slate-800 dark:text-white mt-1 print:text-black">{summary.avgSteps} steps / day</p>
             </div>
 
             {/* Rest */}
             <div className="p-4 rounded-xl bg-slate-950/20 border border-slate-900 print:border-slate-200">
               <span className="text-[9px] uppercase font-bold text-slate-500">Sleep Duration</span>
-              <p className="text-lg font-extrabold text-white mt-1 print:text-black">{summary.avgSleep} hours / night</p>
+              <p className="text-lg font-extrabold text-slate-800 dark:text-white mt-1 print:text-black">{summary.avgSleep} hours / night</p>
             </div>
 
             {/* Heart Rate */}
             <div className="p-4 rounded-xl bg-slate-950/20 border border-slate-900 print:border-slate-200">
               <span className="text-[9px] uppercase font-bold text-slate-500">Resting Heart Rate</span>
-              <p className="text-lg font-extrabold text-white mt-1 print:text-black">{summary.avgHeartRate} bpm</p>
+              <p className="text-lg font-extrabold text-slate-800 dark:text-white mt-1 print:text-black">{summary.avgHeartRate} bpm</p>
             </div>
 
           </div>

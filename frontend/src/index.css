@@ -33,7 +33,7 @@
 
 /* Premium Card Styles (Maintains old classes but upgrades visuals) */
 .glass-panel {
-  @apply bg-white border border-slate-200/50 rounded-xl shadow-[0_8px_30px_rgba(15,23,42,0.03)] backdrop-blur-sm transition-all duration-200;
+  @apply bg-white/80 border border-slate-200/50 rounded-xl shadow-[0_8px_30px_rgba(15,23,42,0.03)] backdrop-blur-md transition-all duration-200;
 }
 
 .dark .glass-panel {

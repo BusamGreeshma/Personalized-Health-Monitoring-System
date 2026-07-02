@@ -94,7 +94,7 @@ const SleepMonitoring = () => {
           </div>
           <div>
             <span className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Average Sleep Duration</span>
-            <p className="text-xl font-bold text-white mt-1">{averages.duration || '--'} hours / night</p>
+            <p className="text-xl font-bold text-slate-800 dark:text-white mt-1">{averages.duration || '--'} hours / night</p>
           </div>
         </GlassCard>
 
@@ -105,7 +105,7 @@ const SleepMonitoring = () => {
           </div>
           <div>
             <span className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Average Rest Quality</span>
-            <p className="text-xl font-bold text-white mt-1">4.2 / 5.0 Rating</p>
+            <p className="text-xl font-bold text-slate-800 dark:text-white mt-1">4.2 / 5.0 Rating</p>
           </div>
         </GlassCard>
       </div>

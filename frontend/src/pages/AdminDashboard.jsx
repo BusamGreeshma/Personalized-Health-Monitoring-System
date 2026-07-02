@@ -96,7 +96,7 @@ const AdminDashboard = () => {
           </div>
           <div>
             <span className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Registered Users</span>
-            <p className="text-xl font-bold text-white mt-1">{stats?.totalUsers || 0}</p>
+            <p className="text-xl font-bold text-slate-800 dark:text-white mt-1">{stats?.totalUsers || 0}</p>
           </div>
         </GlassCard>
 
@@ -107,7 +107,7 @@ const AdminDashboard = () => {
           </div>
           <div>
             <span className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Database Vitals Logs</span>
-            <p className="text-xl font-bold text-white mt-1">{stats?.totalLogs || 0}</p>
+            <p className="text-xl font-bold text-slate-800 dark:text-white mt-1">{stats?.totalLogs || 0}</p>
           </div>
         </GlassCard>
 
@@ -118,7 +118,7 @@ const AdminDashboard = () => {
           </div>
           <div>
             <span className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">AI Chat sessions</span>
-            <p className="text-xl font-bold text-white mt-1">{stats?.aiUsage?.sessions || 0}</p>
+            <p className="text-xl font-bold text-slate-800 dark:text-white mt-1">{stats?.aiUsage?.sessions || 0}</p>
           </div>
         </GlassCard>
 
@@ -129,7 +129,7 @@ const AdminDashboard = () => {
           </div>
           <div>
             <span className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Total AI Prompts</span>
-            <p className="text-xl font-bold text-white mt-1">{stats?.aiUsage?.messages || 0}</p>
+            <p className="text-xl font-bold text-slate-800 dark:text-white mt-1">{stats?.aiUsage?.messages || 0}</p>
           </div>
         </GlassCard>
       </div>

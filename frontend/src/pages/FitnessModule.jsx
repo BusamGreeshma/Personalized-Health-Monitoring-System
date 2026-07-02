@@ -102,7 +102,7 @@ const FitnessModule = () => {
           </div>
           <div>
             <span className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Active Calories</span>
-            <p className="text-xl font-bold text-white mt-1">{totals.calories} kcal burned</p>
+            <p className="text-xl font-bold text-slate-800 dark:text-white mt-1">{totals.calories} kcal burned</p>
           </div>
         </GlassCard>
 
@@ -113,7 +113,7 @@ const FitnessModule = () => {
           </div>
           <div>
             <span className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Active Minutes</span>
-            <p className="text-xl font-bold text-white mt-1">{totals.duration} minutes total</p>
+            <p className="text-xl font-bold text-slate-800 dark:text-white mt-1">{totals.duration} minutes total</p>
           </div>
         </GlassCard>
 
@@ -124,7 +124,7 @@ const FitnessModule = () => {
           </div>
           <div>
             <span className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Exercise Sessions</span>
-            <p className="text-xl font-bold text-white mt-1">{totals.count} logged sessions</p>
+            <p className="text-xl font-bold text-slate-800 dark:text-white mt-1">{totals.count} logged sessions</p>
           </div>
         </GlassCard>
       </div>

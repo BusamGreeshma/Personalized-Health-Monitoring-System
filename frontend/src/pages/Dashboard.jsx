@@ -339,7 +339,7 @@ const Dashboard = () => {
                   </defs>
                 </svg>
                 <div className="absolute flex flex-col items-center">
-                  <span className="text-4xl font-extrabold tracking-tighter text-white">{healthScore?.score || 72}</span>
+                  <span className="text-4xl font-extrabold tracking-tighter text-slate-800 dark:text-white">{healthScore?.score || 72}</span>
                   <span className="text-[10px] text-slate-500 dark:text-slate-400 font-bold uppercase tracking-widest mt-0.5">Perfect</span>
                 </div>
               </div>

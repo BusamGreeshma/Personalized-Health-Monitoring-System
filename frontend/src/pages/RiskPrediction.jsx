@@ -80,7 +80,7 @@ const RiskPrediction = () => {
                 </span>
               </div>
               <div className="text-right">
-                <span className="text-2xl font-extrabold text-white">{item.riskPercentage}%</span>
+                <span className="text-2xl font-extrabold text-slate-800 dark:text-white">{item.riskPercentage}%</span>
                 <p className="text-[9px] text-slate-500 font-bold uppercase tracking-wider mt-0.5">Risk Factor</p>
               </div>
             </div>

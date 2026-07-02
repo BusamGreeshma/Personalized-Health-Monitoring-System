@@ -104,7 +104,7 @@ const NutritionTracker = () => {
         <GlassCard hover={false} className="p-5 flex flex-col justify-between">
           <span className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Calories</span>
           <div className="mt-2">
-            <span className="text-2xl font-extrabold text-white">{totals.calories}</span>
+            <span className="text-2xl font-extrabold text-slate-800 dark:text-white">{totals.calories}</span>
             <span className="text-xs text-slate-500 ml-1">/ {macroTargets.calories} kcal</span>
           </div>
           <div className="w-full bg-slate-900 h-1.5 rounded-full mt-3 overflow-hidden">
@@ -116,7 +116,7 @@ const NutritionTracker = () => {
         <GlassCard hover={false} className="p-5 flex flex-col justify-between">
           <span className="text-[10px] uppercase font-bold text-slate-500 tracking-wider text-rose-400">Protein</span>
           <div className="mt-2">
-            <span className="text-2xl font-extrabold text-white">{totals.protein}g</span>
+            <span className="text-2xl font-extrabold text-slate-800 dark:text-white">{totals.protein}g</span>
             <span className="text-xs text-slate-500 ml-1">/ {macroTargets.protein}g</span>
           </div>
           <div className="w-full bg-slate-900 h-1.5 rounded-full mt-3 overflow-hidden">
@@ -128,7 +128,7 @@ const NutritionTracker = () => {
         <GlassCard hover={false} className="p-5 flex flex-col justify-between">
           <span className="text-[10px] uppercase font-bold text-slate-500 tracking-wider text-cyan-400">Carbohydrates</span>
           <div className="mt-2">
-            <span className="text-2xl font-extrabold text-white">{totals.carbs}g</span>
+            <span className="text-2xl font-extrabold text-slate-800 dark:text-white">{totals.carbs}g</span>
             <span className="text-xs text-slate-500 ml-1">/ {macroTargets.carbs}g</span>
           </div>
           <div className="w-full bg-slate-900 h-1.5 rounded-full mt-3 overflow-hidden">
@@ -140,7 +140,7 @@ const NutritionTracker = () => {
         <GlassCard hover={false} className="p-5 flex flex-col justify-between">
           <span className="text-[10px] uppercase font-bold text-slate-500 tracking-wider text-amber-400">Fats</span>
           <div className="mt-2">
-            <span className="text-2xl font-extrabold text-white">{totals.fats}g</span>
+            <span className="text-2xl font-extrabold text-slate-800 dark:text-white">{totals.fats}g</span>
             <span className="text-xs text-slate-500 ml-1">/ {macroTargets.fats}g</span>
           </div>
           <div className="w-full bg-slate-900 h-1.5 rounded-full mt-3 overflow-hidden">
