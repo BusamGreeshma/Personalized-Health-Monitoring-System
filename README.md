@@ -4,13 +4,6 @@ Aura Health is a production-ready, clinical-grade digital wellness dashboard bui
 
 ---
 
-## Live Deployments
-
-- **Frontend Client Web App**: [https://aura-health-six.vercel.app](https://aura-health-six.vercel.app)
-- **Backend Serverless API**: [https://aura-health-api-gamma.vercel.app](https://aura-health-api-gamma.vercel.app)
-
----
-
 ## Tech Stack Overview
 
 ### Frontend
