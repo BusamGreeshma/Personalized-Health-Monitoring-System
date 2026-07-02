@@ -114,7 +114,7 @@ const Profile = () => {
                 {/* Gender */}
                 <div className="flex flex-col gap-1.5">
                   <label className="text-xs text-slate-500 dark:text-slate-400 font-medium">Gender</label>
-                  <select className="glass-input text-sm bg-slate-900" {...register('gender')}>
+                  <select className="glass-input text-sm bg-slate-100 dark:bg-slate-900" {...register('gender')}>
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
                     <option value="Other">Other</option>
@@ -144,7 +144,7 @@ const Profile = () => {
                 {/* Activity Level */}
                 <div className="flex flex-col gap-1.5 sm:col-span-2">
                   <label className="text-xs text-slate-500 dark:text-slate-400 font-medium">Activity Level</label>
-                  <select className="glass-input text-sm bg-slate-900" {...register('activityLevel')}>
+                  <select className="glass-input text-sm bg-slate-100 dark:bg-slate-900" {...register('activityLevel')}>
                     {activityOptions.map(opt => (
                       <option key={opt} value={opt}>{opt}</option>
                     ))}
@@ -251,7 +251,7 @@ const Profile = () => {
               ) : (
                 <div className="space-y-4">
                   {fields.map((field, idx) => (
-                    <div key={field.id} className="grid grid-cols-1 sm:grid-cols-3 gap-4 p-4 rounded-xl bg-slate-950/40 border border-slate-900 relative">
+                    <div key={field.id} className="grid grid-cols-1 sm:grid-cols-3 gap-4 p-4 rounded-xl bg-slate-50 dark:bg-slate-950/40 border border-slate-200 dark:border-slate-900 relative">
                       <div className="flex flex-col gap-1">
                         <label className="text-[10px] text-slate-500 uppercase tracking-widest font-semibold">Name</label>
                         <input
@@ -321,7 +321,7 @@ const Profile = () => {
             ) : (
               <div className="space-y-3">
                 {user?.badges?.map((b, idx) => (
-                  <div key={idx} className="p-3 rounded-xl bg-slate-950/40 border border-slate-900 flex items-start gap-3">
+                  <div key={idx} className="p-3 rounded-xl bg-slate-50 dark:bg-slate-950/40 border border-slate-200 dark:border-slate-900 flex items-start gap-3">
                     <div className="text-xl">🏆</div>
                     <div>
                       <h4 className="text-xs font-bold text-slate-800 dark:text-slate-200">{b.name}</h4>

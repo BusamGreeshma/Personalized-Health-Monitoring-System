@@ -133,7 +133,7 @@ const AppointmentModule = () => {
             ) : (
               <div className="space-y-4">
                 {appointments.map(appt => (
-                  <div key={appt._id} className="p-4 rounded-xl bg-slate-950/40 border border-slate-900 flex justify-between items-start gap-4">
+                  <div key={appt._id} className="p-4 rounded-xl bg-slate-50 dark:bg-slate-950/40 border border-slate-200 dark:border-slate-900 flex justify-between items-start gap-4">
                     <div className="flex-1 text-xs">
                       <div className="flex items-center gap-2">
                         <h4 className="text-sm font-bold text-slate-800 dark:text-slate-200">Dr. {appt.doctorName}</h4>

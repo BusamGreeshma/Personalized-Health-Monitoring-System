@@ -165,14 +165,14 @@ const AdminDashboard = () => {
                         <button
                           onClick={() => handleToggleRole(u._id, u.role)}
                           disabled={updatingUser === u._id}
-                          className="p-1.5 rounded-lg bg-slate-900 border border-slate-850 hover:border-indigo-500/30 text-indigo-400 cursor-pointer"
+                          className="p-1.5 rounded-lg bg-slate-100 dark:bg-slate-900 border border-slate-250 dark:border-slate-850 hover:border-indigo-500/30 text-indigo-400 cursor-pointer"
                           title="Toggle Admin Privilege"
                         >
                           <Shield size={13} />
                         </button>
                         <button
                           onClick={() => handleDeleteUser(u._id)}
-                          className="p-1.5 rounded-lg bg-slate-900 border border-slate-850 hover:border-rose-500/30 text-rose-400 cursor-pointer"
+                          className="p-1.5 rounded-lg bg-slate-100 dark:bg-slate-900 border border-slate-250 dark:border-slate-850 hover:border-rose-500/30 text-rose-400 cursor-pointer"
                           title="Remove Account"
                         >
                           <Trash2 size={13} />

@@ -150,6 +150,7 @@ export const NotificationProvider = ({ children }) => {
   };
 
   const [medications, setMedications] = useState([]);
+  const [activeAlarms, setActiveAlarms] = useState([]);
 
   const fetchMedicationList = async () => {
     if (!user) return;
@@ -211,34 +212,59 @@ export const NotificationProvider = ({ children }) => {
       const mins = String(now.getMinutes()).padStart(2, '0');
       const currentTime = `${hrs}:${mins}`; // "HH:MM"
 
+      const currentActive = [];
+
       medications.forEach(med => {
         if (!med.remindersEnabled) return;
 
         med.times.forEach(time => {
           const normalizedTime = normalizeTimeTo24h(time);
           if (normalizedTime === currentTime) {
-            const key = `${med._id}-${time}-${todayStr}`;
-            if (!firedAlerts.has(key)) {
-              firedAlerts.add(key);
-              const list = Array.from(firedAlerts).slice(-100);
-              localStorage.setItem('firedMedAlerts', JSON.stringify(list));
+            // Check if this specific dose is logged as taken or missed today
+            const log = med.logs.find(l => l.date === todayStr && l.time === time);
+            const isDone = log?.status === 'taken' || log?.status === 'missed';
 
-              // Trigger alert sound & banner toast!
-              addNotification(
-                'Medication Reminder',
-                `Time to take your ${med.name} (${med.dosage}) dose.`,
-                'medication'
-              );
+            if (!isDone) {
+              const alarmKey = `${med._id}-${time}`;
+              currentActive.push(alarmKey);
+
+              const key = `${med._id}-${time}-${todayStr}`;
+              if (!firedAlerts.has(key)) {
+                firedAlerts.add(key);
+                const list = Array.from(firedAlerts).slice(-100);
+                localStorage.setItem('firedMedAlerts', JSON.stringify(list));
+
+                // Trigger alert sound & banner toast!
+                addNotification(
+                  'Medication Reminder',
+                  `Time to take your ${med.name} (${med.dosage}) dose.`,
+                  'medication'
+                );
+              }
             }
           }
         });
       });
+
+      setActiveAlarms(currentActive);
     };
 
     checkScheduledReminders();
-    const ticker = setInterval(checkScheduledReminders, 20 * 1000); // Check every 20 seconds
+    const ticker = setInterval(checkScheduledReminders, 10 * 1000); // Check every 10 seconds
     return () => clearInterval(ticker);
   }, [user, medications]);
+
+  // Looping Medication Alarm Sound - continues playing chimes every 3 seconds until marked taken
+  useEffect(() => {
+    if (activeAlarms.length === 0) return;
+
+    // Repeat chime every 3 seconds
+    const loopInterval = setInterval(() => {
+      playNotificationSound('medication');
+    }, 3000);
+
+    return () => clearInterval(loopInterval);
+  }, [activeAlarms]);
 
   const markAllRead = () => {
     setNotifications(prev => prev.map(n => ({ ...n, read: true })));

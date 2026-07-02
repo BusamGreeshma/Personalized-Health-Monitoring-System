@@ -86,7 +86,7 @@ const WearableIntegration = () => {
         
         {/* Fitbit Card */}
         <GlassCard hover={false} className={`p-6 border flex flex-col justify-between h-56 transition-all ${
-          activeMeds.fitbit ? 'border-cyan-500/30 bg-cyan-950/5' : 'border-slate-800'
+          activeMeds.fitbit ? 'border-cyan-500/30 bg-cyan-950/5' : 'border-slate-200 dark:border-slate-800'
         }`}>
           <div>
             <div className="flex justify-between items-start">
@@ -110,7 +110,7 @@ const WearableIntegration = () => {
 
         {/* Google Fit Card */}
         <GlassCard hover={false} className={`p-6 border flex flex-col justify-between h-56 transition-all ${
-          activeMeds.google ? 'border-rose-500/30 bg-rose-950/5' : 'border-slate-800'
+          activeMeds.google ? 'border-rose-500/30 bg-rose-950/5' : 'border-slate-200 dark:border-slate-800'
         }`}>
           <div>
             <div className="flex justify-between items-start">
@@ -134,7 +134,7 @@ const WearableIntegration = () => {
 
         {/* Apple Health Card */}
         <GlassCard hover={false} className={`p-6 border flex flex-col justify-between h-56 transition-all ${
-          activeMeds.apple ? 'border-indigo-500/30 bg-indigo-950/5' : 'border-slate-800'
+          activeMeds.apple ? 'border-indigo-500/30 bg-indigo-950/5' : 'border-slate-200 dark:border-slate-800'
         }`}>
           <div>
             <div className="flex justify-between items-start">
@@ -144,7 +144,7 @@ const WearableIntegration = () => {
             <p className="text-[10px] text-slate-500 dark:text-slate-400 mt-1.5 leading-relaxed">Pulls ECG biometrics, SpO2 blood oxygen levels, and dynamic sleep logs.</p>
           </div>
           <div className="flex justify-between items-center mt-6">
-            <span className="badge-warning text-[10px] bg-slate-900 border border-slate-800 text-slate-500 dark:text-slate-400">Offline</span>
+            <span className="badge-warning text-[10px] bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-500 dark:text-slate-400">Offline</span>
             <button
               onClick={() => {
                 setActiveMeds(prev => ({ ...prev, apple: true }));
@@ -204,7 +204,7 @@ const WearableIntegration = () => {
         <div className="lg:col-span-2">
           <GlassCard hover={false} className="space-y-4 border-slate-800/80">
             <span className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">BLE Handshake Stream Console</span>
-            <div className="h-60 rounded-xl bg-slate-950 p-4 border border-slate-900 overflow-y-auto space-y-1.5 font-mono text-[10px] text-slate-500 dark:text-slate-400 scrollbar-thin">
+            <div className="h-60 rounded-xl bg-slate-50 dark:bg-slate-950 p-4 border border-slate-200 dark:border-slate-900 overflow-y-auto space-y-1.5 font-mono text-[10px] text-slate-500 dark:text-slate-400 scrollbar-thin">
               {logs.map((log, idx) => (
                 <div key={idx} className={log.includes('Error') ? 'text-rose-400' : log.includes('handshake') || log.includes('HANDSHAKE') || log.includes(' Handshake') ? 'text-indigo-400 font-semibold' : 'text-slate-500 dark:text-slate-400'}>
                   {log}

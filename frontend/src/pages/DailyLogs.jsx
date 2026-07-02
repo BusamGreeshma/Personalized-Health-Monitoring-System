@@ -229,7 +229,7 @@ const DailyLogs = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div className="flex flex-col gap-1.5">
                 <label className="text-xs text-slate-500 dark:text-slate-400">Meal Type</label>
-                <select className="glass-input text-sm bg-slate-900" {...mealReg('mealType')}>
+                <select className="glass-input text-sm bg-slate-100 dark:bg-slate-900" {...mealReg('mealType')}>
                   <option value="breakfast">Breakfast</option>
                   <option value="lunch">Lunch</option>
                   <option value="dinner">Dinner</option>
@@ -277,7 +277,7 @@ const DailyLogs = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div className="flex flex-col gap-1.5">
                 <label className="text-xs text-slate-500 dark:text-slate-400">Activity Type</label>
-                <select className="glass-input text-sm bg-slate-900" {...exerciseReg('activityType')}>
+                <select className="glass-input text-sm bg-slate-100 dark:bg-slate-900" {...exerciseReg('activityType')}>
                   <option value="walking">Walking</option>
                   <option value="running">Running</option>
                   <option value="cycling">Cycling</option>
@@ -320,7 +320,7 @@ const DailyLogs = () => {
               </div>
               <div className="flex flex-col gap-1.5">
                 <label className="text-xs text-slate-500 dark:text-slate-400">Sleep Quality (1-5)</label>
-                <select className="glass-input text-sm bg-slate-900" {...sleepReg('quality')}>
+                <select className="glass-input text-sm bg-slate-100 dark:bg-slate-900" {...sleepReg('quality')}>
                   <option value="5">5 - Excellent Rest</option>
                   <option value="4">4 - Good Sleep</option>
                   <option value="3">3 - Light Restless</option>
@@ -355,7 +355,7 @@ const DailyLogs = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div className="flex flex-col gap-1.5">
                 <label className="text-xs text-slate-500 dark:text-slate-400">Mood State</label>
-                <select className="glass-input text-sm bg-slate-900" {...moodReg('mood')}>
+                <select className="glass-input text-sm bg-slate-100 dark:bg-slate-900" {...moodReg('mood')}>
                   <option value="happy">Happy & Content</option>
                   <option value="neutral">Neutral & Stable</option>
                   <option value="stressed">Stressed</option>

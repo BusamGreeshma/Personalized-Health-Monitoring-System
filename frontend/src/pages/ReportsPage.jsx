@@ -82,10 +82,10 @@ const ReportsPage = () => {
       </div>
 
       {/* Printable Report Card Container */}
-      <div className="bg-slate-900/40 border border-slate-800/80 rounded-2xl p-8 space-y-8 print:border-none print:bg-white print:p-0 print:text-black">
+      <div className="bg-white/80 dark:bg-slate-900/40 border border-slate-200/50 dark:border-slate-800/80 rounded-2xl p-8 space-y-8 print:border-none print:bg-white print:p-0 print:text-black">
         
         {/* Document Header */}
-        <div className="flex justify-between items-start pb-6 border-b border-slate-800 print:border-slate-300">
+        <div className="flex justify-between items-start pb-6 border-b border-slate-200 dark:border-slate-800 print:border-slate-300">
           <div>
             <div className="flex items-center gap-2">
               <div className="w-6 h-6 rounded bg-indigo-600 flex items-center justify-center print:bg-indigo-600">
@@ -103,7 +103,7 @@ const ReportsPage = () => {
         </div>
 
         {/* Demographics Details Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 p-5 rounded-xl bg-slate-950/40 border border-slate-900/60 print:bg-slate-50 print:border-slate-200 print:text-black">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 p-5 rounded-xl bg-slate-50 dark:bg-slate-950/40 border border-slate-200 dark:border-slate-900/60 print:bg-slate-50 print:border-slate-200 print:text-black">
           <div className="text-xs">
             <span className="text-[9px] uppercase font-bold text-slate-500 tracking-wider">Patient Name</span>
             <p className="font-bold mt-1 text-slate-800 dark:text-slate-200 print:text-black">{user?.username}</p>
@@ -132,19 +132,19 @@ const ReportsPage = () => {
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
             
             {/* Steps */}
-            <div className="p-4 rounded-xl bg-slate-950/20 border border-slate-900 print:border-slate-200">
+            <div className="p-4 rounded-xl bg-slate-50 dark:bg-slate-950/20 border border-slate-200 dark:border-slate-900 print:border-slate-200">
               <span className="text-[9px] uppercase font-bold text-slate-500">Steps Average</span>
               <p className="text-lg font-extrabold text-slate-800 dark:text-white mt-1 print:text-black">{summary.avgSteps} steps / day</p>
             </div>
 
-            {/* Rest */}
-            <div className="p-4 rounded-xl bg-slate-950/20 border border-slate-900 print:border-slate-200">
+            {/* Sleep Duration */}
+            <div className="p-4 rounded-xl bg-slate-50 dark:bg-slate-950/20 border border-slate-200 dark:border-slate-900 print:border-slate-200">
               <span className="text-[9px] uppercase font-bold text-slate-500">Sleep Duration</span>
               <p className="text-lg font-extrabold text-slate-800 dark:text-white mt-1 print:text-black">{summary.avgSleep} hours / night</p>
             </div>
 
-            {/* Heart Rate */}
-            <div className="p-4 rounded-xl bg-slate-950/20 border border-slate-900 print:border-slate-200">
+            {/* Resting Heart Rate */}
+            <div className="p-4 rounded-xl bg-slate-50 dark:bg-slate-950/20 border border-slate-200 dark:border-slate-900 print:border-slate-200">
               <span className="text-[9px] uppercase font-bold text-slate-500">Resting Heart Rate</span>
               <p className="text-lg font-extrabold text-slate-800 dark:text-white mt-1 print:text-black">{summary.avgHeartRate} bpm</p>
             </div>
@@ -153,12 +153,12 @@ const ReportsPage = () => {
         </div>
 
         {/* Clinical Summary AI section */}
-        <div className="space-y-4 pt-6 border-t border-slate-800 print:border-slate-300">
+        <div className="space-y-4 pt-6 border-t border-slate-200 dark:border-slate-800 print:border-slate-300">
           <h3 className="font-bold text-sm text-slate-600 dark:text-slate-300 print:text-black flex items-center gap-1.5">
             <Sparkles size={16} className="text-indigo-400" />
             <span>Aura AI Clinical Advisory Summary</span>
           </h3>
-          <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed bg-slate-950/50 p-4 rounded-xl border border-slate-900 print:bg-slate-50 print:border-slate-200 print:text-black">
+          <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed bg-slate-50 dark:bg-slate-950/50 p-4 rounded-xl border border-slate-200 dark:border-slate-900 print:bg-slate-50 print:border-slate-200 print:text-black">
             The patient shows stable resting biometrics over the active 7-day monitoring window. 
             The heart rate averages around {summary.avgHeartRate} bpm, indicating healthy athletic cardiovascular efficiency. 
             Averaging {summary.avgSleep} hours of nightly rest supports normal hormone synthesis, although step count targets could be raised to lower LDL risks.
@@ -166,7 +166,7 @@ const ReportsPage = () => {
         </div>
 
         {/* Footer info warning */}
-        <div className="pt-6 border-t border-slate-800 text-center text-[10px] text-slate-500 print:border-slate-300 print:text-slate-600">
+        <div className="pt-6 border-t border-slate-200 dark:border-slate-800 text-center text-[10px] text-slate-500 print:border-slate-300 print:text-slate-600">
           <div className="flex items-center justify-center gap-1 text-emerald-500 font-bold mb-2">
             <ShieldCheck size={12} />
             <span>DIGITALLY SIGNED VIA AURA DIAGNOSTIC ENGINE</span>

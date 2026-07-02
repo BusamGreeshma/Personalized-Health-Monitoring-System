@@ -116,7 +116,7 @@ const Dashboard = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {/* Steps Progress */}
             <GlassCard hover={false} className="p-6 flex items-center gap-4 relative overflow-hidden">
-              <div className="p-3 rounded-lg bg-slate-950 border border-slate-850 text-indigo-400">
+              <div className="p-3 rounded-lg bg-slate-50 dark:bg-slate-950 border border-slate-250 dark:border-slate-850 text-indigo-400">
                 <Milestone size={20} />
               </div>
               <div className="flex-1">
@@ -126,7 +126,7 @@ const Dashboard = () => {
                   <span className="text-xs text-slate-500">/ 8,000 steps</span>
                 </div>
                 {/* ProgressBar */}
-                <div className="w-full bg-slate-950 h-1.5 rounded-full mt-3 overflow-hidden">
+                <div className="w-full bg-slate-50 dark:bg-slate-950 h-1.5 rounded-full mt-3 overflow-hidden">
                   <div 
                     className="bg-indigo-500 h-full rounded-full transition-all duration-500" 
                     style={{ width: `${getPercent(vitals?.stepCount || 0, 8000)}%` }}
@@ -140,7 +140,7 @@ const Dashboard = () => {
 
             {/* Hydration Progress */}
             <GlassCard hover={false} className="p-6 flex items-center gap-4 relative overflow-hidden">
-              <div className="p-3 rounded-lg bg-slate-950 border border-slate-850 text-sky-400">
+              <div className="p-3 rounded-lg bg-slate-50 dark:bg-slate-950 border border-slate-250 dark:border-slate-850 text-sky-400">
                 <Droplet size={20} />
               </div>
               <div className="flex-1">
@@ -149,7 +149,7 @@ const Dashboard = () => {
                   <span className="text-xl font-bold text-slate-800 dark:text-slate-100">{vitals?.waterIntake || 0}</span>
                   <span className="text-xs text-slate-500">/ 2,500 ml</span>
                 </div>
-                <div className="w-full bg-slate-950 h-1.5 rounded-full mt-3 overflow-hidden">
+                <div className="w-full bg-slate-50 dark:bg-slate-950 h-1.5 rounded-full mt-3 overflow-hidden">
                   <div 
                     className="bg-sky-500 h-full rounded-full transition-all duration-500" 
                     style={{ width: `${getPercent(vitals?.waterIntake || 0, 2500)}%` }}
@@ -163,7 +163,7 @@ const Dashboard = () => {
 
             {/* Calories Burned Progress */}
             <GlassCard hover={false} className="p-6 flex items-center gap-4 relative overflow-hidden">
-              <div className="p-3 rounded-lg bg-slate-950 border border-slate-850 text-rose-400">
+              <div className="p-3 rounded-lg bg-slate-50 dark:bg-slate-950 border border-slate-250 dark:border-slate-850 text-rose-400">
                 <Flame size={20} />
               </div>
               <div className="flex-1">
@@ -172,7 +172,7 @@ const Dashboard = () => {
                   <span className="text-xl font-bold text-slate-800 dark:text-slate-100">{vitals?.caloriesBurned || 0}</span>
                   <span className="text-xs text-slate-500">/ 500 kcal</span>
                 </div>
-                <div className="w-full bg-slate-950 h-1.5 rounded-full mt-3 overflow-hidden">
+                <div className="w-full bg-slate-50 dark:bg-slate-950 h-1.5 rounded-full mt-3 overflow-hidden">
                   <div 
                     className="bg-rose-500 h-full rounded-full transition-all duration-500" 
                     style={{ width: `${getPercent(vitals?.caloriesBurned || 0, 500)}%` }}
@@ -186,7 +186,7 @@ const Dashboard = () => {
 
             {/* Sleep Progress */}
             <GlassCard hover={false} className="p-6 flex items-center gap-4 relative overflow-hidden">
-              <div className="p-3 rounded-lg bg-slate-950 border border-slate-850 text-violet-400">
+              <div className="p-3 rounded-lg bg-slate-50 dark:bg-slate-950 border border-slate-250 dark:border-slate-850 text-violet-400">
                 <Moon size={20} />
               </div>
               <div className="flex-1">
@@ -195,7 +195,7 @@ const Dashboard = () => {
                   <span className="text-xl font-bold text-slate-800 dark:text-slate-100">{vitals?.sleepHours || 0}</span>
                   <span className="text-xs text-slate-500">/ 8 hrs</span>
                 </div>
-                <div className="w-full bg-slate-950 h-1.5 rounded-full mt-3 overflow-hidden">
+                <div className="w-full bg-slate-50 dark:bg-slate-950 h-1.5 rounded-full mt-3 overflow-hidden">
                   <div 
                     className="bg-violet-500 h-full rounded-full transition-all duration-500" 
                     style={{ width: `${getPercent(vitals?.sleepHours || 0, 8)}%` }}

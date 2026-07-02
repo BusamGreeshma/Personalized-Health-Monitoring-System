@@ -216,7 +216,7 @@ const AiAssistant = () => {
                     className={`max-w-[75%] p-3.5 rounded-2xl border text-xs leading-relaxed flex flex-col relative group ${
                       msg.sender === 'user'
                         ? 'bg-indigo-600/10 border-indigo-500/20 text-slate-800 dark:text-slate-200 rounded-tr-none'
-                        : 'bg-slate-950/50 border-slate-900 text-slate-600 dark:text-slate-300 rounded-tl-none'
+                        : 'bg-slate-50 dark:bg-slate-950/50 border-slate-200 dark:border-slate-900 text-slate-600 dark:text-slate-300 rounded-tl-none'
                     }`}
                   >
                     <p className="whitespace-pre-wrap">{msg.text}</p>
@@ -225,7 +225,7 @@ const AiAssistant = () => {
                     {msg.sender === 'ai' && (
                       <button
                         onClick={() => speakText(msg.text)}
-                        className="absolute bottom-2 right-2 p-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-500 dark:text-slate-400 hover:text-white transition-opacity opacity-0 group-hover:opacity-100 cursor-pointer"
+                        className="absolute bottom-2 right-2 p-1.5 rounded-lg bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-500 dark:text-slate-400 hover:text-white transition-opacity opacity-0 group-hover:opacity-100 cursor-pointer"
                         title="Read Response Out Loud"
                       >
                         <Volume2 size={11} />
@@ -238,7 +238,7 @@ const AiAssistant = () => {
             
             {loading && (
               <div className="flex justify-start">
-                <div className="p-3.5 rounded-2xl bg-slate-950/50 border border-slate-900 text-slate-500 dark:text-slate-400 rounded-tl-none flex items-center gap-2">
+                <div className="p-3.5 rounded-2xl bg-slate-50 dark:bg-slate-950/50 border border-slate-200 dark:border-slate-900 text-slate-500 dark:text-slate-400 rounded-tl-none flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-indigo-500 animate-bounce" />
                   <span className="w-1.5 h-1.5 rounded-full bg-indigo-500 animate-bounce [animation-delay:0.2s]" />
                   <span className="w-1.5 h-1.5 rounded-full bg-indigo-500 animate-bounce [animation-delay:0.4s]" />

@@ -142,7 +142,7 @@ const FitnessModule = () => {
             <form onSubmit={handleSubmit(onSubmit)} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="flex flex-col gap-1.5">
                 <label className="text-xs text-slate-500 dark:text-slate-400">Activity Type</label>
-                <select className="glass-input text-sm bg-slate-900" {...register('activityType')}>
+                <select className="glass-input text-sm bg-slate-100 dark:bg-slate-900" {...register('activityType')}>
                   <option value="walking">Walking</option>
                   <option value="running">Running</option>
                   <option value="cycling">Cycling</option>
@@ -206,7 +206,7 @@ const FitnessModule = () => {
             ) : (
               <div className="space-y-3.5">
                 {aiSuggestions.map((item, idx) => (
-                  <div key={idx} className="p-3.5 rounded-xl bg-slate-950/40 border border-slate-900 flex justify-between items-center text-xs">
+                  <div key={idx} className="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-950/40 border border-slate-200 dark:border-slate-900 flex justify-between items-center text-xs">
                     <div>
                       <h4 className="font-bold text-slate-800 dark:text-slate-200">{item.exercise}</h4>
                       <p className="text-[10px] text-slate-500 mt-0.5">Intensity: {item.intensity}</p>

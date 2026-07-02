@@ -174,7 +174,7 @@ Contacts: ${profile.emergencyContacts?.map(c => `${c.name} (${c.phone})`).join('
               {countdown !== null ? (
                 <button
                   onClick={handleCancelSOS}
-                  className="w-36 h-36 rounded-full bg-slate-900 border-4 border-slate-800 text-rose-500 text-2xl font-extrabold flex items-center justify-center animate-pulse cursor-pointer"
+                  className="w-36 h-36 rounded-full bg-slate-100 dark:bg-slate-900 border-4 border-slate-200 dark:border-slate-800 text-rose-500 text-2xl font-extrabold flex items-center justify-center animate-pulse cursor-pointer"
                 >
                   {countdown}s
                 </button>
@@ -226,7 +226,7 @@ Contacts: ${profile.emergencyContacts?.map(c => `${c.name} (${c.phone})`).join('
               </p>
             </div>
 
-            <div className="my-6 p-3 rounded-2xl bg-slate-950 border border-slate-900 flex items-center justify-center">
+            <div className="my-6 p-3 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-900 flex items-center justify-center">
               <img src={qrCodeUrl} alt="Emergency Medical Profile QR Code" className="w-40 h-40 rounded-lg" />
             </div>
 
@@ -245,7 +245,7 @@ Contacts: ${profile.emergencyContacts?.map(c => `${c.name} (${c.phone})`).join('
             
             <div className="space-y-3">
               {nearbyHospitals.map((hosp, idx) => (
-                <div key={idx} className="p-3.5 rounded-xl bg-slate-950/40 border border-slate-900 text-xs">
+                <div key={idx} className="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-950/40 border border-slate-200 dark:border-slate-900 text-xs">
                   <div className="flex justify-between items-start">
                     <h4 className="font-bold text-slate-800 dark:text-slate-200">{hosp.name}</h4>
                     <span className="badge-success text-[9px]">{hosp.distance}</span>
@@ -282,7 +282,7 @@ Contacts: ${profile.emergencyContacts?.map(c => `${c.name} (${c.phone})`).join('
                     </div>
                     <a
                       href={`tel:${c.phone}`}
-                      className="p-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-600 dark:text-slate-300 hover:text-white"
+                      className="p-2 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:text-white"
                     >
                       <Phone size={12} />
                     </a>

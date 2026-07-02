@@ -107,7 +107,7 @@ const NutritionTracker = () => {
             <span className="text-2xl font-extrabold text-slate-800 dark:text-white">{totals.calories}</span>
             <span className="text-xs text-slate-500 ml-1">/ {macroTargets.calories} kcal</span>
           </div>
-          <div className="w-full bg-slate-900 h-1.5 rounded-full mt-3 overflow-hidden">
+          <div className="w-full bg-slate-100 dark:bg-slate-900 h-1.5 rounded-full mt-3 overflow-hidden">
             <div className="bg-indigo-500 h-full rounded-full" style={{ width: `${getPercent(totals.calories, macroTargets.calories)}%` }} />
           </div>
         </GlassCard>
@@ -119,7 +119,7 @@ const NutritionTracker = () => {
             <span className="text-2xl font-extrabold text-slate-800 dark:text-white">{totals.protein}g</span>
             <span className="text-xs text-slate-500 ml-1">/ {macroTargets.protein}g</span>
           </div>
-          <div className="w-full bg-slate-900 h-1.5 rounded-full mt-3 overflow-hidden">
+          <div className="w-full bg-slate-100 dark:bg-slate-900 h-1.5 rounded-full mt-3 overflow-hidden">
             <div className="bg-rose-500 h-full rounded-full" style={{ width: `${getPercent(totals.protein, macroTargets.protein)}%` }} />
           </div>
         </GlassCard>
@@ -131,7 +131,7 @@ const NutritionTracker = () => {
             <span className="text-2xl font-extrabold text-slate-800 dark:text-white">{totals.carbs}g</span>
             <span className="text-xs text-slate-500 ml-1">/ {macroTargets.carbs}g</span>
           </div>
-          <div className="w-full bg-slate-900 h-1.5 rounded-full mt-3 overflow-hidden">
+          <div className="w-full bg-slate-100 dark:bg-slate-900 h-1.5 rounded-full mt-3 overflow-hidden">
             <div className="bg-cyan-500 h-full rounded-full" style={{ width: `${getPercent(totals.carbs, macroTargets.carbs)}%` }} />
           </div>
         </GlassCard>
@@ -143,7 +143,7 @@ const NutritionTracker = () => {
             <span className="text-2xl font-extrabold text-slate-800 dark:text-white">{totals.fats}g</span>
             <span className="text-xs text-slate-500 ml-1">/ {macroTargets.fats}g</span>
           </div>
-          <div className="w-full bg-slate-900 h-1.5 rounded-full mt-3 overflow-hidden">
+          <div className="w-full bg-slate-100 dark:bg-slate-900 h-1.5 rounded-full mt-3 overflow-hidden">
             <div className="bg-amber-500 h-full rounded-full" style={{ width: `${getPercent(totals.fats, macroTargets.fats)}%` }} />
           </div>
         </GlassCard>
@@ -162,7 +162,7 @@ const NutritionTracker = () => {
             <form onSubmit={handleSubmit(onSubmit)} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="flex flex-col gap-1.5">
                 <label className="text-xs text-slate-500 dark:text-slate-400">Meal Type</label>
-                <select className="glass-input text-sm bg-slate-900" {...register('mealType')}>
+                <select className="glass-input text-sm bg-slate-100 dark:bg-slate-900" {...register('mealType')}>
                   <option value="breakfast">Breakfast</option>
                   <option value="lunch">Lunch</option>
                   <option value="dinner">Dinner</option>
@@ -237,7 +237,7 @@ const NutritionTracker = () => {
 
             <div className="space-y-3.5 pt-2">
               {suggestions.map((s, idx) => (
-                <div key={idx} className="p-3 rounded-xl bg-slate-950/30 border border-slate-900 flex items-start gap-2.5 text-xs text-slate-600 dark:text-slate-300">
+                <div key={idx} className="p-3 rounded-xl bg-slate-950/30 border border-slate-200 dark:border-slate-900 flex items-start gap-2.5 text-xs text-slate-600 dark:text-slate-300">
                   <span className="text-indigo-400 mt-0.5">✦</span>
                   <p>{s}</p>
                 </div>

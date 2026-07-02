@@ -120,7 +120,7 @@ const MentalWellness = () => {
             <form onSubmit={handleSubmit(onSubmit)} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="flex flex-col gap-1.5">
                 <label className="text-xs text-slate-500 dark:text-slate-400">Mood State</label>
-                <select className="glass-input text-sm bg-slate-900" {...register('mood')}>
+                <select className="glass-input text-sm bg-slate-100 dark:bg-slate-900" {...register('mood')}>
                   <option value="happy">Happy & Content</option>
                   <option value="neutral">Neutral & Stable</option>
                   <option value="stressed">Stressed</option>
@@ -168,7 +168,7 @@ const MentalWellness = () => {
                       </div>
                       <span className="text-[10px] text-slate-500">{new Date(m.createdAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
                     </div>
-                    {m.notes && <p className="text-slate-500 dark:text-slate-400 leading-relaxed bg-slate-950/20 border border-slate-900/80 p-3 rounded-xl italic">{m.notes}</p>}
+                    {m.notes && <p className="text-slate-500 dark:text-slate-400 leading-relaxed bg-slate-950/20 border border-slate-200 dark:border-slate-900/80 p-3 rounded-xl italic">{m.notes}</p>}
                     
                     {/* Render recommendations */}
                     {m.suggestions?.length > 0 && (

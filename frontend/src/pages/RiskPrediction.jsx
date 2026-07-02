@@ -94,7 +94,7 @@ const RiskPrediction = () => {
             </div>
 
             {/* Explanations (XAI) */}
-            <div className="space-y-3 pt-3 border-t border-slate-900">
+            <div className="space-y-3 pt-3 border-t border-slate-200 dark:border-slate-900">
               <div>
                 <span className="text-[10px] uppercase font-bold text-slate-500 dark:text-slate-400 tracking-wider">Primary Risk Indicators</span>
                 <ul className="text-xs text-slate-600 dark:text-slate-300 space-y-1 mt-1.5 list-disc list-inside">

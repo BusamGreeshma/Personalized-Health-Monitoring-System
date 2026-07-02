@@ -172,7 +172,7 @@ const MedicalReportAnalyzer = () => {
               {/* Summary */}
               <div className="space-y-2">
                 <span className="text-[10px] uppercase font-bold text-slate-500 dark:text-slate-400 tracking-wider">AI Diagnostic Summary</span>
-                <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed bg-slate-950/40 border border-slate-900/60 p-4 rounded-xl">
+                <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed bg-slate-50 dark:bg-slate-950/40 border border-slate-200 dark:border-slate-900/60 p-4 rounded-xl">
                   {selectedReport.aiSummary}
                 </p>
               </div>
@@ -211,11 +211,11 @@ const MedicalReportAnalyzer = () => {
               </div>
 
               {/* Lifestyle Suggestions */}
-              <div className="space-y-3 pt-3 border-t border-slate-900">
+              <div className="space-y-3 pt-3 border-t border-slate-200 dark:border-slate-900">
                 <span className="text-[10px] uppercase font-bold text-slate-500 dark:text-slate-400 tracking-wider">AI Lifestyle & Diet Recommendations</span>
                 <div className="space-y-2">
                   {selectedReport.lifestyleSuggestions.map((s, idx) => (
-                    <div key={idx} className="p-3 rounded-xl bg-slate-950/20 border border-slate-900 flex items-start gap-2.5 text-xs text-slate-600 dark:text-slate-300">
+                    <div key={idx} className="p-3 rounded-xl bg-slate-950/20 border border-slate-200 dark:border-slate-900 flex items-start gap-2.5 text-xs text-slate-600 dark:text-slate-300">
                       <span className="text-indigo-400 mt-0.5">✦</span>
                       <p>{s}</p>
                     </div>

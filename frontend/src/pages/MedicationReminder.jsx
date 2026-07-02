@@ -128,7 +128,7 @@ const MedicationReminder = () => {
               </div>
               <div className="flex flex-col gap-1">
                 <label className="text-xs text-slate-500 dark:text-slate-400">Frequency</label>
-                <select className="glass-input text-xs bg-slate-900" {...register('frequency')}>
+                <select className="glass-input text-xs bg-slate-100 dark:bg-slate-900" {...register('frequency')}>
                   <option value="Daily">Daily</option>
                   <option value="Weekly">Weekly</option>
                   <option value="Twice a day">Twice a day</option>

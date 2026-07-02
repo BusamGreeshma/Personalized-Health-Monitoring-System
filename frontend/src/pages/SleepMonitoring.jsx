@@ -127,7 +127,7 @@ const SleepMonitoring = () => {
               </div>
               <div className="flex flex-col gap-1.5">
                 <label className="text-xs text-slate-500 dark:text-slate-400">Sleep Quality (1-5)</label>
-                <select className="glass-input text-sm bg-slate-900" {...register('quality')}>
+                <select className="glass-input text-sm bg-slate-100 dark:bg-slate-900" {...register('quality')}>
                   <option value="5">5 - Excellent Rest</option>
                   <option value="4">4 - Good Sleep</option>
                   <option value="3">3 - Light Restless</option>
@@ -198,7 +198,7 @@ const SleepMonitoring = () => {
                 <p className="text-xs text-slate-500 italic py-4 text-center">Log sleep to fetch AI feedback.</p>
               ) : (
                 sleeps.map((log, idx) => (
-                  <div key={idx} className="p-3.5 rounded-xl bg-slate-950/40 border border-slate-900 flex flex-col gap-1 text-xs text-slate-600 dark:text-slate-300">
+                  <div key={idx} className="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-950/40 border border-slate-200 dark:border-slate-900 flex flex-col gap-1 text-xs text-slate-600 dark:text-slate-300">
                     <div className="flex justify-between font-bold text-slate-800 dark:text-slate-200">
                       <span>Sleep Rating: {log.quality} ★</span>
                       <span className="text-[10px] text-slate-500">{log.bedtime} - {log.wakeupTime}</span>
