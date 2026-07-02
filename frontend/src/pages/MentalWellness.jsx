@@ -104,7 +104,7 @@ const MentalWellness = () => {
     <div className="space-y-8 max-w-5xl mx-auto">
       <div>
         <h2 className="text-2xl font-bold tracking-tight">Mental Wellness & Stress Control</h2>
-        <p className="text-xs text-slate-400">Track anxiety metrics, log mental journals, and perform Box Breathing exercises.</p>
+        <p className="text-xs text-slate-500 dark:text-slate-400">Track anxiety metrics, log mental journals, and perform Box Breathing exercises.</p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -119,7 +119,7 @@ const MentalWellness = () => {
 
             <form onSubmit={handleSubmit(onSubmit)} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="flex flex-col gap-1.5">
-                <label className="text-xs text-slate-400">Mood State</label>
+                <label className="text-xs text-slate-500 dark:text-slate-400">Mood State</label>
                 <select className="glass-input text-sm bg-slate-900" {...register('mood')}>
                   <option value="happy">Happy & Content</option>
                   <option value="neutral">Neutral & Stable</option>
@@ -130,16 +130,16 @@ const MentalWellness = () => {
               </div>
               <div className="grid grid-cols-2 gap-3">
                 <div className="flex flex-col gap-1.5">
-                  <label className="text-xs text-slate-400">Stress (1-10)</label>
+                  <label className="text-xs text-slate-500 dark:text-slate-400">Stress (1-10)</label>
                   <input type="number" min="1" max="10" placeholder="2" className="glass-input text-sm" {...register('stressLevel', { required: true })} />
                 </div>
                 <div className="flex flex-col gap-1.5">
-                  <label className="text-xs text-slate-400">Anxiety (1-10)</label>
+                  <label className="text-xs text-slate-500 dark:text-slate-400">Anxiety (1-10)</label>
                   <input type="number" min="1" max="10" placeholder="2" className="glass-input text-sm" {...register('anxietyLevel', { required: true })} />
                 </div>
               </div>
               <div className="flex flex-col gap-1.5 sm:col-span-2">
-                <label className="text-xs text-slate-400">Mood Journal Notes</label>
+                <label className="text-xs text-slate-500 dark:text-slate-400">Mood Journal Notes</label>
                 <textarea rows="3" placeholder="Write any notes about stressors or triggers..." className="glass-input text-sm resize-none" {...register('notes')} />
               </div>
 
@@ -168,7 +168,7 @@ const MentalWellness = () => {
                       </div>
                       <span className="text-[10px] text-slate-500">{new Date(m.createdAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
                     </div>
-                    {m.notes && <p className="text-slate-400 leading-relaxed bg-slate-950/20 border border-slate-900/80 p-3 rounded-xl italic">{m.notes}</p>}
+                    {m.notes && <p className="text-slate-500 dark:text-slate-400 leading-relaxed bg-slate-950/20 border border-slate-900/80 p-3 rounded-xl italic">{m.notes}</p>}
                     
                     {/* Render recommendations */}
                     {m.suggestions?.length > 0 && (
@@ -194,7 +194,7 @@ const MentalWellness = () => {
           <GlassCard hover={false} className="flex flex-col items-center p-8 text-center border-slate-800/80">
             <Heart className="text-rose-500 animate-pulse-slow mb-4" size={24} />
             <h3 className="font-semibold text-sm">Guided Box Breathing</h3>
-            <p className="text-[11px] text-slate-400 mt-2 leading-relaxed">
+            <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-2 leading-relaxed">
               Box Breathing triggers the parasympathetic nervous system, decreasing systemic cortisol and heart rate loads.
             </p>
 

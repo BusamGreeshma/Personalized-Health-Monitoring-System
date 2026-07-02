@@ -96,7 +96,7 @@ const MedicationReminder = () => {
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <div>
           <h2 className="text-2xl font-bold tracking-tight">Medication Reminders</h2>
-          <p className="text-xs text-slate-400">Manage prescriptions, set times, and track daily dose adherence.</p>
+          <p className="text-xs text-slate-500 dark:text-slate-400">Manage prescriptions, set times, and track daily dose adherence.</p>
         </div>
         <button
           onClick={() => showToast('Reminder Chime Test', 'This is how your medication alert sounds.', 'medication')}
@@ -119,15 +119,15 @@ const MedicationReminder = () => {
 
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
               <div className="flex flex-col gap-1">
-                <label className="text-xs text-slate-400">Medicine Name</label>
+                <label className="text-xs text-slate-500 dark:text-slate-400">Medicine Name</label>
                 <input type="text" placeholder="e.g. Vitamin D3" className="glass-input text-xs" {...register('name', { required: true })} />
               </div>
               <div className="flex flex-col gap-1">
-                <label className="text-xs text-slate-400">Dosage Amount</label>
+                <label className="text-xs text-slate-500 dark:text-slate-400">Dosage Amount</label>
                 <input type="text" placeholder="e.g. 1 tablet, 5ml" className="glass-input text-xs" {...register('dosage', { required: true })} />
               </div>
               <div className="flex flex-col gap-1">
-                <label className="text-xs text-slate-400">Frequency</label>
+                <label className="text-xs text-slate-500 dark:text-slate-400">Frequency</label>
                 <select className="glass-input text-xs bg-slate-900" {...register('frequency')}>
                   <option value="Daily">Daily</option>
                   <option value="Weekly">Weekly</option>
@@ -135,7 +135,7 @@ const MedicationReminder = () => {
                 </select>
               </div>
               <div className="flex flex-col gap-1">
-                <label className="text-xs text-slate-400">Alert Times (Comma separated HH:MM)</label>
+                <label className="text-xs text-slate-500 dark:text-slate-400">Alert Times (Comma separated HH:MM)</label>
                 <input type="text" placeholder="e.g. 08:00, 20:00" className="glass-input text-xs" {...register('times', { required: true })} />
               </div>
 
@@ -177,7 +177,7 @@ const MedicationReminder = () => {
 
                           return (
                             <div key={idx} className="flex items-center gap-1 bg-slate-900 border border-slate-800 p-1.5 rounded-lg text-[10px]">
-                              <span className="font-semibold text-slate-400 mr-1.5">{time}</span>
+                              <span className="font-semibold text-slate-500 dark:text-slate-400 mr-1.5">{time}</span>
                               <button
                                 onClick={() => handleLogStatus(med._id, time, 'taken')}
                                 className={`px-2 py-0.5 rounded cursor-pointer ${isTaken ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20' : 'bg-slate-950 text-slate-500 hover:text-slate-800 dark:text-slate-200'}`}

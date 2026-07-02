@@ -71,54 +71,60 @@ export const NotificationProvider = ({ children }) => {
       if (!AudioContext) return;
       
       const ctx = audioCtx || new AudioContext();
-      if (ctx.state === 'suspended') {
-        ctx.resume();
-      }
       
-      const osc = ctx.createOscillator();
-      const gain = ctx.createGain();
-      
-      osc.connect(gain);
-      gain.connect(ctx.destination);
-      
-      if (type === 'medication' || type === 'alert') {
-        // Elegant medical reminder chime
-        osc.type = 'sine';
-        osc.frequency.setValueAtTime(587.33, ctx.currentTime); // D5
-        gain.gain.setValueAtTime(0.15, ctx.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.15);
-        osc.start(ctx.currentTime);
-        osc.stop(ctx.currentTime + 0.15);
+      const playChime = () => {
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.connect(gain);
+        gain.connect(ctx.destination);
         
-        setTimeout(() => {
-          try {
-            const osc2 = ctx.createOscillator();
-            const gain2 = ctx.createGain();
-            osc2.connect(gain2);
-            gain2.connect(ctx.destination);
-            osc2.type = 'sine';
-            osc2.frequency.setValueAtTime(880, ctx.currentTime); // A5
-            gain2.gain.setValueAtTime(0.15, ctx.currentTime);
-            gain2.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.25);
-            osc2.start(ctx.currentTime);
-            osc2.stop(ctx.currentTime + 0.25);
-          } catch (err) {}
-        }, 150);
-      } else if (type === 'success') {
-        osc.type = 'triangle';
-        osc.frequency.setValueAtTime(523.25, ctx.currentTime); // C5
-        osc.frequency.exponentialRampToValueAtTime(1046.50, ctx.currentTime + 0.25); // C6
-        gain.gain.setValueAtTime(0.10, ctx.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.3);
-        osc.start(ctx.currentTime);
-        osc.stop(ctx.currentTime + 0.3);
+        if (type === 'medication' || type === 'alert') {
+          // Elegant medical reminder chime
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(587.33, ctx.currentTime); // D5
+          gain.gain.setValueAtTime(0.15, ctx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.15);
+          osc.start(ctx.currentTime);
+          osc.stop(ctx.currentTime + 0.15);
+          
+          setTimeout(() => {
+            try {
+              const osc2 = ctx.createOscillator();
+              const gain2 = ctx.createGain();
+              osc2.connect(gain2);
+              gain2.connect(ctx.destination);
+              osc2.type = 'sine';
+              osc2.frequency.setValueAtTime(880, ctx.currentTime); // A5
+              gain2.gain.setValueAtTime(0.15, ctx.currentTime);
+              gain2.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.25);
+              osc2.start(ctx.currentTime);
+              osc2.stop(ctx.currentTime + 0.25);
+            } catch (err) {}
+          }, 150);
+        } else if (type === 'success') {
+          osc.type = 'triangle';
+          osc.frequency.setValueAtTime(523.25, ctx.currentTime); // C5
+          osc.frequency.exponentialRampToValueAtTime(1046.50, ctx.currentTime + 0.25); // C6
+          gain.gain.setValueAtTime(0.10, ctx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.3);
+          osc.start(ctx.currentTime);
+          osc.stop(ctx.currentTime + 0.3);
+        } else {
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(440, ctx.currentTime); // A4
+          gain.gain.setValueAtTime(0.06, ctx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.2);
+          osc.start(ctx.currentTime);
+          osc.stop(ctx.currentTime + 0.2);
+        }
+      };
+
+      if (ctx.state === 'suspended') {
+        ctx.resume()
+          .then(playChime)
+          .catch(err => console.warn("Failed to resume suspended audio context:", err));
       } else {
-        osc.type = 'sine';
-        osc.frequency.setValueAtTime(440, ctx.currentTime); // A4
-        gain.gain.setValueAtTime(0.06, ctx.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.2);
-        osc.start(ctx.currentTime);
-        osc.stop(ctx.currentTime + 0.2);
+        playChime();
       }
     } catch (e) {
       console.warn("Audio Context playback failed or blocked by browser gesture policies:", e);

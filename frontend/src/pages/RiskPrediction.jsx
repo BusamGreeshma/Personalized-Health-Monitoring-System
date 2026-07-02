@@ -51,7 +51,7 @@ const RiskPrediction = () => {
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <div>
           <h2 className="text-2xl font-bold tracking-tight">AI Health Risk Predictions</h2>
-          <p className="text-xs text-slate-400">Explainable AI (XAI) engine mapping physical vitals telemetry against risk categories.</p>
+          <p className="text-xs text-slate-500 dark:text-slate-400">Explainable AI (XAI) engine mapping physical vitals telemetry against risk categories.</p>
         </div>
         <button
           onClick={fetchRisks}
@@ -96,16 +96,16 @@ const RiskPrediction = () => {
             {/* Explanations (XAI) */}
             <div className="space-y-3 pt-3 border-t border-slate-900">
               <div>
-                <span className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Primary Risk Indicators</span>
-                <ul className="text-xs text-slate-300 space-y-1 mt-1.5 list-disc list-inside">
+                <span className="text-[10px] uppercase font-bold text-slate-500 dark:text-slate-400 tracking-wider">Primary Risk Indicators</span>
+                <ul className="text-xs text-slate-600 dark:text-slate-300 space-y-1 mt-1.5 list-disc list-inside">
                   {item.reasons.map((r, i) => (
                     <li key={i}>{r}</li>
                   ))}
                 </ul>
               </div>
               <div>
-                <span className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Preventive Guidelines</span>
-                <ul className="text-xs text-slate-400 space-y-1 mt-1.5 list-disc list-inside">
+                <span className="text-[10px] uppercase font-bold text-slate-500 dark:text-slate-400 tracking-wider">Preventive Guidelines</span>
+                <ul className="text-xs text-slate-500 dark:text-slate-400 space-y-1 mt-1.5 list-disc list-inside">
                   {item.preventiveMeasures.map((pm, i) => (
                     <li key={i}>{pm}</li>
                   ))}

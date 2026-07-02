@@ -72,7 +72,7 @@ const WearableIntegration = () => {
     <div className="space-y-8 max-w-5xl mx-auto">
       <div>
         <h2 className="text-2xl font-bold tracking-tight">Wearable Device Integration</h2>
-        <p className="text-xs text-slate-400">Establish authorization tokens and simulate biometrics sync with Fitbit, Apple Health, or Google Fit.</p>
+        <p className="text-xs text-slate-500 dark:text-slate-400">Establish authorization tokens and simulate biometrics sync with Fitbit, Apple Health, or Google Fit.</p>
       </div>
 
       {/* Info Warning */}
@@ -93,7 +93,7 @@ const WearableIntegration = () => {
               <span className="font-bold text-base text-slate-800 dark:text-slate-200">Fitbit Sync</span>
               <Watch size={18} className="text-cyan-400" />
             </div>
-            <p className="text-[10px] text-slate-400 mt-1.5 leading-relaxed">Continuous sync for step count meters, active metabolic rate, and sleep state intervals.</p>
+            <p className="text-[10px] text-slate-500 dark:text-slate-400 mt-1.5 leading-relaxed">Continuous sync for step count meters, active metabolic rate, and sleep state intervals.</p>
           </div>
           <div className="flex justify-between items-center mt-6">
             <span className="badge-success text-[10px]">Active BLE</span>
@@ -117,7 +117,7 @@ const WearableIntegration = () => {
               <span className="font-bold text-base text-slate-800 dark:text-slate-200">Google Fit API</span>
               <Watch size={18} className="text-rose-400" />
             </div>
-            <p className="text-[10px] text-slate-400 mt-1.5 leading-relaxed">Aggregates distance maps, resting heart rate values, and caloric logs sync.</p>
+            <p className="text-[10px] text-slate-500 dark:text-slate-400 mt-1.5 leading-relaxed">Aggregates distance maps, resting heart rate values, and caloric logs sync.</p>
           </div>
           <div className="flex justify-between items-center mt-6">
             <span className="badge-success text-[10px]">Active API</span>
@@ -141,10 +141,10 @@ const WearableIntegration = () => {
               <span className="font-bold text-base text-slate-800 dark:text-slate-200">Apple HealthKit</span>
               <Watch size={18} className="text-indigo-400" />
             </div>
-            <p className="text-[10px] text-slate-400 mt-1.5 leading-relaxed">Pulls ECG biometrics, SpO2 blood oxygen levels, and dynamic sleep logs.</p>
+            <p className="text-[10px] text-slate-500 dark:text-slate-400 mt-1.5 leading-relaxed">Pulls ECG biometrics, SpO2 blood oxygen levels, and dynamic sleep logs.</p>
           </div>
           <div className="flex justify-between items-center mt-6">
-            <span className="badge-warning text-[10px] bg-slate-900 border border-slate-800 text-slate-400">Offline</span>
+            <span className="badge-warning text-[10px] bg-slate-900 border border-slate-800 text-slate-500 dark:text-slate-400">Offline</span>
             <button
               onClick={() => {
                 setActiveMeds(prev => ({ ...prev, apple: true }));
@@ -169,7 +169,7 @@ const WearableIntegration = () => {
               <h3 className="font-semibold text-sm">Biometrics Sensor Simulator</h3>
             </div>
             
-            <p className="text-[11px] text-slate-400 leading-relaxed">Inject raw vital anomalies into Aura logs to test warnings responses:</p>
+            <p className="text-[11px] text-slate-500 dark:text-slate-400 leading-relaxed">Inject raw vital anomalies into Aura logs to test warnings responses:</p>
             
             <div className="space-y-2.5 pt-2">
               <button
@@ -204,9 +204,9 @@ const WearableIntegration = () => {
         <div className="lg:col-span-2">
           <GlassCard hover={false} className="space-y-4 border-slate-800/80">
             <span className="text-[10px] uppercase font-bold text-slate-500 tracking-wider">BLE Handshake Stream Console</span>
-            <div className="h-60 rounded-xl bg-slate-950 p-4 border border-slate-900 overflow-y-auto space-y-1.5 font-mono text-[10px] text-slate-400 scrollbar-thin">
+            <div className="h-60 rounded-xl bg-slate-950 p-4 border border-slate-900 overflow-y-auto space-y-1.5 font-mono text-[10px] text-slate-500 dark:text-slate-400 scrollbar-thin">
               {logs.map((log, idx) => (
-                <div key={idx} className={log.includes('Error') ? 'text-rose-400' : log.includes('handshake') || log.includes('HANDSHAKE') || log.includes(' Handshake') ? 'text-indigo-400 font-semibold' : 'text-slate-400'}>
+                <div key={idx} className={log.includes('Error') ? 'text-rose-400' : log.includes('handshake') || log.includes('HANDSHAKE') || log.includes(' Handshake') ? 'text-indigo-400 font-semibold' : 'text-slate-500 dark:text-slate-400'}>
                   {log}
                 </div>
               ))}

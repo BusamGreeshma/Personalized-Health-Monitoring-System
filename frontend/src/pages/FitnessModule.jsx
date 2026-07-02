@@ -90,7 +90,7 @@ const FitnessModule = () => {
     <div className="space-y-8 max-w-5xl mx-auto">
       <div>
         <h2 className="text-2xl font-bold tracking-tight">Fitness Tracker</h2>
-        <p className="text-xs text-slate-400">Record calorie burners and structured activities to keep cardiovascular health high.</p>
+        <p className="text-xs text-slate-500 dark:text-slate-400">Record calorie burners and structured activities to keep cardiovascular health high.</p>
       </div>
 
       {/* Progress Cards */}
@@ -141,7 +141,7 @@ const FitnessModule = () => {
 
             <form onSubmit={handleSubmit(onSubmit)} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="flex flex-col gap-1.5">
-                <label className="text-xs text-slate-400">Activity Type</label>
+                <label className="text-xs text-slate-500 dark:text-slate-400">Activity Type</label>
                 <select className="glass-input text-sm bg-slate-900" {...register('activityType')}>
                   <option value="walking">Walking</option>
                   <option value="running">Running</option>
@@ -151,15 +151,15 @@ const FitnessModule = () => {
                 </select>
               </div>
               <div className="flex flex-col gap-1.5">
-                <label className="text-xs text-slate-400">Duration (Minutes)</label>
+                <label className="text-xs text-slate-500 dark:text-slate-400">Duration (Minutes)</label>
                 <input type="number" placeholder="30" className="glass-input text-sm" {...register('duration', { required: true })} />
               </div>
               <div className="flex flex-col gap-1.5">
-                <label className="text-xs text-slate-400">Distance (km) (Optional)</label>
+                <label className="text-xs text-slate-500 dark:text-slate-400">Distance (km) (Optional)</label>
                 <input type="number" step="0.01" placeholder="2.5" className="glass-input text-sm" {...register('distance')} />
               </div>
               <div className="flex flex-col gap-1.5">
-                <label className="text-xs text-slate-400">Calories Burned (kcal)</label>
+                <label className="text-xs text-slate-500 dark:text-slate-400">Calories Burned (kcal)</label>
                 <input type="number" placeholder="220" className="glass-input text-sm" {...register('caloriesBurned', { required: true })} />
               </div>
 

@@ -89,7 +89,7 @@ const MedicalReportAnalyzer = () => {
       {/* Banner */}
       <div>
         <h2 className="text-2xl font-bold tracking-tight">AI Medical Report Analyzer</h2>
-        <p className="text-xs text-slate-400">Extract blood panel telemetry values directly using Gemini Multimodal Vision OCR.</p>
+        <p className="text-xs text-slate-500 dark:text-slate-400">Extract blood panel telemetry values directly using Gemini Multimodal Vision OCR.</p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -122,7 +122,7 @@ const MedicalReportAnalyzer = () => {
                     className={`p-3 rounded-xl border text-xs font-semibold cursor-pointer flex items-center justify-between transition-all ${
                       selectedReport?._id === r._id
                         ? 'bg-indigo-600/10 border-indigo-500/25 text-indigo-400'
-                        : 'border-slate-800/80 text-slate-400 hover:bg-slate-900/60 hover:text-slate-800 dark:text-slate-200'
+                        : 'border-slate-800/80 text-slate-500 dark:text-slate-400 hover:bg-slate-900/60 hover:text-slate-800 dark:text-slate-200'
                     }`}
                   >
                     <div className="flex items-center gap-2 truncate">
@@ -171,15 +171,15 @@ const MedicalReportAnalyzer = () => {
 
               {/* Summary */}
               <div className="space-y-2">
-                <span className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">AI Diagnostic Summary</span>
-                <p className="text-xs text-slate-300 leading-relaxed bg-slate-950/40 border border-slate-900/60 p-4 rounded-xl">
+                <span className="text-[10px] uppercase font-bold text-slate-500 dark:text-slate-400 tracking-wider">AI Diagnostic Summary</span>
+                <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed bg-slate-950/40 border border-slate-900/60 p-4 rounded-xl">
                   {selectedReport.aiSummary}
                 </p>
               </div>
 
               {/* Abnormal Values Parameter Vitals list */}
               <div className="space-y-3">
-                <span className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Extracted Vitals & Values</span>
+                <span className="text-[10px] uppercase font-bold text-slate-500 dark:text-slate-400 tracking-wider">Extracted Vitals & Values</span>
                 <div className="overflow-x-auto">
                   <table className="w-full text-left text-xs">
                     <thead>
@@ -192,10 +192,10 @@ const MedicalReportAnalyzer = () => {
                     </thead>
                     <tbody className="divide-y divide-slate-900">
                       {selectedReport.abnormalValues.map((val, idx) => (
-                        <tr key={idx} className="text-slate-300 font-medium hover:bg-slate-900/10">
+                        <tr key={idx} className="text-slate-600 dark:text-slate-300 font-medium hover:bg-slate-900/10">
                           <td className="py-3 font-semibold text-slate-800 dark:text-slate-200">{val.parameter}</td>
                           <td className="py-3">{val.value}</td>
-                          <td className="py-3 text-slate-400">{val.normalRange}</td>
+                          <td className="py-3 text-slate-500 dark:text-slate-400">{val.normalRange}</td>
                           <td className="py-3 text-right">
                             <span className={
                               val.status === 'high' ? 'badge-danger' : val.status === 'low' ? 'badge-warning' : 'badge-success'
@@ -212,10 +212,10 @@ const MedicalReportAnalyzer = () => {
 
               {/* Lifestyle Suggestions */}
               <div className="space-y-3 pt-3 border-t border-slate-900">
-                <span className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">AI Lifestyle & Diet Recommendations</span>
+                <span className="text-[10px] uppercase font-bold text-slate-500 dark:text-slate-400 tracking-wider">AI Lifestyle & Diet Recommendations</span>
                 <div className="space-y-2">
                   {selectedReport.lifestyleSuggestions.map((s, idx) => (
-                    <div key={idx} className="p-3 rounded-xl bg-slate-950/20 border border-slate-900 flex items-start gap-2.5 text-xs text-slate-300">
+                    <div key={idx} className="p-3 rounded-xl bg-slate-950/20 border border-slate-900 flex items-start gap-2.5 text-xs text-slate-600 dark:text-slate-300">
                       <span className="text-indigo-400 mt-0.5">✦</span>
                       <p>{s}</p>
                     </div>

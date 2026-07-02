@@ -95,7 +95,7 @@ const NutritionTracker = () => {
     <div className="space-y-8 max-w-5xl mx-auto">
       <div>
         <h2 className="text-2xl font-bold tracking-tight">Nutrition Tracker</h2>
-        <p className="text-xs text-slate-400">Log meals and balance macronutrient calories to maintain fitness standards.</p>
+        <p className="text-xs text-slate-500 dark:text-slate-400">Log meals and balance macronutrient calories to maintain fitness standards.</p>
       </div>
 
       {/* Progress Cards */}
@@ -161,7 +161,7 @@ const NutritionTracker = () => {
 
             <form onSubmit={handleSubmit(onSubmit)} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="flex flex-col gap-1.5">
-                <label className="text-xs text-slate-400">Meal Type</label>
+                <label className="text-xs text-slate-500 dark:text-slate-400">Meal Type</label>
                 <select className="glass-input text-sm bg-slate-900" {...register('mealType')}>
                   <option value="breakfast">Breakfast</option>
                   <option value="lunch">Lunch</option>
@@ -170,24 +170,24 @@ const NutritionTracker = () => {
                 </select>
               </div>
               <div className="flex flex-col gap-1.5">
-                <label className="text-xs text-slate-400">Food / Drink Name</label>
+                <label className="text-xs text-slate-500 dark:text-slate-400">Food / Drink Name</label>
                 <input type="text" placeholder="e.g. Avocado Toast with Egg" className="glass-input text-sm" {...register('foodName', { required: true })} />
               </div>
               <div className="flex flex-col gap-1.5">
-                <label className="text-xs text-slate-400">Calories (kcal)</label>
+                <label className="text-xs text-slate-500 dark:text-slate-400">Calories (kcal)</label>
                 <input type="number" placeholder="280" className="glass-input text-sm" {...register('calories', { required: true })} />
               </div>
               <div className="grid grid-cols-3 gap-2">
                 <div className="flex flex-col gap-1.5">
-                  <label className="text-xs text-slate-400">Protein (g)</label>
+                  <label className="text-xs text-slate-500 dark:text-slate-400">Protein (g)</label>
                   <input type="number" placeholder="12" className="glass-input text-xs" {...register('protein')} />
                 </div>
                 <div className="flex flex-col gap-1.5">
-                  <label className="text-xs text-slate-400">Carbs (g)</label>
+                  <label className="text-xs text-slate-500 dark:text-slate-400">Carbs (g)</label>
                   <input type="number" placeholder="30" className="glass-input text-xs" {...register('carbs')} />
                 </div>
                 <div className="flex flex-col gap-1.5">
-                  <label className="text-xs text-slate-400">Fats (g)</label>
+                  <label className="text-xs text-slate-500 dark:text-slate-400">Fats (g)</label>
                   <input type="number" placeholder="8" className="glass-input text-xs" {...register('fats')} />
                 </div>
               </div>
@@ -214,7 +214,7 @@ const NutritionTracker = () => {
                       <h4 className="font-bold text-slate-800 dark:text-slate-200">{m.foodName}</h4>
                       <p className="text-[10px] text-slate-500 uppercase mt-0.5 tracking-wider">{m.mealType} • P: {m.protein}g, C: {m.carbs}g, F: {m.fats}g</p>
                     </div>
-                    <span className="font-semibold text-slate-300">{m.calories} kcal</span>
+                    <span className="font-semibold text-slate-600 dark:text-slate-300">{m.calories} kcal</span>
                   </div>
                 ))}
               </div>
@@ -237,7 +237,7 @@ const NutritionTracker = () => {
 
             <div className="space-y-3.5 pt-2">
               {suggestions.map((s, idx) => (
-                <div key={idx} className="p-3 rounded-xl bg-slate-950/30 border border-slate-900 flex items-start gap-2.5 text-xs text-slate-300">
+                <div key={idx} className="p-3 rounded-xl bg-slate-950/30 border border-slate-900 flex items-start gap-2.5 text-xs text-slate-600 dark:text-slate-300">
                   <span className="text-indigo-400 mt-0.5">✦</span>
                   <p>{s}</p>
                 </div>

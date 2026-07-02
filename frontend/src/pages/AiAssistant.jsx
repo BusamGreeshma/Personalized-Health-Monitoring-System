@@ -172,7 +172,7 @@ const AiAssistant = () => {
                 className={`w-full text-left p-2.5 rounded-xl text-xs font-medium border transition-all flex items-center gap-2 truncate cursor-pointer ${
                   currentSessionId === s._id
                     ? 'bg-indigo-600/10 text-indigo-400 border-indigo-500/25'
-                    : 'border-transparent text-slate-400 hover:bg-slate-900/60 hover:text-slate-800 dark:text-slate-200'
+                    : 'border-transparent text-slate-500 dark:text-slate-400 hover:bg-slate-900/60 hover:text-slate-800 dark:text-slate-200'
                 }`}
               >
                 <MessageSquare size={13} className="flex-shrink-0" />
@@ -204,7 +204,7 @@ const AiAssistant = () => {
                   <Sparkles size={20} className="animate-pulse" />
                 </div>
                 <h3 className="font-semibold text-sm">Hello, I am Aura</h3>
-                <p className="text-xs text-slate-400">Ask me questions about sleep optimization, cardio routines, dietary ingredients, or blood test terms.</p>
+                <p className="text-xs text-slate-500 dark:text-slate-400">Ask me questions about sleep optimization, cardio routines, dietary ingredients, or blood test terms.</p>
               </div>
             ) : (
               messages.map((msg, idx) => (
@@ -216,7 +216,7 @@ const AiAssistant = () => {
                     className={`max-w-[75%] p-3.5 rounded-2xl border text-xs leading-relaxed flex flex-col relative group ${
                       msg.sender === 'user'
                         ? 'bg-indigo-600/10 border-indigo-500/20 text-slate-800 dark:text-slate-200 rounded-tr-none'
-                        : 'bg-slate-950/50 border-slate-900 text-slate-300 rounded-tl-none'
+                        : 'bg-slate-950/50 border-slate-900 text-slate-600 dark:text-slate-300 rounded-tl-none'
                     }`}
                   >
                     <p className="whitespace-pre-wrap">{msg.text}</p>
@@ -225,7 +225,7 @@ const AiAssistant = () => {
                     {msg.sender === 'ai' && (
                       <button
                         onClick={() => speakText(msg.text)}
-                        className="absolute bottom-2 right-2 p-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-400 hover:text-white transition-opacity opacity-0 group-hover:opacity-100 cursor-pointer"
+                        className="absolute bottom-2 right-2 p-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-500 dark:text-slate-400 hover:text-white transition-opacity opacity-0 group-hover:opacity-100 cursor-pointer"
                         title="Read Response Out Loud"
                       >
                         <Volume2 size={11} />
@@ -238,7 +238,7 @@ const AiAssistant = () => {
             
             {loading && (
               <div className="flex justify-start">
-                <div className="p-3.5 rounded-2xl bg-slate-950/50 border border-slate-900 text-slate-400 rounded-tl-none flex items-center gap-2">
+                <div className="p-3.5 rounded-2xl bg-slate-950/50 border border-slate-900 text-slate-500 dark:text-slate-400 rounded-tl-none flex items-center gap-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-indigo-500 animate-bounce" />
                   <span className="w-1.5 h-1.5 rounded-full bg-indigo-500 animate-bounce [animation-delay:0.2s]" />
                   <span className="w-1.5 h-1.5 rounded-full bg-indigo-500 animate-bounce [animation-delay:0.4s]" />
@@ -256,7 +256,7 @@ const AiAssistant = () => {
               className={`p-3 rounded-xl border transition-all cursor-pointer ${
                 isListening
                   ? 'bg-rose-950/20 border-rose-500/40 text-rose-400 animate-pulse'
-                  : 'bg-slate-900/60 border-slate-800/80 text-slate-400 hover:text-white'
+                  : 'bg-slate-900/60 border-slate-800/80 text-slate-500 dark:text-slate-400 hover:text-white'
               }`}
               title="Voice Input Dictation"
             >

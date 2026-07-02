@@ -95,7 +95,7 @@ const Dashboard = () => {
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <div>
           <h2 className="text-xl font-bold tracking-tight text-slate-800 dark:text-slate-100">Overview</h2>
-          <p className="text-xs text-slate-400">Biometrics and wellness summary for today, {todayStr}</p>
+          <p className="text-xs text-slate-500 dark:text-slate-400">Biometrics and wellness summary for today, {todayStr}</p>
         </div>
         <button
           onClick={handleWearableSync}
@@ -120,7 +120,7 @@ const Dashboard = () => {
                 <Milestone size={20} />
               </div>
               <div className="flex-1">
-                <p className="text-[11px] text-slate-400 font-semibold uppercase tracking-wider">Daily Steps</p>
+                <p className="text-[11px] text-slate-500 dark:text-slate-400 font-semibold uppercase tracking-wider">Daily Steps</p>
                 <div className="flex items-baseline gap-1.5 mt-1">
                   <span className="text-xl font-bold text-slate-800 dark:text-slate-100">{vitals?.stepCount || 0}</span>
                   <span className="text-xs text-slate-500">/ 8,000 steps</span>
@@ -144,7 +144,7 @@ const Dashboard = () => {
                 <Droplet size={20} />
               </div>
               <div className="flex-1">
-                <p className="text-[11px] text-slate-400 font-semibold uppercase tracking-wider">Hydration</p>
+                <p className="text-[11px] text-slate-500 dark:text-slate-400 font-semibold uppercase tracking-wider">Hydration</p>
                 <div className="flex items-baseline gap-1.5 mt-1">
                   <span className="text-xl font-bold text-slate-800 dark:text-slate-100">{vitals?.waterIntake || 0}</span>
                   <span className="text-xs text-slate-500">/ 2,500 ml</span>
@@ -167,7 +167,7 @@ const Dashboard = () => {
                 <Flame size={20} />
               </div>
               <div className="flex-1">
-                <p className="text-[11px] text-slate-400 font-semibold uppercase tracking-wider">Calories Burned</p>
+                <p className="text-[11px] text-slate-500 dark:text-slate-400 font-semibold uppercase tracking-wider">Calories Burned</p>
                 <div className="flex items-baseline gap-1.5 mt-1">
                   <span className="text-xl font-bold text-slate-800 dark:text-slate-100">{vitals?.caloriesBurned || 0}</span>
                   <span className="text-xs text-slate-500">/ 500 kcal</span>
@@ -190,7 +190,7 @@ const Dashboard = () => {
                 <Moon size={20} />
               </div>
               <div className="flex-1">
-                <p className="text-[11px] text-slate-400 font-semibold uppercase tracking-wider">Sleep Duration</p>
+                <p className="text-[11px] text-slate-500 dark:text-slate-400 font-semibold uppercase tracking-wider">Sleep Duration</p>
                 <div className="flex items-baseline gap-1.5 mt-1">
                   <span className="text-xl font-bold text-slate-800 dark:text-slate-100">{vitals?.sleepHours || 0}</span>
                   <span className="text-xs text-slate-500">/ 8 hrs</span>
@@ -214,48 +214,48 @@ const Dashboard = () => {
             {/* Heart Rate */}
             <GlassCard hover={false} className="p-4 flex flex-col justify-between h-28">
               <div className="flex justify-between items-center text-rose-500">
-                <span className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Heart Rate</span>
+                <span className="text-[10px] uppercase font-bold text-slate-500 dark:text-slate-400 tracking-wider">Heart Rate</span>
                 <Heart size={16} />
               </div>
               <div>
                 <span className="text-xl font-bold">{vitals?.heartRate || '--'}</span>
-                <span className="text-[10px] text-slate-400 ml-1">bpm</span>
+                <span className="text-[10px] text-slate-500 dark:text-slate-400 ml-1">bpm</span>
               </div>
             </GlassCard>
 
             {/* Blood Pressure */}
             <GlassCard hover={false} className="p-4 flex flex-col justify-between h-28">
               <div className="flex justify-between items-center text-cyan-500">
-                <span className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Blood Pressure</span>
+                <span className="text-[10px] uppercase font-bold text-slate-500 dark:text-slate-400 tracking-wider">Blood Pressure</span>
                 <Activity size={16} />
               </div>
               <div>
                 <span className="text-xl font-bold">{vitals?.bloodPressure?.systolic}/{vitals?.bloodPressure?.diastolic}</span>
-                <span className="text-[10px] text-slate-400 ml-1">mmHg</span>
+                <span className="text-[10px] text-slate-500 dark:text-slate-400 ml-1">mmHg</span>
               </div>
             </GlassCard>
 
             {/* Blood Sugar */}
             <GlassCard hover={false} className="p-4 flex flex-col justify-between h-28">
               <div className="flex justify-between items-center text-amber-500">
-                <span className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Blood Sugar</span>
+                <span className="text-[10px] uppercase font-bold text-slate-500 dark:text-slate-400 tracking-wider">Blood Sugar</span>
                 <Flame size={16} />
               </div>
               <div>
                 <span className="text-xl font-bold">{vitals?.bloodSugar || '--'}</span>
-                <span className="text-[10px] text-slate-400 ml-1">mg/dL</span>
+                <span className="text-[10px] text-slate-500 dark:text-slate-400 ml-1">mg/dL</span>
               </div>
             </GlassCard>
 
             {/* Oxygen Level */}
             <GlassCard hover={false} className="p-4 flex flex-col justify-between h-28">
               <div className="flex justify-between items-center text-emerald-500">
-                <span className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Oxygen Vitals</span>
+                <span className="text-[10px] uppercase font-bold text-slate-500 dark:text-slate-400 tracking-wider">Oxygen Vitals</span>
                 <Wind size={16} />
               </div>
               <div>
                 <span className="text-xl font-bold">{vitals?.oxygenLevel || '--'}</span>
-                <span className="text-[10px] text-slate-400 ml-1">% SpO2</span>
+                <span className="text-[10px] text-slate-500 dark:text-slate-400 ml-1">% SpO2</span>
               </div>
             </GlassCard>
 
@@ -297,11 +297,11 @@ const Dashboard = () => {
           
           {/* Health Score circle widget */}
           <GlassCard hover={false} className="flex flex-col items-center p-8 text-center relative">
-            <div className="absolute top-4 right-4 text-slate-400">
+            <div className="absolute top-4 right-4 text-slate-500 dark:text-slate-400">
               <Sparkles size={16} className="text-indigo-400 animate-pulse" />
             </div>
             
-            <h3 className="font-semibold text-sm mb-6 text-slate-300">AI-Generated Health Score</h3>
+            <h3 className="font-semibold text-sm mb-6 text-slate-600 dark:text-slate-300">AI-Generated Health Score</h3>
 
             {scoreLoading ? (
               <div className="w-36 h-36 flex items-center justify-center">
@@ -340,7 +340,7 @@ const Dashboard = () => {
                 </svg>
                 <div className="absolute flex flex-col items-center">
                   <span className="text-4xl font-extrabold tracking-tighter text-white">{healthScore?.score || 72}</span>
-                  <span className="text-[10px] text-slate-400 font-bold uppercase tracking-widest mt-0.5">Perfect</span>
+                  <span className="text-[10px] text-slate-500 dark:text-slate-400 font-bold uppercase tracking-widest mt-0.5">Perfect</span>
                 </div>
               </div>
             )}
@@ -348,7 +348,7 @@ const Dashboard = () => {
             {/* Vitals Diagnostics Bullet Points */}
             <div className="w-full text-left space-y-4 mt-8 pt-6 border-t border-slate-800/80">
               <div>
-                <span className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Strengths</span>
+                <span className="text-[10px] uppercase font-bold text-slate-500 dark:text-slate-400 tracking-wider">Strengths</span>
                 <ul className="text-xs text-emerald-400 space-y-1 mt-1 list-disc list-inside">
                   {healthScore?.explanation?.strengths?.map((s, i) => <li key={i}>{s}</li>) || (
                     <li>Logs tracking is stable</li>
@@ -357,7 +357,7 @@ const Dashboard = () => {
               </div>
               
               <div>
-                <span className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Warning Areas</span>
+                <span className="text-[10px] uppercase font-bold text-slate-500 dark:text-slate-400 tracking-wider">Warning Areas</span>
                 <ul className="text-xs text-rose-400 space-y-1 mt-1 list-disc list-inside">
                   {healthScore?.explanation?.warnings?.map((w, i) => <li key={i}>{w}</li>) || (
                     <li>Rest parameters can be improved</li>
@@ -366,7 +366,7 @@ const Dashboard = () => {
               </div>
 
               <div>
-                <span className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Recommendations</span>
+                <span className="text-[10px] uppercase font-bold text-slate-500 dark:text-slate-400 tracking-wider">Recommendations</span>
                 <ul className="text-xs text-cyan-400 space-y-1 mt-1 list-disc list-inside">
                   {healthScore?.explanation?.improvements?.map((im, i) => <li key={i}>{im}</li>) || (
                     <li>Sync fit band steps regularly</li>
@@ -383,7 +383,7 @@ const Dashboard = () => {
                 <Scale size={20} />
               </div>
               <div>
-                <p className="text-[10px] text-slate-400 uppercase tracking-widest font-semibold">Body Mass Index</p>
+                <p className="text-[10px] text-slate-500 dark:text-slate-400 uppercase tracking-widest font-semibold">Body Mass Index</p>
                 <p className="text-sm font-bold text-slate-800 dark:text-slate-200 mt-0.5">{vitals?.weight || user?.profile?.weight} kg • BMI {vitals?.bmi}</p>
               </div>
             </div>

@@ -82,7 +82,7 @@ const SleepMonitoring = () => {
     <div className="space-y-8 max-w-5xl mx-auto">
       <div>
         <h2 className="text-2xl font-bold tracking-tight">Sleep Monitoring</h2>
-        <p className="text-xs text-slate-400">Track bedtime schedules and rest quality values to optimize recovery.</p>
+        <p className="text-xs text-slate-500 dark:text-slate-400">Track bedtime schedules and rest quality values to optimize recovery.</p>
       </div>
 
       {/* Progress Cards */}
@@ -122,11 +122,11 @@ const SleepMonitoring = () => {
 
             <form onSubmit={handleSubmit(onSubmit)} className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="flex flex-col gap-1.5">
-                <label className="text-xs text-slate-400">Sleep Duration (Hours)</label>
+                <label className="text-xs text-slate-500 dark:text-slate-400">Sleep Duration (Hours)</label>
                 <input type="number" step="0.1" placeholder="7.5" className="glass-input text-sm" {...register('duration', { required: true })} />
               </div>
               <div className="flex flex-col gap-1.5">
-                <label className="text-xs text-slate-400">Sleep Quality (1-5)</label>
+                <label className="text-xs text-slate-500 dark:text-slate-400">Sleep Quality (1-5)</label>
                 <select className="glass-input text-sm bg-slate-900" {...register('quality')}>
                   <option value="5">5 - Excellent Rest</option>
                   <option value="4">4 - Good Sleep</option>
@@ -136,11 +136,11 @@ const SleepMonitoring = () => {
                 </select>
               </div>
               <div className="flex flex-col gap-1.5">
-                <label className="text-xs text-slate-400">Bedtime (HH:MM)</label>
+                <label className="text-xs text-slate-500 dark:text-slate-400">Bedtime (HH:MM)</label>
                 <input type="time" className="glass-input text-sm" {...register('bedtime', { required: true })} />
               </div>
               <div className="flex flex-col gap-1.5">
-                <label className="text-xs text-slate-400">Wake-up Time (HH:MM)</label>
+                <label className="text-xs text-slate-500 dark:text-slate-400">Wake-up Time (HH:MM)</label>
                 <input type="time" className="glass-input text-sm" {...register('wakeupTime', { required: true })} />
               </div>
 
@@ -198,12 +198,12 @@ const SleepMonitoring = () => {
                 <p className="text-xs text-slate-500 italic py-4 text-center">Log sleep to fetch AI feedback.</p>
               ) : (
                 sleeps.map((log, idx) => (
-                  <div key={idx} className="p-3.5 rounded-xl bg-slate-950/40 border border-slate-900 flex flex-col gap-1 text-xs text-slate-300">
+                  <div key={idx} className="p-3.5 rounded-xl bg-slate-950/40 border border-slate-900 flex flex-col gap-1 text-xs text-slate-600 dark:text-slate-300">
                     <div className="flex justify-between font-bold text-slate-800 dark:text-slate-200">
                       <span>Sleep Rating: {log.quality} ★</span>
                       <span className="text-[10px] text-slate-500">{log.bedtime} - {log.wakeupTime}</span>
                     </div>
-                    <p className="mt-1 text-slate-400 text-[11px] leading-relaxed">{log.suggestions}</p>
+                    <p className="mt-1 text-slate-500 dark:text-slate-400 text-[11px] leading-relaxed">{log.suggestions}</p>
                   </div>
                 ))
               )}

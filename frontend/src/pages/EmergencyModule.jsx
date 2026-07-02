@@ -155,7 +155,7 @@ Contacts: ${profile.emergencyContacts?.map(c => `${c.name} (${c.phone})`).join('
     <div className="space-y-8 max-w-5xl mx-auto">
       <div>
         <h2 className="text-2xl font-bold tracking-tight">Emergency SOS Dispatcher</h2>
-        <p className="text-xs text-slate-400">Trigger immediate panic alerts, broadcast live tracking coordinates, and display emergency medical profile cards.</p>
+        <p className="text-xs text-slate-500 dark:text-slate-400">Trigger immediate panic alerts, broadcast live tracking coordinates, and display emergency medical profile cards.</p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -165,7 +165,7 @@ Contacts: ${profile.emergencyContacts?.map(c => `${c.name} (${c.phone})`).join('
           <GlassCard hover={false} className="p-8 text-center w-full flex flex-col items-center justify-center border-rose-500/20 bg-rose-950/5">
             <AlertOctagon className="text-rose-500 animate-pulse mb-6" size={32} />
             <h3 className="font-bold text-base text-slate-800 dark:text-slate-200">SOS Panic Button</h3>
-            <p className="text-[11px] text-slate-400 mt-2 leading-relaxed">
+            <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-2 leading-relaxed">
               Tapping triggers a 3-second countdown. Upon completion, a siren sounds and emergency dispatch alerts are broadcasted.
             </p>
 
@@ -199,7 +199,7 @@ Contacts: ${profile.emergencyContacts?.map(c => `${c.name} (${c.phone})`).join('
             {sosActive && (
               <div className="w-full space-y-3">
                 <span className="badge-danger uppercase text-[10px] tracking-widest font-black block">Panic Mode Dispatched</span>
-                <div className="text-[10px] text-slate-400">
+                <div className="text-[10px] text-slate-500 dark:text-slate-400">
                   <p>Live Location: {coordinates.lat.toFixed(4)}°, {coordinates.lng.toFixed(4)}°</p>
                   <a
                     href={`https://maps.google.com/?q=${coordinates.lat},${coordinates.lng}`}
@@ -220,8 +220,8 @@ Contacts: ${profile.emergencyContacts?.map(c => `${c.name} (${c.phone})`).join('
           <GlassCard hover={false} className="p-8 text-center flex flex-col items-center justify-between h-full">
             <div>
               <QrCode className="text-cyan-400 mb-4" size={24} />
-              <h3 className="font-semibold text-sm text-slate-300">Scan QR Profile</h3>
-              <p className="text-[11px] text-slate-400 mt-2 leading-relaxed">
+              <h3 className="font-semibold text-sm text-slate-600 dark:text-slate-300">Scan QR Profile</h3>
+              <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-2 leading-relaxed">
                 Emergency clinical personnel can scan this code to review your allergies, medical conditions, and contacts.
               </p>
             </div>
@@ -277,12 +277,12 @@ Contacts: ${profile.emergencyContacts?.map(c => `${c.name} (${c.phone})`).join('
                 user?.profile?.emergencyContacts?.map((c, idx) => (
                   <div key={idx} className="flex justify-between items-center text-xs">
                     <div>
-                      <h4 className="font-bold text-slate-300">{c.name}</h4>
+                      <h4 className="font-bold text-slate-600 dark:text-slate-300">{c.name}</h4>
                       <p className="text-[10px] text-slate-500 uppercase mt-0.5 tracking-wider">{c.relation}</p>
                     </div>
                     <a
                       href={`tel:${c.phone}`}
-                      className="p-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-300 hover:text-white"
+                      className="p-2 rounded-xl bg-slate-900 border border-slate-800 text-slate-600 dark:text-slate-300 hover:text-white"
                     >
                       <Phone size={12} />
                     </a>

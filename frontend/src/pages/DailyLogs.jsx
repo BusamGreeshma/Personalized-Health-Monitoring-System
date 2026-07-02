@@ -151,7 +151,7 @@ const DailyLogs = () => {
     <div className="space-y-8 max-w-4xl mx-auto">
       <div>
         <h2 className="text-2xl font-bold tracking-tight">Daily Health Logger</h2>
-        <p className="text-xs text-slate-400">Record daily health logs and telemetry to train Aura recommendations engine.</p>
+        <p className="text-xs text-slate-500 dark:text-slate-400">Record daily health logs and telemetry to train Aura recommendations engine.</p>
       </div>
 
       {/* Tabs */}
@@ -165,7 +165,7 @@ const DailyLogs = () => {
               className={`flex items-center gap-2 px-5 py-3 border-b-2 text-xs font-semibold uppercase tracking-wider transition-all whitespace-nowrap cursor-pointer ${
                 activeTab === tab.id
                   ? 'border-indigo-500 text-indigo-400'
-                  : 'border-transparent text-slate-400 hover:text-slate-800 dark:text-slate-200'
+                  : 'border-transparent text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:text-slate-200'
               }`}
             >
               <Icon size={14} />
@@ -181,33 +181,33 @@ const DailyLogs = () => {
         {/* VITALS FORM */}
         {activeTab === 'vitals' && (
           <form onSubmit={vitalsSubmit(onLogVitals)} className="space-y-6">
-            <h3 className="text-sm font-semibold text-slate-300 pb-3 border-b border-slate-800/80">Log Vitals & Demographics</h3>
+            <h3 className="text-sm font-semibold text-slate-600 dark:text-slate-300 pb-3 border-b border-slate-800/80">Log Vitals & Demographics</h3>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div className="flex flex-col gap-1.5">
-                <label className="text-xs text-slate-400">Heart Rate (bpm)</label>
+                <label className="text-xs text-slate-500 dark:text-slate-400">Heart Rate (bpm)</label>
                 <input type="number" placeholder="72" className="glass-input text-sm" {...vitalsReg('heartRate', { required: true })} />
               </div>
               <div className="grid grid-cols-2 gap-3">
                 <div className="flex flex-col gap-1.5">
-                  <label className="text-xs text-slate-400">Systolic BP</label>
+                  <label className="text-xs text-slate-500 dark:text-slate-400">Systolic BP</label>
                   <input type="number" placeholder="120" className="glass-input text-sm" {...vitalsReg('systolic', { required: true })} />
                 </div>
                 <div className="flex flex-col gap-1.5">
-                  <label className="text-xs text-slate-400">Diastolic BP</label>
+                  <label className="text-xs text-slate-500 dark:text-slate-400">Diastolic BP</label>
                   <input type="number" placeholder="80" className="glass-input text-sm" {...vitalsReg('diastolic', { required: true })} />
                 </div>
               </div>
               <div className="flex flex-col gap-1.5">
-                <label className="text-xs text-slate-400">Blood Sugar (mg/dL)</label>
+                <label className="text-xs text-slate-500 dark:text-slate-400">Blood Sugar (mg/dL)</label>
                 <input type="number" placeholder="95" className="glass-input text-sm" {...vitalsReg('bloodSugar', { required: true })} />
               </div>
               <div className="flex flex-col gap-1.5">
-                <label className="text-xs text-slate-400">Oxygen Level (% SpO2)</label>
+                <label className="text-xs text-slate-500 dark:text-slate-400">Oxygen Level (% SpO2)</label>
                 <input type="number" placeholder="98" className="glass-input text-sm" {...vitalsReg('oxygenLevel', { required: true })} />
               </div>
               <div className="flex flex-col gap-1.5 sm:col-span-2">
-                <label className="text-xs text-slate-400">Current Weight (kg)</label>
+                <label className="text-xs text-slate-500 dark:text-slate-400">Current Weight (kg)</label>
                 <input type="number" step="0.1" placeholder="70.5" className="glass-input text-sm" {...vitalsReg('weight', { required: true })} />
               </div>
             </div>
@@ -224,11 +224,11 @@ const DailyLogs = () => {
         {/* MEAL NUTRITION FORM */}
         {activeTab === 'meal' && (
           <form onSubmit={mealSubmit(onLogMeal)} className="space-y-6">
-            <h3 className="text-sm font-semibold text-slate-300 pb-3 border-b border-slate-800/80">Log Nutrition Intake</h3>
+            <h3 className="text-sm font-semibold text-slate-600 dark:text-slate-300 pb-3 border-b border-slate-800/80">Log Nutrition Intake</h3>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div className="flex flex-col gap-1.5">
-                <label className="text-xs text-slate-400">Meal Type</label>
+                <label className="text-xs text-slate-500 dark:text-slate-400">Meal Type</label>
                 <select className="glass-input text-sm bg-slate-900" {...mealReg('mealType')}>
                   <option value="breakfast">Breakfast</option>
                   <option value="lunch">Lunch</option>
@@ -237,24 +237,24 @@ const DailyLogs = () => {
                 </select>
               </div>
               <div className="flex flex-col gap-1.5">
-                <label className="text-xs text-slate-400">Food Name</label>
+                <label className="text-xs text-slate-500 dark:text-slate-400">Food Name</label>
                 <input type="text" placeholder="e.g. Scrambled eggs & Sourdough" className="glass-input text-sm" {...mealReg('foodName', { required: true })} />
               </div>
               <div className="flex flex-col gap-1.5">
-                <label className="text-xs text-slate-400">Calories (kcal)</label>
+                <label className="text-xs text-slate-500 dark:text-slate-400">Calories (kcal)</label>
                 <input type="number" placeholder="350" className="glass-input text-sm" {...mealReg('calories', { required: true })} />
               </div>
               <div className="grid grid-cols-3 gap-2">
                 <div className="flex flex-col gap-1.5">
-                  <label className="text-xs text-slate-400">Protein (g)</label>
+                  <label className="text-xs text-slate-500 dark:text-slate-400">Protein (g)</label>
                   <input type="number" placeholder="15" className="glass-input text-sm" {...mealReg('protein')} />
                 </div>
                 <div className="flex flex-col gap-1.5">
-                  <label className="text-xs text-slate-400">Carbs (g)</label>
+                  <label className="text-xs text-slate-500 dark:text-slate-400">Carbs (g)</label>
                   <input type="number" placeholder="25" className="glass-input text-sm" {...mealReg('carbs')} />
                 </div>
                 <div className="flex flex-col gap-1.5">
-                  <label className="text-xs text-slate-400">Fats (g)</label>
+                  <label className="text-xs text-slate-500 dark:text-slate-400">Fats (g)</label>
                   <input type="number" placeholder="10" className="glass-input text-sm" {...mealReg('fats')} />
                 </div>
               </div>
@@ -272,11 +272,11 @@ const DailyLogs = () => {
         {/* FITNESS WORKOUT FORM */}
         {activeTab === 'exercise' && (
           <form onSubmit={exerciseSubmit(onLogExercise)} className="space-y-6">
-            <h3 className="text-sm font-semibold text-slate-300 pb-3 border-b border-slate-800/80">Log Exercise Session</h3>
+            <h3 className="text-sm font-semibold text-slate-600 dark:text-slate-300 pb-3 border-b border-slate-800/80">Log Exercise Session</h3>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div className="flex flex-col gap-1.5">
-                <label className="text-xs text-slate-400">Activity Type</label>
+                <label className="text-xs text-slate-500 dark:text-slate-400">Activity Type</label>
                 <select className="glass-input text-sm bg-slate-900" {...exerciseReg('activityType')}>
                   <option value="walking">Walking</option>
                   <option value="running">Running</option>
@@ -286,15 +286,15 @@ const DailyLogs = () => {
                 </select>
               </div>
               <div className="flex flex-col gap-1.5">
-                <label className="text-xs text-slate-400">Duration (Minutes)</label>
+                <label className="text-xs text-slate-500 dark:text-slate-400">Duration (Minutes)</label>
                 <input type="number" placeholder="30" className="glass-input text-sm" {...exerciseReg('duration', { required: true })} />
               </div>
               <div className="flex flex-col gap-1.5">
-                <label className="text-xs text-slate-400">Distance (km) (Optional)</label>
+                <label className="text-xs text-slate-500 dark:text-slate-400">Distance (km) (Optional)</label>
                 <input type="number" step="0.01" placeholder="2.5" className="glass-input text-sm" {...exerciseReg('distance')} />
               </div>
               <div className="flex flex-col gap-1.5">
-                <label className="text-xs text-slate-400">Calories Burned (kcal)</label>
+                <label className="text-xs text-slate-500 dark:text-slate-400">Calories Burned (kcal)</label>
                 <input type="number" placeholder="200" className="glass-input text-sm" {...exerciseReg('caloriesBurned', { required: true })} />
               </div>
             </div>
@@ -311,15 +311,15 @@ const DailyLogs = () => {
         {/* SLEEP REST FORM */}
         {activeTab === 'sleep' && (
           <form onSubmit={sleepSubmit(onLogSleep)} className="space-y-6">
-            <h3 className="text-sm font-semibold text-slate-300 pb-3 border-b border-slate-800/80">Log Sleep Details</h3>
+            <h3 className="text-sm font-semibold text-slate-600 dark:text-slate-300 pb-3 border-b border-slate-800/80">Log Sleep Details</h3>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div className="flex flex-col gap-1.5">
-                <label className="text-xs text-slate-400">Sleep Duration (Hours)</label>
+                <label className="text-xs text-slate-500 dark:text-slate-400">Sleep Duration (Hours)</label>
                 <input type="number" step="0.1" placeholder="7.5" className="glass-input text-sm" {...sleepReg('duration', { required: true })} />
               </div>
               <div className="flex flex-col gap-1.5">
-                <label className="text-xs text-slate-400">Sleep Quality (1-5)</label>
+                <label className="text-xs text-slate-500 dark:text-slate-400">Sleep Quality (1-5)</label>
                 <select className="glass-input text-sm bg-slate-900" {...sleepReg('quality')}>
                   <option value="5">5 - Excellent Rest</option>
                   <option value="4">4 - Good Sleep</option>
@@ -329,11 +329,11 @@ const DailyLogs = () => {
                 </select>
               </div>
               <div className="flex flex-col gap-1.5">
-                <label className="text-xs text-slate-400">Bedtime (HH:MM)</label>
+                <label className="text-xs text-slate-500 dark:text-slate-400">Bedtime (HH:MM)</label>
                 <input type="time" placeholder="22:30" className="glass-input text-sm" {...sleepReg('bedtime', { required: true })} />
               </div>
               <div className="flex flex-col gap-1.5">
-                <label className="text-xs text-slate-400">Wake-up Time (HH:MM)</label>
+                <label className="text-xs text-slate-500 dark:text-slate-400">Wake-up Time (HH:MM)</label>
                 <input type="time" placeholder="06:30" className="glass-input text-sm" {...sleepReg('wakeupTime', { required: true })} />
               </div>
             </div>
@@ -350,11 +350,11 @@ const DailyLogs = () => {
         {/* MOOD WELLNESS FORM */}
         {activeTab === 'mood' && (
           <form onSubmit={moodSubmit(onLogMood)} className="space-y-6">
-            <h3 className="text-sm font-semibold text-slate-300 pb-3 border-b border-slate-800/80">Log Mood & Stress Levels</h3>
+            <h3 className="text-sm font-semibold text-slate-600 dark:text-slate-300 pb-3 border-b border-slate-800/80">Log Mood & Stress Levels</h3>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div className="flex flex-col gap-1.5">
-                <label className="text-xs text-slate-400">Mood State</label>
+                <label className="text-xs text-slate-500 dark:text-slate-400">Mood State</label>
                 <select className="glass-input text-sm bg-slate-900" {...moodReg('mood')}>
                   <option value="happy">Happy & Content</option>
                   <option value="neutral">Neutral & Stable</option>
@@ -365,16 +365,16 @@ const DailyLogs = () => {
               </div>
               <div className="grid grid-cols-2 gap-3">
                 <div className="flex flex-col gap-1.5">
-                  <label className="text-xs text-slate-400">Stress (1-10)</label>
+                  <label className="text-xs text-slate-500 dark:text-slate-400">Stress (1-10)</label>
                   <input type="number" min="1" max="10" placeholder="2" className="glass-input text-sm" {...moodReg('stressLevel', { required: true })} />
                 </div>
                 <div className="flex flex-col gap-1.5">
-                  <label className="text-xs text-slate-400">Anxiety (1-10)</label>
+                  <label className="text-xs text-slate-500 dark:text-slate-400">Anxiety (1-10)</label>
                   <input type="number" min="1" max="10" placeholder="2" className="glass-input text-sm" {...moodReg('anxietyLevel', { required: true })} />
                 </div>
               </div>
               <div className="flex flex-col gap-1.5 sm:col-span-2">
-                <label className="text-xs text-slate-400">Mood Journal Notes (Optional)</label>
+                <label className="text-xs text-slate-500 dark:text-slate-400">Mood Journal Notes (Optional)</label>
                 <textarea rows="3" placeholder="Write any details about today's stressors or mindfulness..." className="glass-input text-sm resize-none" {...moodReg('notes')} />
               </div>
             </div>

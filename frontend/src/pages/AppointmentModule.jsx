@@ -77,7 +77,7 @@ const AppointmentModule = () => {
     <div className="space-y-8 max-w-5xl mx-auto">
       <div>
         <h2 className="text-2xl font-bold tracking-tight">Doctor Appointments</h2>
-        <p className="text-xs text-slate-400">Schedule visits, log consultation summaries, and configure reminder alerts.</p>
+        <p className="text-xs text-slate-500 dark:text-slate-400">Schedule visits, log consultation summaries, and configure reminder alerts.</p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -92,23 +92,23 @@ const AppointmentModule = () => {
 
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
               <div className="flex flex-col gap-1">
-                <label className="text-xs text-slate-400">Doctor Name</label>
+                <label className="text-xs text-slate-500 dark:text-slate-400">Doctor Name</label>
                 <input type="text" placeholder="e.g. John Watson" className="glass-input text-xs" {...register('doctorName', { required: true })} />
               </div>
               <div className="flex flex-col gap-1">
-                <label className="text-xs text-slate-400">Specialty</label>
+                <label className="text-xs text-slate-500 dark:text-slate-400">Specialty</label>
                 <input type="text" placeholder="e.g. Cardiologist" className="glass-input text-xs" {...register('specialty', { required: true })} />
               </div>
               <div className="flex flex-col gap-1">
-                <label className="text-xs text-slate-400">Date & Time</label>
+                <label className="text-xs text-slate-500 dark:text-slate-400">Date & Time</label>
                 <input type="datetime-local" className="glass-input text-xs" {...register('dateTime', { required: true })} />
               </div>
               <div className="flex flex-col gap-1">
-                <label className="text-xs text-slate-400">Alert Lead Time (Minutes)</label>
+                <label className="text-xs text-slate-500 dark:text-slate-400">Alert Lead Time (Minutes)</label>
                 <input type="number" placeholder="30" className="glass-input text-xs" {...register('reminderMinutesBefore')} />
               </div>
               <div className="flex flex-col gap-1">
-                <label className="text-xs text-slate-400">Consultation Notes (Optional)</label>
+                <label className="text-xs text-slate-500 dark:text-slate-400">Consultation Notes (Optional)</label>
                 <textarea rows="3" placeholder="Symptom details or reports..." className="glass-input text-xs resize-none" {...register('notes')} />
               </div>
 
@@ -139,7 +139,7 @@ const AppointmentModule = () => {
                         <h4 className="text-sm font-bold text-slate-800 dark:text-slate-200">Dr. {appt.doctorName}</h4>
                         <span className="badge-success text-[10px] py-px px-2">{appt.specialty}</span>
                       </div>
-                      <p className="text-slate-400 mt-1.5">
+                      <p className="text-slate-500 dark:text-slate-400 mt-1.5">
                         Date: {new Date(appt.dateTime).toLocaleString()}
                       </p>
                       {appt.notes && <p className="text-slate-500 mt-1 italic font-medium">Notes: {appt.notes}</p>}

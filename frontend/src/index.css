@@ -6,9 +6,9 @@
 
 @layer base {
   body {
-    @apply bg-slate-50 text-slate-900 font-sans antialiased overflow-x-hidden transition-colors duration-200;
+    @apply bg-slate-100/60 text-slate-900 font-sans antialiased overflow-x-hidden transition-colors duration-200;
     background-image: 
-      radial-gradient(ellipse at top, rgba(99, 102, 241, 0.03) 0%, transparent 60%);
+      radial-gradient(ellipse at top, rgba(99, 102, 241, 0.04) 0%, transparent 60%);
     background-attachment: fixed;
   }
 
@@ -33,7 +33,7 @@
 
 /* Premium Card Styles (Maintains old classes but upgrades visuals) */
 .glass-panel {
-  @apply bg-white border border-slate-200/80 rounded-xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] backdrop-blur-sm transition-all duration-200;
+  @apply bg-white border border-slate-200/50 rounded-xl shadow-[0_8px_30px_rgba(15,23,42,0.03)] backdrop-blur-sm transition-all duration-200;
 }
 
 .dark .glass-panel {

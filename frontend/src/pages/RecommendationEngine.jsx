@@ -39,7 +39,7 @@ const RecommendationEngine = () => {
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <div>
           <h2 className="text-2xl font-bold tracking-tight">AI Recommendation Engine</h2>
-          <p className="text-xs text-slate-400">Custom meal planning, structured workout regimens, and weekly wellness targets.</p>
+          <p className="text-xs text-slate-500 dark:text-slate-400">Custom meal planning, structured workout regimens, and weekly wellness targets.</p>
         </div>
         <button
           onClick={fetchRecommendations}
@@ -148,7 +148,7 @@ const RecommendationEngine = () => {
               {plans?.weeklyGoals?.map((goal, idx) => (
                 <div key={idx} className="flex items-start gap-3 text-xs leading-relaxed">
                   <span className="text-cyan-400 mt-0.5">✔</span>
-                  <p className="text-slate-300">{goal}</p>
+                  <p className="text-slate-600 dark:text-slate-300">{goal}</p>
                 </div>
               ))}
             </div>

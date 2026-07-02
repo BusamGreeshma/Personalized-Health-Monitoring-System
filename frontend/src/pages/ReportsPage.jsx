@@ -70,7 +70,7 @@ const ReportsPage = () => {
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 print:hidden">
         <div>
           <h2 className="text-2xl font-bold tracking-tight">Clinical Reports Exporter</h2>
-          <p className="text-xs text-slate-400">Compile vitals logs summaries into printable PDF health reviews.</p>
+          <p className="text-xs text-slate-500 dark:text-slate-400">Compile vitals logs summaries into printable PDF health reviews.</p>
         </div>
         <button
           onClick={handlePrint}
@@ -95,7 +95,7 @@ const ReportsPage = () => {
             </div>
             <p className="text-[10px] text-slate-500 mt-1 uppercase tracking-widest font-semibold">Weekly Telemetry Report</p>
           </div>
-          <div className="text-right text-[10px] text-slate-400 print:text-slate-600 space-y-0.5">
+          <div className="text-right text-[10px] text-slate-500 dark:text-slate-400 print:text-slate-600 space-y-0.5">
             <p>Report ID: AR-{Math.floor(Math.random() * 90000) + 10000}</p>
             <p>Export Date: {new Date().toLocaleDateString()}</p>
             <p>Status: <span className="text-emerald-500 font-bold uppercase">Verified Telemetry</span></p>
@@ -124,7 +124,7 @@ const ReportsPage = () => {
 
         {/* Vitals averages values */}
         <div className="space-y-4">
-          <h3 className="font-bold text-sm text-slate-300 print:text-black flex items-center gap-1.5">
+          <h3 className="font-bold text-sm text-slate-600 dark:text-slate-300 print:text-black flex items-center gap-1.5">
             <TrendingUp size={16} />
             <span>Weekly Vitals Average Metrics</span>
           </h3>
@@ -154,11 +154,11 @@ const ReportsPage = () => {
 
         {/* Clinical Summary AI section */}
         <div className="space-y-4 pt-6 border-t border-slate-800 print:border-slate-300">
-          <h3 className="font-bold text-sm text-slate-300 print:text-black flex items-center gap-1.5">
+          <h3 className="font-bold text-sm text-slate-600 dark:text-slate-300 print:text-black flex items-center gap-1.5">
             <Sparkles size={16} className="text-indigo-400" />
             <span>Aura AI Clinical Advisory Summary</span>
           </h3>
-          <p className="text-xs text-slate-300 leading-relaxed bg-slate-950/50 p-4 rounded-xl border border-slate-900 print:bg-slate-50 print:border-slate-200 print:text-black">
+          <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed bg-slate-950/50 p-4 rounded-xl border border-slate-900 print:bg-slate-50 print:border-slate-200 print:text-black">
             The patient shows stable resting biometrics over the active 7-day monitoring window. 
             The heart rate averages around {summary.avgHeartRate} bpm, indicating healthy athletic cardiovascular efficiency. 
             Averaging {summary.avgSleep} hours of nightly rest supports normal hormone synthesis, although step count targets could be raised to lower LDL risks.

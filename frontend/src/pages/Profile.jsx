@@ -80,7 +80,7 @@ const Profile = () => {
           </div>
           <div className="text-center sm:text-left flex-1">
             <h2 className="text-2xl font-bold">{user?.username}</h2>
-            <p className="text-xs text-slate-400 mt-1">{user?.email} • Account type: <span className="capitalize text-indigo-400 font-semibold">{user?.role}</span></p>
+            <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">{user?.email} • Account type: <span className="capitalize text-indigo-400 font-semibold">{user?.role}</span></p>
             <div className="flex gap-4 mt-3 justify-center sm:justify-start">
               <span className="badge-success">🔥 {user?.streak || 0} Day Active Streak</span>
               {user?.badges?.length > 0 && <span className="bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 px-2.5 py-0.5 rounded-full text-xs font-semibold">🏆 {user.badges.length} Badges Earned</span>}
@@ -103,7 +103,7 @@ const Profile = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 {/* Age */}
                 <div className="flex flex-col gap-1.5">
-                  <label className="text-xs text-slate-400 font-medium">Age</label>
+                  <label className="text-xs text-slate-500 dark:text-slate-400 font-medium">Age</label>
                   <input
                     type="number"
                     className="glass-input text-sm"
@@ -113,7 +113,7 @@ const Profile = () => {
 
                 {/* Gender */}
                 <div className="flex flex-col gap-1.5">
-                  <label className="text-xs text-slate-400 font-medium">Gender</label>
+                  <label className="text-xs text-slate-500 dark:text-slate-400 font-medium">Gender</label>
                   <select className="glass-input text-sm bg-slate-900" {...register('gender')}>
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
@@ -123,7 +123,7 @@ const Profile = () => {
 
                 {/* Height */}
                 <div className="flex flex-col gap-1.5">
-                  <label className="text-xs text-slate-400 font-medium">Height (cm)</label>
+                  <label className="text-xs text-slate-500 dark:text-slate-400 font-medium">Height (cm)</label>
                   <input
                     type="number"
                     className="glass-input text-sm"
@@ -133,7 +133,7 @@ const Profile = () => {
 
                 {/* Weight */}
                 <div className="flex flex-col gap-1.5">
-                  <label className="text-xs text-slate-400 font-medium">Weight (kg)</label>
+                  <label className="text-xs text-slate-500 dark:text-slate-400 font-medium">Weight (kg)</label>
                   <input
                     type="number"
                     className="glass-input text-sm"
@@ -143,7 +143,7 @@ const Profile = () => {
 
                 {/* Activity Level */}
                 <div className="flex flex-col gap-1.5 sm:col-span-2">
-                  <label className="text-xs text-slate-400 font-medium">Activity Level</label>
+                  <label className="text-xs text-slate-500 dark:text-slate-400 font-medium">Activity Level</label>
                   <select className="glass-input text-sm bg-slate-900" {...register('activityLevel')}>
                     {activityOptions.map(opt => (
                       <option key={opt} value={opt}>{opt}</option>
@@ -162,7 +162,7 @@ const Profile = () => {
 
               {/* Diseases */}
               <div className="space-y-3">
-                <label className="text-xs text-slate-400 font-medium">Pre-existing Diseases / Diagnoses</label>
+                <label className="text-xs text-slate-500 dark:text-slate-400 font-medium">Pre-existing Diseases / Diagnoses</label>
                 <div className="flex gap-2">
                   <input
                     type="text"
@@ -185,7 +185,7 @@ const Profile = () => {
                     <span className="text-xs text-slate-500 italic">No pre-existing conditions declared</span>
                   ) : (
                     diseases.map((d, idx) => (
-                      <span key={idx} className="bg-slate-800 border border-slate-700/60 text-slate-300 text-xs px-2.5 py-1 rounded-lg flex items-center gap-1.5">
+                      <span key={idx} className="bg-slate-800 border border-slate-700/60 text-slate-600 dark:text-slate-300 text-xs px-2.5 py-1 rounded-lg flex items-center gap-1.5">
                         {d}
                         <button type="button" onClick={() => handleRemoveDisease(idx)} className="text-slate-500 hover:text-rose-400 font-semibold cursor-pointer">✕</button>
                       </span>
@@ -196,7 +196,7 @@ const Profile = () => {
 
               {/* Allergies */}
               <div className="space-y-3">
-                <label className="text-xs text-slate-400 font-medium">Allergies</label>
+                <label className="text-xs text-slate-500 dark:text-slate-400 font-medium">Allergies</label>
                 <div className="flex gap-2">
                   <input
                     type="text"
@@ -219,7 +219,7 @@ const Profile = () => {
                     <span className="text-xs text-slate-500 italic">No allergies declared</span>
                   ) : (
                     allergies.map((a, idx) => (
-                      <span key={idx} className="bg-slate-800 border border-slate-700/60 text-slate-300 text-xs px-2.5 py-1 rounded-lg flex items-center gap-1.5">
+                      <span key={idx} className="bg-slate-800 border border-slate-700/60 text-slate-600 dark:text-slate-300 text-xs px-2.5 py-1 rounded-lg flex items-center gap-1.5">
                         {a}
                         <button type="button" onClick={() => handleRemoveAllergy(idx)} className="text-slate-500 hover:text-rose-400 font-semibold cursor-pointer">✕</button>
                       </span>
@@ -325,7 +325,7 @@ const Profile = () => {
                     <div className="text-xl">🏆</div>
                     <div>
                       <h4 className="text-xs font-bold text-slate-800 dark:text-slate-200">{b.name}</h4>
-                      <p className="text-[10px] text-slate-400 mt-0.5">{b.description}</p>
+                      <p className="text-[10px] text-slate-500 dark:text-slate-400 mt-0.5">{b.description}</p>
                     </div>
                   </div>
                 ))}
@@ -338,22 +338,22 @@ const Profile = () => {
               <ShieldCheck className="text-indigo-400" size={18} />
               <h3 className="font-semibold text-base">System Access Vitals</h3>
             </div>
-            <div className="text-xs space-y-2 text-slate-400">
+            <div className="text-xs space-y-2 text-slate-500 dark:text-slate-400">
               <div className="flex justify-between">
                 <span>Account Status:</span>
                 <span className="text-emerald-400 font-medium">Fully Authorized</span>
               </div>
               <div className="flex justify-between">
                 <span>Security Engine:</span>
-                <span className="text-slate-300">JWT Token Enabled</span>
+                <span className="text-slate-600 dark:text-slate-300">JWT Token Enabled</span>
               </div>
               <div className="flex justify-between">
                 <span>Database Sync:</span>
-                <span className="text-slate-300">MongoDB Atlas Connected</span>
+                <span className="text-slate-600 dark:text-slate-300">MongoDB Atlas Connected</span>
               </div>
               <div className="flex justify-between">
                 <span>Vitals Stream:</span>
-                <span className="text-slate-300">Local Telemetry Sim active</span>
+                <span className="text-slate-600 dark:text-slate-300">Local Telemetry Sim active</span>
               </div>
             </div>
           </GlassCard>
