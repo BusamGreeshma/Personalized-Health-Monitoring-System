@@ -63,26 +63,26 @@ const RecommendationEngine = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               
               {/* Breakfast */}
-              <div className="p-4 rounded-xl bg-slate-950/40 border border-slate-900 flex flex-col justify-between">
-                <span className="text-[10px] uppercase font-bold text-indigo-400 tracking-widest">Breakfast</span>
+              <div className="p-4 rounded-xl bg-slate-50 dark:bg-slate-950/40 border border-slate-200 dark:border-slate-900 flex flex-col justify-between">
+                <span className="text-[10px] uppercase font-bold text-indigo-600 dark:text-indigo-400 tracking-widest">Breakfast</span>
                 <p className="text-xs text-slate-800 dark:text-slate-200 mt-2 leading-relaxed">{plans?.mealPlan?.breakfast || 'Oats & berries'}</p>
               </div>
 
               {/* Lunch */}
-              <div className="p-4 rounded-xl bg-slate-950/40 border border-slate-900 flex flex-col justify-between">
-                <span className="text-[10px] uppercase font-bold text-indigo-400 tracking-widest">Lunch</span>
+              <div className="p-4 rounded-xl bg-slate-50 dark:bg-slate-950/40 border border-slate-200 dark:border-slate-900 flex flex-col justify-between">
+                <span className="text-[10px] uppercase font-bold text-indigo-600 dark:text-indigo-400 tracking-widest">Lunch</span>
                 <p className="text-xs text-slate-800 dark:text-slate-200 mt-2 leading-relaxed">{plans?.mealPlan?.lunch || 'Chicken salad'}</p>
               </div>
 
               {/* Dinner */}
-              <div className="p-4 rounded-xl bg-slate-950/40 border border-slate-900 flex flex-col justify-between">
-                <span className="text-[10px] uppercase font-bold text-indigo-400 tracking-widest">Dinner</span>
+              <div className="p-4 rounded-xl bg-slate-50 dark:bg-slate-950/40 border border-slate-200 dark:border-slate-900 flex flex-col justify-between">
+                <span className="text-[10px] uppercase font-bold text-indigo-600 dark:text-indigo-400 tracking-widest">Dinner</span>
                 <p className="text-xs text-slate-800 dark:text-slate-200 mt-2 leading-relaxed">{plans?.mealPlan?.dinner || 'Grilled salmon'}</p>
               </div>
 
               {/* Snack */}
-              <div className="p-4 rounded-xl bg-slate-950/40 border border-slate-900 flex flex-col justify-between">
-                <span className="text-[10px] uppercase font-bold text-indigo-400 tracking-widest">Snack</span>
+              <div className="p-4 rounded-xl bg-slate-50 dark:bg-slate-950/40 border border-slate-200 dark:border-slate-900 flex flex-col justify-between">
+                <span className="text-[10px] uppercase font-bold text-indigo-600 dark:text-indigo-400 tracking-widest">Snack</span>
                 <p className="text-xs text-slate-800 dark:text-slate-200 mt-2 leading-relaxed">{plans?.mealPlan?.snack || 'Nuts & Greek yogurt'}</p>
               </div>
 
@@ -98,7 +98,7 @@ const RecommendationEngine = () => {
 
             <div className="space-y-3">
               {plans?.workoutPlan?.map((item, idx) => (
-                <div key={idx} className="p-3.5 rounded-xl bg-slate-950/40 border border-slate-900 flex justify-between items-center text-xs">
+                <div key={idx} className="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-950/40 border border-slate-200 dark:border-slate-900 flex justify-between items-center text-xs">
                   <div>
                     <h4 className="font-bold text-slate-800 dark:text-slate-200">{item.exercise}</h4>
                     <p className="text-[10px] text-slate-500 mt-0.5">Intensity: {item.intensity}</p>

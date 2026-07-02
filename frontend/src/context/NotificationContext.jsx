@@ -79,13 +79,13 @@ export const NotificationProvider = ({ children }) => {
         gain.connect(ctx.destination);
         
         if (type === 'medication' || type === 'alert') {
-          // Elegant medical reminder chime
+          // Louder, resonant dual-tone clinical alarm chime (E5 and A5)
           osc.type = 'sine';
-          osc.frequency.setValueAtTime(587.33, ctx.currentTime); // D5
-          gain.gain.setValueAtTime(0.15, ctx.currentTime);
-          gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.15);
+          osc.frequency.setValueAtTime(659.25, ctx.currentTime); // E5
+          gain.gain.setValueAtTime(0.45, ctx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.35);
           osc.start(ctx.currentTime);
-          osc.stop(ctx.currentTime + 0.15);
+          osc.stop(ctx.currentTime + 0.35);
           
           setTimeout(() => {
             try {
@@ -95,12 +95,12 @@ export const NotificationProvider = ({ children }) => {
               gain2.connect(ctx.destination);
               osc2.type = 'sine';
               osc2.frequency.setValueAtTime(880, ctx.currentTime); // A5
-              gain2.gain.setValueAtTime(0.15, ctx.currentTime);
-              gain2.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.25);
+              gain2.gain.setValueAtTime(0.45, ctx.currentTime);
+              gain2.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.45);
               osc2.start(ctx.currentTime);
-              osc2.stop(ctx.currentTime + 0.25);
+              osc2.stop(ctx.currentTime + 0.45);
             } catch (err) {}
-          }, 150);
+          }, 180);
         } else if (type === 'success') {
           osc.type = 'triangle';
           osc.frequency.setValueAtTime(523.25, ctx.currentTime); // C5
