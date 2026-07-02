@@ -173,6 +173,31 @@ export const NotificationProvider = ({ children }) => {
     }
   }, [user]);
 
+  const normalizeTimeTo24h = (timeStr) => {
+    if (!timeStr) return '';
+    try {
+      const clean = timeStr.trim().toUpperCase();
+      
+      // Matches formats like "6:50PM", "06:50 PM", "18:50", "08:00 AM", "6:50"
+      const match = clean.match(/^(\d{1,2}):(\d{2})\s*(AM|PM)?$/);
+      if (match) {
+        let hours = parseInt(match[1], 10);
+        const minutes = match[2];
+        const ampm = match[3];
+        
+        if (ampm) {
+          if (ampm === 'PM' && hours < 12) hours += 12;
+          if (ampm === 'AM' && hours === 12) hours = 0;
+        }
+        
+        return `${String(hours).padStart(2, '0')}:${minutes}`;
+      }
+    } catch (e) {
+      console.warn("Time normalization error:", e);
+    }
+    return timeStr;
+  };
+
   // Background time checker for scheduled meds
   useEffect(() => {
     if (!user || medications.length === 0) return;
@@ -190,7 +215,8 @@ export const NotificationProvider = ({ children }) => {
         if (!med.remindersEnabled) return;
 
         med.times.forEach(time => {
-          if (time === currentTime) {
+          const normalizedTime = normalizeTimeTo24h(time);
+          if (normalizedTime === currentTime) {
             const key = `${med._id}-${time}-${todayStr}`;
             if (!firedAlerts.has(key)) {
               firedAlerts.add(key);

@@ -163,7 +163,7 @@ const MedicationReminder = () => {
             ) : (
               <div className="space-y-4">
                 {medications.map(med => (
-                  <div key={med._id} className="p-4 rounded-xl bg-slate-950/40 border border-slate-900 flex justify-between items-start gap-4">
+                  <div key={med._id} className="p-4 rounded-xl bg-slate-50 dark:bg-slate-950/40 border border-slate-200 dark:border-slate-900 flex justify-between items-start gap-4">
                     <div className="flex-1">
                       <h4 className="text-sm font-bold text-slate-800 dark:text-slate-200">{med.name}</h4>
                       <p className="text-[11px] text-slate-500 mt-0.5">Dosage: {med.dosage} • Frequency: {med.frequency}</p>
@@ -176,17 +176,17 @@ const MedicationReminder = () => {
                           const isMissed = log?.status === 'missed';
 
                           return (
-                            <div key={idx} className="flex items-center gap-1 bg-slate-900 border border-slate-800 p-1.5 rounded-lg text-[10px]">
+                            <div key={idx} className="flex items-center gap-1 bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-1.5 rounded-lg text-[10px]">
                               <span className="font-semibold text-slate-500 dark:text-slate-400 mr-1.5">{time}</span>
                               <button
                                 onClick={() => handleLogStatus(med._id, time, 'taken')}
-                                className={`px-2 py-0.5 rounded cursor-pointer ${isTaken ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20' : 'bg-slate-950 text-slate-500 hover:text-slate-800 dark:text-slate-200'}`}
+                                className={`px-2 py-0.5 rounded cursor-pointer ${isTaken ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20' : 'bg-white dark:bg-slate-950 text-slate-500 hover:text-slate-800 dark:text-slate-200'}`}
                               >
                                 Taken
                               </button>
                               <button
                                 onClick={() => handleLogStatus(med._id, time, 'missed')}
-                                className={`px-2 py-0.5 rounded cursor-pointer ${isMissed ? 'bg-rose-500/10 text-rose-400 border border-rose-500/20' : 'bg-slate-950 text-slate-500 hover:text-slate-800 dark:text-slate-200'}`}
+                                className={`px-2 py-0.5 rounded cursor-pointer ${isMissed ? 'bg-rose-500/10 text-rose-400 border border-rose-500/20' : 'bg-white dark:bg-slate-950 text-slate-500 hover:text-slate-800 dark:text-slate-200'}`}
                               >
                                 Missed
                               </button>
