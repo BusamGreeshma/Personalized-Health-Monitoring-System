@@ -164,7 +164,7 @@ Contacts: ${profile.emergencyContacts?.map(c => `${c.name} (${c.phone})`).join('
         <div className="lg:col-span-1 flex flex-col items-center justify-center">
           <GlassCard hover={false} className="p-8 text-center w-full flex flex-col items-center justify-center border-rose-500/20 bg-rose-950/5">
             <AlertOctagon className="text-rose-500 animate-pulse mb-6" size={32} />
-            <h3 className="font-bold text-base text-slate-200">SOS Panic Button</h3>
+            <h3 className="font-bold text-base text-slate-800 dark:text-slate-200">SOS Panic Button</h3>
             <p className="text-[11px] text-slate-400 mt-2 leading-relaxed">
               Tapping triggers a 3-second countdown. Upon completion, a siren sounds and emergency dispatch alerts are broadcasted.
             </p>
@@ -247,7 +247,7 @@ Contacts: ${profile.emergencyContacts?.map(c => `${c.name} (${c.phone})`).join('
               {nearbyHospitals.map((hosp, idx) => (
                 <div key={idx} className="p-3.5 rounded-xl bg-slate-950/40 border border-slate-900 text-xs">
                   <div className="flex justify-between items-start">
-                    <h4 className="font-bold text-slate-200">{hosp.name}</h4>
+                    <h4 className="font-bold text-slate-800 dark:text-slate-200">{hosp.name}</h4>
                     <span className="badge-success text-[9px]">{hosp.distance}</span>
                   </div>
                   <p className="text-[10px] text-slate-500 mt-1">Type: {hosp.type}</p>

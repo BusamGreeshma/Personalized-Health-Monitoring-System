@@ -106,19 +106,19 @@ const ReportsPage = () => {
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 p-5 rounded-xl bg-slate-950/40 border border-slate-900/60 print:bg-slate-50 print:border-slate-200 print:text-black">
           <div className="text-xs">
             <span className="text-[9px] uppercase font-bold text-slate-500 tracking-wider">Patient Name</span>
-            <p className="font-bold mt-1 text-slate-200 print:text-black">{user?.username}</p>
+            <p className="font-bold mt-1 text-slate-800 dark:text-slate-200 print:text-black">{user?.username}</p>
           </div>
           <div className="text-xs">
             <span className="text-[9px] uppercase font-bold text-slate-500 tracking-wider">Age / Gender</span>
-            <p className="font-bold mt-1 text-slate-200 print:text-black">{user?.profile?.age} yrs / {user?.profile?.gender}</p>
+            <p className="font-bold mt-1 text-slate-800 dark:text-slate-200 print:text-black">{user?.profile?.age} yrs / {user?.profile?.gender}</p>
           </div>
           <div className="text-xs">
             <span className="text-[9px] uppercase font-bold text-slate-500 tracking-wider">BMI Ratio</span>
-            <p className="font-bold mt-1 text-slate-200 print:text-black">{(summary.weight / ((user?.profile?.height / 100) ** 2)).toFixed(1)} Index</p>
+            <p className="font-bold mt-1 text-slate-800 dark:text-slate-200 print:text-black">{(summary.weight / ((user?.profile?.height / 100) ** 2)).toFixed(1)} Index</p>
           </div>
           <div className="text-xs">
             <span className="text-[9px] uppercase font-bold text-slate-500 tracking-wider">Known Conditions</span>
-            <p className="font-bold mt-1 text-slate-200 print:text-black truncate">{user?.profile?.diseases?.join(', ') || 'None'}</p>
+            <p className="font-bold mt-1 text-slate-800 dark:text-slate-200 print:text-black truncate">{user?.profile?.diseases?.join(', ') || 'None'}</p>
           </div>
         </div>
 

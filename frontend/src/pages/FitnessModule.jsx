@@ -208,7 +208,7 @@ const FitnessModule = () => {
                 {aiSuggestions.map((item, idx) => (
                   <div key={idx} className="p-3.5 rounded-xl bg-slate-950/40 border border-slate-900 flex justify-between items-center text-xs">
                     <div>
-                      <h4 className="font-bold text-slate-200">{item.exercise}</h4>
+                      <h4 className="font-bold text-slate-800 dark:text-slate-200">{item.exercise}</h4>
                       <p className="text-[10px] text-slate-500 mt-0.5">Intensity: {item.intensity}</p>
                     </div>
                     <span className="badge-success">{item.duration}</span>

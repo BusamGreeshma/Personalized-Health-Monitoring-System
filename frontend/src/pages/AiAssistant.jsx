@@ -172,7 +172,7 @@ const AiAssistant = () => {
                 className={`w-full text-left p-2.5 rounded-xl text-xs font-medium border transition-all flex items-center gap-2 truncate cursor-pointer ${
                   currentSessionId === s._id
                     ? 'bg-indigo-600/10 text-indigo-400 border-indigo-500/25'
-                    : 'border-transparent text-slate-400 hover:bg-slate-900/60 hover:text-slate-200'
+                    : 'border-transparent text-slate-400 hover:bg-slate-900/60 hover:text-slate-800 dark:text-slate-200'
                 }`}
               >
                 <MessageSquare size={13} className="flex-shrink-0" />
@@ -215,7 +215,7 @@ const AiAssistant = () => {
                   <div
                     className={`max-w-[75%] p-3.5 rounded-2xl border text-xs leading-relaxed flex flex-col relative group ${
                       msg.sender === 'user'
-                        ? 'bg-indigo-600/10 border-indigo-500/20 text-slate-200 rounded-tr-none'
+                        ? 'bg-indigo-600/10 border-indigo-500/20 text-slate-800 dark:text-slate-200 rounded-tr-none'
                         : 'bg-slate-950/50 border-slate-900 text-slate-300 rounded-tl-none'
                     }`}
                   >

@@ -161,7 +161,7 @@ const MentalWellness = () => {
               <div className="divide-y divide-slate-900">
                 {moodLogs.map(m => (
                   <div key={m._id} className="py-4 flex flex-col gap-2 text-xs">
-                    <div className="flex justify-between items-center text-slate-200">
+                    <div className="flex justify-between items-center text-slate-800 dark:text-slate-200">
                       <div>
                         <span className="font-bold capitalize">{m.mood}</span>
                         <span className="text-slate-500 ml-2">Stress: {m.stressLevel}/10, Anxiety: {m.anxietyLevel}/10</span>

@@ -34,12 +34,12 @@ const Register = () => {
       <div className="absolute w-[400px] h-[400px] rounded-full bg-cyan-500/10 blur-[100px] bottom-1/4 right-1/4 translate-x-1/2 translate-y-1/2" />
 
       <GlassCard className="max-w-md w-full p-8 relative z-10" hover={false}>
-        <div className="flex flex-col items-center mb-8">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-500 to-cyan-500 flex items-center justify-center shadow-lg shadow-indigo-500/20 mb-3">
-            <span className="text-white font-extrabold text-base tracking-tighter">A</span>
+        <div className="flex flex-col items-center mb-6">
+          <div className="w-8 h-8 rounded bg-indigo-600 flex items-center justify-center shadow-md mb-3">
+            <span className="text-white font-bold text-sm">A</span>
           </div>
-          <h2 className="text-2xl font-bold tracking-tight">Create Account</h2>
-          <p className="text-xs text-slate-400 mt-1">Get custom wellness goals and report analyzer tools.</p>
+          <h2 className="text-xl font-bold tracking-tight text-slate-100">Create Account</h2>
+          <p className="text-xs text-slate-400 mt-1">Get started with personalized health telemetry.</p>
         </div>
 
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">

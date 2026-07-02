@@ -324,7 +324,7 @@ const Profile = () => {
                   <div key={idx} className="p-3 rounded-xl bg-slate-950/40 border border-slate-900 flex items-start gap-3">
                     <div className="text-xl">🏆</div>
                     <div>
-                      <h4 className="text-xs font-bold text-slate-200">{b.name}</h4>
+                      <h4 className="text-xs font-bold text-slate-800 dark:text-slate-200">{b.name}</h4>
                       <p className="text-[10px] text-slate-400 mt-0.5">{b.description}</p>
                     </div>
                   </div>

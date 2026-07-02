@@ -42,10 +42,96 @@ export const NotificationProvider = ({ children }) => {
     fetchNotifications();
   }, [user]);
 
+  const [audioCtx, setAudioCtx] = useState(null);
+
+  useEffect(() => {
+    const initCtx = () => {
+      try {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        if (!AudioContext) return;
+        const ctx = new AudioContext();
+        setAudioCtx(ctx);
+      } catch (err) {
+        console.warn("Failed to pre-initialize AudioContext:", err);
+      }
+      window.removeEventListener('click', initCtx);
+      window.removeEventListener('keydown', initCtx);
+    };
+    window.addEventListener('click', initCtx);
+    window.addEventListener('keydown', initCtx);
+    return () => {
+      window.removeEventListener('click', initCtx);
+      window.removeEventListener('keydown', initCtx);
+    };
+  }, []);
+
+  const playNotificationSound = (type) => {
+    try {
+      const AudioContext = window.AudioContext || window.webkitAudioContext;
+      if (!AudioContext) return;
+      
+      const ctx = audioCtx || new AudioContext();
+      if (ctx.state === 'suspended') {
+        ctx.resume();
+      }
+      
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      
+      if (type === 'medication' || type === 'alert') {
+        // Elegant medical reminder chime
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(587.33, ctx.currentTime); // D5
+        gain.gain.setValueAtTime(0.15, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.15);
+        osc.start(ctx.currentTime);
+        osc.stop(ctx.currentTime + 0.15);
+        
+        setTimeout(() => {
+          try {
+            const osc2 = ctx.createOscillator();
+            const gain2 = ctx.createGain();
+            osc2.connect(gain2);
+            gain2.connect(ctx.destination);
+            osc2.type = 'sine';
+            osc2.frequency.setValueAtTime(880, ctx.currentTime); // A5
+            gain2.gain.setValueAtTime(0.15, ctx.currentTime);
+            gain2.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.25);
+            osc2.start(ctx.currentTime);
+            osc2.stop(ctx.currentTime + 0.25);
+          } catch (err) {}
+        }, 150);
+      } else if (type === 'success') {
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(523.25, ctx.currentTime); // C5
+        osc.frequency.exponentialRampToValueAtTime(1046.50, ctx.currentTime + 0.25); // C6
+        gain.gain.setValueAtTime(0.10, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.3);
+        osc.start(ctx.currentTime);
+        osc.stop(ctx.currentTime + 0.3);
+      } else {
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(440, ctx.currentTime); // A4
+        gain.gain.setValueAtTime(0.06, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.2);
+        osc.start(ctx.currentTime);
+        osc.stop(ctx.currentTime + 0.2);
+      }
+    } catch (e) {
+      console.warn("Audio Context playback failed or blocked by browser gesture policies:", e);
+    }
+  };
+
   // Show an on-screen floating toast notification
   const showToast = (title, message, type = 'info') => {
     const id = Date.now() + Math.random().toString();
     setToasts(prev => [...prev, { id, title, message, type }]);
+    
+    // Play alert sound
+    playNotificationSound(type);
 
     // Auto-remove toast after 4.5 seconds
     setTimeout(() => {
@@ -56,6 +142,71 @@ export const NotificationProvider = ({ children }) => {
   const removeToast = (id) => {
     setToasts(prev => prev.filter(t => t.id !== id));
   };
+
+  const [medications, setMedications] = useState([]);
+
+  const fetchMedicationList = async () => {
+    if (!user) return;
+    try {
+      const res = await api.get('/medications');
+      if (res.data.success) {
+        setMedications(res.data.data);
+      }
+    } catch (e) {
+      console.error("Failed to retrieve medication schedule for alerts:", e);
+    }
+  };
+
+  useEffect(() => {
+    if (user) {
+      fetchMedicationList();
+      const interval = setInterval(fetchMedicationList, 3 * 60 * 1000); // 3 minutes list sync
+      return () => clearInterval(interval);
+    } else {
+      setMedications([]);
+    }
+  }, [user]);
+
+  // Background time checker for scheduled meds
+  useEffect(() => {
+    if (!user || medications.length === 0) return;
+
+    const firedAlerts = new Set(JSON.parse(localStorage.getItem('firedMedAlerts') || '[]'));
+
+    const checkScheduledReminders = () => {
+      const now = new Date();
+      const todayStr = now.toISOString().split('T')[0];
+      const hrs = String(now.getHours()).padStart(2, '0');
+      const mins = String(now.getMinutes()).padStart(2, '0');
+      const currentTime = `${hrs}:${mins}`; // "HH:MM"
+
+      medications.forEach(med => {
+        if (!med.remindersEnabled) return;
+
+        med.times.forEach(time => {
+          if (time === currentTime) {
+            const key = `${med._id}-${time}-${todayStr}`;
+            if (!firedAlerts.has(key)) {
+              firedAlerts.add(key);
+              const list = Array.from(firedAlerts).slice(-100);
+              localStorage.setItem('firedMedAlerts', JSON.stringify(list));
+
+              // Trigger alert sound & banner toast!
+              addNotification(
+                'Medication Reminder',
+                `Time to take your ${med.name} (${med.dosage}) dose.`,
+                'medication'
+              );
+            }
+          }
+        });
+      });
+    };
+
+    checkScheduledReminders();
+    const ticker = setInterval(checkScheduledReminders, 20 * 1000); // Check every 20 seconds
+    return () => clearInterval(ticker);
+  }, [user, medications]);
 
   const markAllRead = () => {
     setNotifications(prev => prev.map(n => ({ ...n, read: true })));
@@ -83,7 +234,9 @@ export const NotificationProvider = ({ children }) => {
         removeToast,
         markAllRead,
         addNotification,
-        fetchNotifications
+        fetchNotifications,
+        fetchMedicationList,
+        medications
       }}
     >
       {children}

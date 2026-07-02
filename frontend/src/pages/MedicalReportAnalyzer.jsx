@@ -99,7 +99,7 @@ const MedicalReportAnalyzer = () => {
           {/* File Upload Box */}
           <GlassCard hover={false} className="p-6 text-center border-dashed border-slate-700/60 bg-slate-900/10">
             <Upload size={32} className="mx-auto text-indigo-400 mb-3 animate-bounce" />
-            <h4 className="text-xs font-bold text-slate-200">Upload Blood Report</h4>
+            <h4 className="text-xs font-bold text-slate-800 dark:text-slate-200">Upload Blood Report</h4>
             <p className="text-[10px] text-slate-500 mt-1">Accepts images (PNG, JPG) or PDF files up to 10MB.</p>
             
             <label className="mt-4 inline-flex justify-center glass-btn-primary py-2 px-4 text-xs w-full cursor-pointer">
@@ -122,7 +122,7 @@ const MedicalReportAnalyzer = () => {
                     className={`p-3 rounded-xl border text-xs font-semibold cursor-pointer flex items-center justify-between transition-all ${
                       selectedReport?._id === r._id
                         ? 'bg-indigo-600/10 border-indigo-500/25 text-indigo-400'
-                        : 'border-slate-800/80 text-slate-400 hover:bg-slate-900/60 hover:text-slate-200'
+                        : 'border-slate-800/80 text-slate-400 hover:bg-slate-900/60 hover:text-slate-800 dark:text-slate-200'
                     }`}
                   >
                     <div className="flex items-center gap-2 truncate">
@@ -153,7 +153,7 @@ const MedicalReportAnalyzer = () => {
               {/* Header Info */}
               <div className="flex justify-between items-start pb-4 border-b border-slate-800/80">
                 <div>
-                  <h3 className="font-bold text-lg text-slate-100">{selectedReport.title}</h3>
+                  <h3 className="font-bold text-lg text-slate-800 dark:text-slate-100">{selectedReport.title}</h3>
                   <span className="text-[10px] text-indigo-400 font-semibold tracking-wide uppercase mt-1 inline-block">
                     {selectedReport.fileType} Document • Analysed {new Date(selectedReport.analyzedAt).toLocaleDateString()}
                   </span>
@@ -193,7 +193,7 @@ const MedicalReportAnalyzer = () => {
                     <tbody className="divide-y divide-slate-900">
                       {selectedReport.abnormalValues.map((val, idx) => (
                         <tr key={idx} className="text-slate-300 font-medium hover:bg-slate-900/10">
-                          <td className="py-3 font-semibold text-slate-200">{val.parameter}</td>
+                          <td className="py-3 font-semibold text-slate-800 dark:text-slate-200">{val.parameter}</td>
                           <td className="py-3">{val.value}</td>
                           <td className="py-3 text-slate-400">{val.normalRange}</td>
                           <td className="py-3 text-right">

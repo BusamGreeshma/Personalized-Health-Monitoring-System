@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const connectDB = async () => {
   try {
-    const conn = await mongoose.connect(process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/personalized_health');
+    const conn = await mongoose.connect(process.env.MONGO_URI || 'mongodb+srv://greeshmabusam:Chinni2005@cluster0.4lqbupd.mongodb.net/?appName=Cluster0');
     console.log(`MongoDB Connected: ${conn.connection.host}`);
   } catch (error) {
     console.error(`Error connecting to MongoDB: ${error.message}`);

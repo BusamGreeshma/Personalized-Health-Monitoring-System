@@ -154,7 +154,7 @@ const AdminDashboard = () => {
                 <tbody className="divide-y divide-slate-900">
                   {users.map(u => (
                     <tr key={u._id} className="text-slate-300 hover:bg-slate-900/10">
-                      <td className="py-3 font-semibold text-slate-200">{u.username}</td>
+                      <td className="py-3 font-semibold text-slate-800 dark:text-slate-200">{u.username}</td>
                       <td className="py-3">{u.email}</td>
                       <td className="py-3 capitalize">
                         <span className={u.role === 'admin' ? 'text-indigo-400 font-bold' : 'text-slate-400'}>

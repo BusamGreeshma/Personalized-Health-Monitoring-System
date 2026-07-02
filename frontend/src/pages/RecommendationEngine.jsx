@@ -65,25 +65,25 @@ const RecommendationEngine = () => {
               {/* Breakfast */}
               <div className="p-4 rounded-xl bg-slate-950/40 border border-slate-900 flex flex-col justify-between">
                 <span className="text-[10px] uppercase font-bold text-indigo-400 tracking-widest">Breakfast</span>
-                <p className="text-xs text-slate-200 mt-2 leading-relaxed">{plans?.mealPlan?.breakfast || 'Oats & berries'}</p>
+                <p className="text-xs text-slate-800 dark:text-slate-200 mt-2 leading-relaxed">{plans?.mealPlan?.breakfast || 'Oats & berries'}</p>
               </div>
 
               {/* Lunch */}
               <div className="p-4 rounded-xl bg-slate-950/40 border border-slate-900 flex flex-col justify-between">
                 <span className="text-[10px] uppercase font-bold text-indigo-400 tracking-widest">Lunch</span>
-                <p className="text-xs text-slate-200 mt-2 leading-relaxed">{plans?.mealPlan?.lunch || 'Chicken salad'}</p>
+                <p className="text-xs text-slate-800 dark:text-slate-200 mt-2 leading-relaxed">{plans?.mealPlan?.lunch || 'Chicken salad'}</p>
               </div>
 
               {/* Dinner */}
               <div className="p-4 rounded-xl bg-slate-950/40 border border-slate-900 flex flex-col justify-between">
                 <span className="text-[10px] uppercase font-bold text-indigo-400 tracking-widest">Dinner</span>
-                <p className="text-xs text-slate-200 mt-2 leading-relaxed">{plans?.mealPlan?.dinner || 'Grilled salmon'}</p>
+                <p className="text-xs text-slate-800 dark:text-slate-200 mt-2 leading-relaxed">{plans?.mealPlan?.dinner || 'Grilled salmon'}</p>
               </div>
 
               {/* Snack */}
               <div className="p-4 rounded-xl bg-slate-950/40 border border-slate-900 flex flex-col justify-between">
                 <span className="text-[10px] uppercase font-bold text-indigo-400 tracking-widest">Snack</span>
-                <p className="text-xs text-slate-200 mt-2 leading-relaxed">{plans?.mealPlan?.snack || 'Nuts & Greek yogurt'}</p>
+                <p className="text-xs text-slate-800 dark:text-slate-200 mt-2 leading-relaxed">{plans?.mealPlan?.snack || 'Nuts & Greek yogurt'}</p>
               </div>
 
             </div>
@@ -100,7 +100,7 @@ const RecommendationEngine = () => {
               {plans?.workoutPlan?.map((item, idx) => (
                 <div key={idx} className="p-3.5 rounded-xl bg-slate-950/40 border border-slate-900 flex justify-between items-center text-xs">
                   <div>
-                    <h4 className="font-bold text-slate-200">{item.exercise}</h4>
+                    <h4 className="font-bold text-slate-800 dark:text-slate-200">{item.exercise}</h4>
                     <p className="text-[10px] text-slate-500 mt-0.5">Intensity: {item.intensity}</p>
                   </div>
                   <span className="badge-success">{item.duration}</span>
@@ -122,7 +122,7 @@ const RecommendationEngine = () => {
               </div>
               <div>
                 <p className="text-[10px] text-slate-500 uppercase tracking-wider font-semibold">Water Target</p>
-                <p className="text-sm font-bold text-slate-200 mt-0.5">{plans?.waterTarget || 2800} ml</p>
+                <p className="text-sm font-bold text-slate-800 dark:text-slate-200 mt-0.5">{plans?.waterTarget || 2800} ml</p>
               </div>
             </GlassCard>
 
@@ -132,7 +132,7 @@ const RecommendationEngine = () => {
               </div>
               <div>
                 <p className="text-[10px] text-slate-500 uppercase tracking-wider font-semibold">Sleep Target</p>
-                <p className="text-sm font-bold text-slate-200 mt-0.5">{plans?.sleepGoal || 8} hrs</p>
+                <p className="text-sm font-bold text-slate-800 dark:text-slate-200 mt-0.5">{plans?.sleepGoal || 8} hrs</p>
               </div>
             </GlassCard>
           </div>

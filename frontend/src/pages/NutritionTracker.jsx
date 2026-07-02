@@ -211,7 +211,7 @@ const NutritionTracker = () => {
                 {meals.map(m => (
                   <div key={m._id} className="py-3 flex justify-between items-center text-xs">
                     <div>
-                      <h4 className="font-bold text-slate-200">{m.foodName}</h4>
+                      <h4 className="font-bold text-slate-800 dark:text-slate-200">{m.foodName}</h4>
                       <p className="text-[10px] text-slate-500 uppercase mt-0.5 tracking-wider">{m.mealType} • P: {m.protein}g, C: {m.carbs}g, F: {m.fats}g</p>
                     </div>
                     <span className="font-semibold text-slate-300">{m.calories} kcal</span>

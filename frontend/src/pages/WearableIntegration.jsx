@@ -90,7 +90,7 @@ const WearableIntegration = () => {
         }`}>
           <div>
             <div className="flex justify-between items-start">
-              <span className="font-bold text-base text-slate-200">Fitbit Sync</span>
+              <span className="font-bold text-base text-slate-800 dark:text-slate-200">Fitbit Sync</span>
               <Watch size={18} className="text-cyan-400" />
             </div>
             <p className="text-[10px] text-slate-400 mt-1.5 leading-relaxed">Continuous sync for step count meters, active metabolic rate, and sleep state intervals.</p>
@@ -114,7 +114,7 @@ const WearableIntegration = () => {
         }`}>
           <div>
             <div className="flex justify-between items-start">
-              <span className="font-bold text-base text-slate-200">Google Fit API</span>
+              <span className="font-bold text-base text-slate-800 dark:text-slate-200">Google Fit API</span>
               <Watch size={18} className="text-rose-400" />
             </div>
             <p className="text-[10px] text-slate-400 mt-1.5 leading-relaxed">Aggregates distance maps, resting heart rate values, and caloric logs sync.</p>
@@ -138,7 +138,7 @@ const WearableIntegration = () => {
         }`}>
           <div>
             <div className="flex justify-between items-start">
-              <span className="font-bold text-base text-slate-200">Apple HealthKit</span>
+              <span className="font-bold text-base text-slate-800 dark:text-slate-200">Apple HealthKit</span>
               <Watch size={18} className="text-indigo-400" />
             </div>
             <p className="text-[10px] text-slate-400 mt-1.5 leading-relaxed">Pulls ECG biometrics, SpO2 blood oxygen levels, and dynamic sleep logs.</p>

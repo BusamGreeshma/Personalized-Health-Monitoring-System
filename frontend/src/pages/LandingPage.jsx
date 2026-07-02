@@ -14,14 +14,16 @@ const LandingPage = () => {
 
       {/* Header */}
       <header className="h-20 max-w-7xl w-full mx-auto px-6 flex items-center justify-between z-10">
-        <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-indigo-500 to-cyan-500 flex items-center justify-center shadow-lg shadow-indigo-500/20">
-            <span className="text-white font-extrabold text-sm tracking-tighter">A</span>
+        <div className="flex items-center gap-2.5">
+          <div className="w-6 h-6 rounded bg-indigo-600 flex items-center justify-center shadow-md">
+            <span className="text-white font-bold text-xs">A</span>
           </div>
-          <span className="font-extrabold text-lg tracking-tight bg-gradient-to-r from-white to-slate-400 bg-clip-text text-transparent">AURA</span>
-          <span className="text-xs font-semibold text-cyan-400 ml-1">HEALTH</span>
+          <div className="flex flex-col">
+            <span className="font-semibold text-sm tracking-tight text-slate-200">AURA</span>
+            <span className="text-[9px] font-semibold text-slate-500 tracking-wider uppercase -mt-0.5">Health suite</span>
+          </div>
         </div>
-        <div className="flex gap-4">
+        <div className="flex gap-3">
           <button onClick={() => navigate('/login')} className="glass-btn-secondary py-1.5 px-4 text-xs">
             Sign In
           </button>
@@ -32,55 +34,56 @@ const LandingPage = () => {
       </header>
 
       {/* Hero Section */}
-      <main className="flex-1 max-w-7xl w-full mx-auto px-6 flex flex-col justify-center items-center text-center z-10 py-12 md:py-24">
-        {/* Animated Badge */}
+      <main className="flex-1 max-w-6xl w-full mx-auto px-6 flex flex-col justify-center items-center text-center z-10 py-12 md:py-24">
+        {/* Modern Badge */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-300 text-xs font-semibold mb-6"
+          transition={{ duration: 0.5 }}
+          className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-slate-400 text-[11px] font-medium mb-6"
         >
-          <Sparkles size={12} className="animate-spin" />
-          <span>Next-Generation AI Vitals Telemetry</span>
+          <Sparkles size={11} className="text-indigo-400" />
+          <span>Clinical Intelligence Platform</span>
         </motion.div>
 
         {/* Hero Title */}
         <motion.h1
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight max-w-4xl"
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight max-w-3xl leading-[1.15]"
         >
-          Your Personal <span className="bg-gradient-to-r from-indigo-400 via-cyan-400 to-emerald-400 bg-clip-text text-transparent">AI Vitals Analyst</span> & Clinical Companion.
+          Smarter biometrics tracking. <br />
+          <span className="text-indigo-400">In one unified platform.</span>
         </motion.h1>
 
         {/* Hero Description */}
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-slate-400 text-sm sm:text-lg max-w-2xl mt-6 leading-relaxed"
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="text-slate-400 text-sm sm:text-base max-w-xl mt-6 leading-relaxed"
         >
-          Monitor biometric telemetry, calculate dynamic health scores, analyze complex blood reports with vision OCR, and get personalized RAG-driven advice—all in one place.
+          Monitor your vitals, analyze clinical reports, calculate wellness scores, and receive personalized advice. Aura integrates all your daily metrics into a clean, secure dashboard.
         </motion.p>
 
         {/* CTA buttons */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="flex flex-col sm:flex-row gap-4 mt-10"
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="flex flex-col sm:flex-row gap-3 mt-8"
         >
           <button
             onClick={() => navigate('/register')}
-            className="glass-btn-primary px-8 py-3.5 flex items-center gap-2 group text-sm"
+            className="glass-btn-primary px-6 py-2.5 flex items-center gap-2 text-xs"
           >
-            <span>Start Monitoring Free</span>
-            <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+            <span>Start Tracking Free</span>
+            <ArrowRight size={14} />
           </button>
           <button
             onClick={() => navigate('/login')}
-            className="glass-btn-secondary px-8 py-3.5 text-sm"
+            className="glass-btn-secondary px-6 py-2.5 text-xs"
           >
             Explore Dashboard Demo
           </button>
@@ -88,47 +91,47 @@ const LandingPage = () => {
 
         {/* Value Prop Features */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="grid grid-cols-1 md:grid-cols-4 gap-6 w-full mt-24"
+          transition={{ duration: 0.7, delay: 0.4 }}
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 w-full mt-20"
         >
-          <div className="glass-panel p-6 flex flex-col items-center hover:scale-105 transition-transform">
-            <div className="w-12 h-12 rounded-xl bg-indigo-500/10 flex items-center justify-center text-indigo-400 mb-4 border border-indigo-500/10">
-              <Zap size={20} />
+          <div className="glass-panel glass-panel-hover p-6 flex flex-col items-start text-left">
+            <div className="p-2.5 rounded-lg bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 mb-4">
+              <Zap size={16} />
             </div>
-            <h3 className="font-semibold text-sm">Dynamic AI Health Score</h3>
-            <p className="text-xs text-slate-400 mt-2 text-center">Continuous diagnostic telemetry compiled from step logs, rest parameters, and vitals.</p>
+            <h3 className="font-semibold text-xs text-slate-200 uppercase tracking-wider">Health Index</h3>
+            <p className="text-[11px] text-slate-400 mt-2 leading-relaxed">Dynamic scores calculated from daily vitals, sleep parameters, and physical activities.</p>
           </div>
 
-          <div className="glass-panel p-6 flex flex-col items-center hover:scale-105 transition-transform">
-            <div className="w-12 h-12 rounded-xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 mb-4 border border-cyan-500/10">
-              <Sparkles size={20} />
+          <div className="glass-panel glass-panel-hover p-6 flex flex-col items-start text-left">
+            <div className="p-2.5 rounded-lg bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 mb-4">
+              <Sparkles size={16} />
             </div>
-            <h3 className="font-semibold text-sm">Vision Report OCR</h3>
-            <p className="text-xs text-slate-400 mt-2 text-center">Upload blood panel images/PDFs and get extracted parameters with abnormal values highlights.</p>
+            <h3 className="font-semibold text-xs text-slate-200 uppercase tracking-wider">Report Analyzer</h3>
+            <p className="text-[11px] text-slate-400 mt-2 leading-relaxed">Extract and cross-reference biometric indicators directly from uploaded lab panels.</p>
           </div>
 
-          <div className="glass-panel p-6 flex flex-col items-center hover:scale-105 transition-transform">
-            <div className="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 mb-4 border border-emerald-500/10">
-              <ShieldCheck size={20} />
+          <div className="glass-panel glass-panel-hover p-6 flex flex-col items-start text-left">
+            <div className="p-2.5 rounded-lg bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 mb-4">
+              <ShieldCheck size={16} />
             </div>
-            <h3 className="font-semibold text-sm">Predictive Risk Modeling</h3>
-            <p className="text-xs text-slate-400 mt-2 text-center">Analyze markers to estimate percentages and safety trends for Diabetes or Heart Disease.</p>
+            <h3 className="font-semibold text-xs text-slate-200 uppercase tracking-wider">Risk Assessments</h3>
+            <p className="text-[11px] text-slate-400 mt-2 leading-relaxed">Early warning indicators and preventative modeling for heart and diabetic conditions.</p>
           </div>
 
-          <div className="glass-panel p-6 flex flex-col items-center hover:scale-105 transition-transform">
-            <div className="w-12 h-12 rounded-xl bg-rose-500/10 flex items-center justify-center text-rose-400 mb-4 border border-rose-500/10">
-              <Heart size={20} />
+          <div className="glass-panel glass-panel-hover p-6 flex flex-col items-start text-left">
+            <div className="p-2.5 rounded-lg bg-rose-500/10 text-rose-400 border border-rose-500/20 mb-4">
+              <Heart size={16} />
             </div>
-            <h3 className="font-semibold text-sm">Gamified Badges & Streaks</h3>
-            <p className="text-xs text-slate-400 mt-2 text-center">Stay motivated by tracking consecutive logs and unlocking fitness streaks and awards.</p>
+            <h3 className="font-semibold text-xs text-slate-200 uppercase tracking-wider">Streak & Habits</h3>
+            <p className="text-[11px] text-slate-400 mt-2 leading-relaxed">Stay consistent with habit tracking, streak milestones, and positive reinforcement guides.</p>
           </div>
         </motion.div>
       </main>
 
       {/* Footer */}
-      <footer className="h-16 border-t border-slate-800/40 flex items-center justify-center text-xs text-slate-500 z-10 bg-slate-950/80">
+      <footer className="h-16 border-t border-slate-900 flex items-center justify-center text-[10px] text-slate-500 z-10 bg-slate-950/80">
         <span>© 2026 Aura Health Technologies. All rights reserved. Created for Project Expo.</span>
       </footer>
     </div>

@@ -165,7 +165,7 @@ const DailyLogs = () => {
               className={`flex items-center gap-2 px-5 py-3 border-b-2 text-xs font-semibold uppercase tracking-wider transition-all whitespace-nowrap cursor-pointer ${
                 activeTab === tab.id
                   ? 'border-indigo-500 text-indigo-400'
-                  : 'border-transparent text-slate-400 hover:text-slate-200'
+                  : 'border-transparent text-slate-400 hover:text-slate-800 dark:text-slate-200'
               }`}
             >
               <Icon size={14} />

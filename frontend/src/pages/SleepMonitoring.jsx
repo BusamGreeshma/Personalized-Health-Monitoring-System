@@ -199,7 +199,7 @@ const SleepMonitoring = () => {
               ) : (
                 sleeps.map((log, idx) => (
                   <div key={idx} className="p-3.5 rounded-xl bg-slate-950/40 border border-slate-900 flex flex-col gap-1 text-xs text-slate-300">
-                    <div className="flex justify-between font-bold text-slate-200">
+                    <div className="flex justify-between font-bold text-slate-800 dark:text-slate-200">
                       <span>Sleep Rating: {log.quality} ★</span>
                       <span className="text-[10px] text-slate-500">{log.bedtime} - {log.wakeupTime}</span>
                     </div>

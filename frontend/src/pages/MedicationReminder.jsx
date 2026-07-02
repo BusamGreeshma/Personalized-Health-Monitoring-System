@@ -7,9 +7,8 @@ import { useForm } from 'react-hook-form';
 import { Pill, Plus, Check, Trash2, Calendar, AlertCircle } from 'lucide-react';
 
 const MedicationReminder = () => {
-  const { showToast } = useNotification();
+  const { showToast, fetchMedicationList, medications } = useNotification();
   const [loading, setLoading] = useState(true);
-  const [medications, setMedications] = useState([]);
   const [saving, setSaving] = useState(false);
 
   const todayStr = new Date().toISOString().split('T')[0];
@@ -18,10 +17,7 @@ const MedicationReminder = () => {
   const fetchMedications = async () => {
     try {
       setLoading(true);
-      const res = await api.get('/medications');
-      if (res.data.success) {
-        setMedications(res.data.data);
-      }
+      await fetchMedicationList();
     } catch (err) {
       console.error(err);
       showToast('Error', 'Failed to retrieve medication schedule.', 'alert');
@@ -97,9 +93,18 @@ const MedicationReminder = () => {
 
   return (
     <div className="space-y-8 max-w-5xl mx-auto">
-      <div>
-        <h2 className="text-2xl font-bold tracking-tight">Medication Reminders</h2>
-        <p className="text-xs text-slate-400">Manage prescriptions, set times, and track daily dose adherence.</p>
+      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+        <div>
+          <h2 className="text-2xl font-bold tracking-tight">Medication Reminders</h2>
+          <p className="text-xs text-slate-400">Manage prescriptions, set times, and track daily dose adherence.</p>
+        </div>
+        <button
+          onClick={() => showToast('Reminder Chime Test', 'This is how your medication alert sounds.', 'medication')}
+          className="glass-btn-secondary py-2 px-3.5 text-xs flex items-center gap-1.5"
+        >
+          <Pill size={12} />
+          <span>Test Reminder Sound</span>
+        </button>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -160,7 +165,7 @@ const MedicationReminder = () => {
                 {medications.map(med => (
                   <div key={med._id} className="p-4 rounded-xl bg-slate-950/40 border border-slate-900 flex justify-between items-start gap-4">
                     <div className="flex-1">
-                      <h4 className="text-sm font-bold text-slate-200">{med.name}</h4>
+                      <h4 className="text-sm font-bold text-slate-800 dark:text-slate-200">{med.name}</h4>
                       <p className="text-[11px] text-slate-500 mt-0.5">Dosage: {med.dosage} • Frequency: {med.frequency}</p>
                       
                       {/* Scheduled times checkboxes */}
@@ -175,13 +180,13 @@ const MedicationReminder = () => {
                               <span className="font-semibold text-slate-400 mr-1.5">{time}</span>
                               <button
                                 onClick={() => handleLogStatus(med._id, time, 'taken')}
-                                className={`px-2 py-0.5 rounded cursor-pointer ${isTaken ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20' : 'bg-slate-950 text-slate-500 hover:text-slate-200'}`}
+                                className={`px-2 py-0.5 rounded cursor-pointer ${isTaken ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20' : 'bg-slate-950 text-slate-500 hover:text-slate-800 dark:text-slate-200'}`}
                               >
                                 Taken
                               </button>
                               <button
                                 onClick={() => handleLogStatus(med._id, time, 'missed')}
-                                className={`px-2 py-0.5 rounded cursor-pointer ${isMissed ? 'bg-rose-500/10 text-rose-400 border border-rose-500/20' : 'bg-slate-950 text-slate-500 hover:text-slate-200'}`}
+                                className={`px-2 py-0.5 rounded cursor-pointer ${isMissed ? 'bg-rose-500/10 text-rose-400 border border-rose-500/20' : 'bg-slate-950 text-slate-500 hover:text-slate-800 dark:text-slate-200'}`}
                               >
                                 Missed
                               </button>

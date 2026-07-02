@@ -94,15 +94,15 @@ const Dashboard = () => {
       {/* Welcome Banner */}
       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <div>
-          <h2 className="text-2xl font-bold tracking-tight">Health Dashboard</h2>
-          <p className="text-xs text-slate-400">Continuous biometrics monitoring for logs date: {todayStr}</p>
+          <h2 className="text-xl font-bold tracking-tight text-slate-800 dark:text-slate-100">Overview</h2>
+          <p className="text-xs text-slate-400">Biometrics and wellness summary for today, {todayStr}</p>
         </div>
         <button
           onClick={handleWearableSync}
           disabled={syncing}
-          className="glass-btn-secondary py-2.5 px-4 text-xs flex items-center gap-2"
+          className="glass-btn-secondary py-2 px-3.5 text-xs flex items-center gap-2"
         >
-          <RefreshCw size={14} className={syncing ? 'animate-spin' : ''} />
+          <RefreshCw size={12} className={syncing ? 'animate-spin' : ''} />
           <span>{syncing ? 'Syncing...' : 'Sync Wearable Data'}</span>
         </button>
       </div>
@@ -110,99 +110,99 @@ const Dashboard = () => {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         
         {/* Left Column: Metrics & Targets Grid */}
-        <div className="lg:col-span-2 space-y-8">
+        <div className="lg:col-span-2 space-y-6">
           
           {/* Progress Targets Panel */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {/* Steps Progress */}
-            <GlassCard hover={false} className="p-5 flex items-center gap-4 relative overflow-hidden">
-              <div className="p-3.5 rounded-2xl bg-indigo-500/10 text-indigo-400 border border-indigo-500/10">
-                <Milestone size={24} />
+            <GlassCard hover={false} className="p-6 flex items-center gap-4 relative overflow-hidden">
+              <div className="p-3 rounded-lg bg-slate-950 border border-slate-850 text-indigo-400">
+                <Milestone size={20} />
               </div>
               <div className="flex-1">
-                <p className="text-xs text-slate-400 font-medium">Daily Steps Target</p>
+                <p className="text-[11px] text-slate-400 font-semibold uppercase tracking-wider">Daily Steps</p>
                 <div className="flex items-baseline gap-1.5 mt-1">
-                  <span className="text-2xl font-bold">{vitals?.stepCount || 0}</span>
+                  <span className="text-xl font-bold text-slate-800 dark:text-slate-100">{vitals?.stepCount || 0}</span>
                   <span className="text-xs text-slate-500">/ 8,000 steps</span>
                 </div>
                 {/* ProgressBar */}
-                <div className="w-full bg-slate-800/80 h-2 rounded-full mt-3 overflow-hidden">
+                <div className="w-full bg-slate-950 h-1.5 rounded-full mt-3 overflow-hidden">
                   <div 
-                    className="bg-gradient-to-r from-indigo-500 to-cyan-400 h-full rounded-full transition-all duration-500" 
+                    className="bg-indigo-500 h-full rounded-full transition-all duration-500" 
                     style={{ width: `${getPercent(vitals?.stepCount || 0, 8000)}%` }}
                   />
                 </div>
               </div>
-              <span className="absolute top-4 right-4 text-xs font-bold text-slate-500">
+              <span className="absolute top-4 right-4 text-[10px] font-bold text-slate-500">
                 {getPercent(vitals?.stepCount || 0, 8000)}%
               </span>
             </GlassCard>
 
             {/* Hydration Progress */}
-            <GlassCard hover={false} className="p-5 flex items-center gap-4 relative overflow-hidden">
-              <div className="p-3.5 rounded-2xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/10">
-                <Droplet size={24} />
+            <GlassCard hover={false} className="p-6 flex items-center gap-4 relative overflow-hidden">
+              <div className="p-3 rounded-lg bg-slate-950 border border-slate-850 text-sky-400">
+                <Droplet size={20} />
               </div>
               <div className="flex-1">
-                <p className="text-xs text-slate-400 font-medium">Water Hydration Goal</p>
+                <p className="text-[11px] text-slate-400 font-semibold uppercase tracking-wider">Hydration</p>
                 <div className="flex items-baseline gap-1.5 mt-1">
-                  <span className="text-2xl font-bold">{vitals?.waterIntake || 0}</span>
+                  <span className="text-xl font-bold text-slate-800 dark:text-slate-100">{vitals?.waterIntake || 0}</span>
                   <span className="text-xs text-slate-500">/ 2,500 ml</span>
                 </div>
-                <div className="w-full bg-slate-800/80 h-2 rounded-full mt-3 overflow-hidden">
+                <div className="w-full bg-slate-950 h-1.5 rounded-full mt-3 overflow-hidden">
                   <div 
-                    className="bg-gradient-to-r from-cyan-500 to-blue-400 h-full rounded-full transition-all duration-500" 
+                    className="bg-sky-500 h-full rounded-full transition-all duration-500" 
                     style={{ width: `${getPercent(vitals?.waterIntake || 0, 2500)}%` }}
                   />
                 </div>
               </div>
-              <span className="absolute top-4 right-4 text-xs font-bold text-slate-500">
+              <span className="absolute top-4 right-4 text-[10px] font-bold text-slate-500">
                 {getPercent(vitals?.waterIntake || 0, 2500)}%
               </span>
             </GlassCard>
 
             {/* Calories Burned Progress */}
-            <GlassCard hover={false} className="p-5 flex items-center gap-4 relative overflow-hidden">
-              <div className="p-3.5 rounded-2xl bg-rose-500/10 text-rose-400 border border-rose-500/10">
-                <Flame size={24} />
+            <GlassCard hover={false} className="p-6 flex items-center gap-4 relative overflow-hidden">
+              <div className="p-3 rounded-lg bg-slate-950 border border-slate-850 text-rose-400">
+                <Flame size={20} />
               </div>
               <div className="flex-1">
-                <p className="text-xs text-slate-400 font-medium">Active Calories Target</p>
+                <p className="text-[11px] text-slate-400 font-semibold uppercase tracking-wider">Calories Burned</p>
                 <div className="flex items-baseline gap-1.5 mt-1">
-                  <span className="text-2xl font-bold">{vitals?.caloriesBurned || 0}</span>
+                  <span className="text-xl font-bold text-slate-800 dark:text-slate-100">{vitals?.caloriesBurned || 0}</span>
                   <span className="text-xs text-slate-500">/ 500 kcal</span>
                 </div>
-                <div className="w-full bg-slate-800/80 h-2 rounded-full mt-3 overflow-hidden">
+                <div className="w-full bg-slate-950 h-1.5 rounded-full mt-3 overflow-hidden">
                   <div 
-                    className="bg-gradient-to-r from-rose-500 to-amber-500 h-full rounded-full transition-all duration-500" 
+                    className="bg-rose-500 h-full rounded-full transition-all duration-500" 
                     style={{ width: `${getPercent(vitals?.caloriesBurned || 0, 500)}%` }}
                   />
                 </div>
               </div>
-              <span className="absolute top-4 right-4 text-xs font-bold text-slate-500">
+              <span className="absolute top-4 right-4 text-[10px] font-bold text-slate-500">
                 {getPercent(vitals?.caloriesBurned || 0, 500)}%
               </span>
             </GlassCard>
 
             {/* Sleep Progress */}
-            <GlassCard hover={false} className="p-5 flex items-center gap-4 relative overflow-hidden">
-              <div className="p-3.5 rounded-2xl bg-violet-500/10 text-violet-400 border border-violet-500/10">
-                <Moon size={24} />
+            <GlassCard hover={false} className="p-6 flex items-center gap-4 relative overflow-hidden">
+              <div className="p-3 rounded-lg bg-slate-950 border border-slate-850 text-violet-400">
+                <Moon size={20} />
               </div>
               <div className="flex-1">
-                <p className="text-xs text-slate-400 font-medium">Rest Sleep Goal</p>
+                <p className="text-[11px] text-slate-400 font-semibold uppercase tracking-wider">Sleep Duration</p>
                 <div className="flex items-baseline gap-1.5 mt-1">
-                  <span className="text-2xl font-bold">{vitals?.sleepHours || 0}</span>
+                  <span className="text-xl font-bold text-slate-800 dark:text-slate-100">{vitals?.sleepHours || 0}</span>
                   <span className="text-xs text-slate-500">/ 8 hrs</span>
                 </div>
-                <div className="w-full bg-slate-800/80 h-2 rounded-full mt-3 overflow-hidden">
+                <div className="w-full bg-slate-950 h-1.5 rounded-full mt-3 overflow-hidden">
                   <div 
-                    className="bg-gradient-to-r from-violet-500 to-indigo-400 h-full rounded-full transition-all duration-500" 
+                    className="bg-violet-500 h-full rounded-full transition-all duration-500" 
                     style={{ width: `${getPercent(vitals?.sleepHours || 0, 8)}%` }}
                   />
                 </div>
               </div>
-              <span className="absolute top-4 right-4 text-xs font-bold text-slate-500">
+              <span className="absolute top-4 right-4 text-[10px] font-bold text-slate-500">
                 {getPercent(vitals?.sleepHours || 0, 8)}%
               </span>
             </GlassCard>
@@ -384,7 +384,7 @@ const Dashboard = () => {
               </div>
               <div>
                 <p className="text-[10px] text-slate-400 uppercase tracking-widest font-semibold">Body Mass Index</p>
-                <p className="text-sm font-bold text-slate-200 mt-0.5">{vitals?.weight || user?.profile?.weight} kg • BMI {vitals?.bmi}</p>
+                <p className="text-sm font-bold text-slate-800 dark:text-slate-200 mt-0.5">{vitals?.weight || user?.profile?.weight} kg • BMI {vitals?.bmi}</p>
               </div>
             </div>
             <span className="badge-success">

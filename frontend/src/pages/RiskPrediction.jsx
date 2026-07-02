@@ -74,7 +74,7 @@ const RiskPrediction = () => {
             {/* Header */}
             <div className="flex justify-between items-start">
               <div>
-                <h3 className="font-bold text-base text-slate-200">{item.condition}</h3>
+                <h3 className="font-bold text-base text-slate-800 dark:text-slate-200">{item.condition}</h3>
                 <span className={`inline-block mt-1 ${getRiskBadge(item.riskLevel)}`}>
                   {item.riskLevel} Risk
                 </span>
