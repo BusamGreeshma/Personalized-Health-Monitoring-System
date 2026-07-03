@@ -3,6 +3,7 @@ import { useAuth } from '../context/AuthContext';
 import { useNotification } from '../context/NotificationContext';
 import GlassCard from '../components/Common/GlassCard';
 import { AlertOctagon, Phone, ShieldAlert, Heart, QrCode, MapPin, Play, Square } from 'lucide-react';
+import { QRCodeSVG } from 'qrcode.react';
 
 const EmergencyModule = () => {
   const { user } = useAuth();
@@ -226,8 +227,15 @@ Contacts: ${profile.emergencyContacts?.map(c => `${c.name} (${c.phone})`).join('
               </p>
             </div>
 
-            <div className="my-6 p-3 rounded-2xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-900 flex items-center justify-center">
-              <img src={qrCodeUrl} alt="Emergency Medical Profile QR Code" className="w-40 h-40 rounded-lg" />
+            <div className="my-6 p-4 rounded-2xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-900 flex items-center justify-center">
+              <QRCodeSVG
+                value={decodeURIComponent(compileEmergencyPayload())}
+                size={144}
+                bgColor={"transparent"}
+                fgColor={"currentColor"}
+                className="text-slate-800 dark:text-slate-200"
+                level={"M"}
+              />
             </div>
 
             <span className="text-[9px] uppercase font-bold text-slate-500 tracking-wider">Aura Profile tag generated</span>

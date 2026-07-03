@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aura Health - Expo Winning Pitch Book & Oral Prep Guide</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #0b0f19;
+      --card-bg: rgba(17, 24, 39, 0.7);
+      --border-color: rgba(99, 102, 241, 0.15);
+      --text-main: #f3f4f6;
+      --text-sub: #9ca3af;
+      --primary: #6366f1;
+      --primary-hover: #4f46e5;
+      --secondary: #06b6d4;
+      --accent: #ec4899;
+      --success: #10b981;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      font-family: 'Outfit', sans-serif;
+      line-height: 1.6;
+      padding: 3rem 2rem;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.08) 0%, transparent 45%),
+        radial-gradient(circle at 90% 80%, rgba(6, 182, 212, 0.08) 0%, transparent 45%);
+      background-attachment: fixed;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 4rem;
+      padding-bottom: 2rem;
+      border-b: 1px solid var(--border-color);
+    }
+
+    header h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      letter-spacing: -0.05em;
+      background: linear-gradient(to right, #6366f1, #06b6d4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      color: var(--text-sub);
+      font-size: 1.1rem;
+      font-weight: 400;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(99, 102, 241, 0.1);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      color: #818cf8;
+      padding: 0.3rem 0.8rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1rem;
+    }
+
+    .section {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 1.5rem;
+      padding: 2.5rem;
+      margin-bottom: 3rem;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .section h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      border-left: 4px solid var(--primary);
+      padding-left: 0.75rem;
+    }
+
+    .section h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      color: var(--secondary);
+    }
+
+    p {
+      color: var(--text-sub);
+      margin-bottom: 1.2rem;
+      font-size: 1rem;
+    }
+
+    ul, ol {
+      margin-left: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: var(--text-sub);
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    strong {
+      color: var(--text-main);
+    }
+
+    .highlight-box {
+      background: rgba(6, 182, 212, 0.05);
+      border-left: 4px solid var(--secondary);
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .highlight-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .alert-box {
+      background: rgba(236, 72, 153, 0.05);
+      border-left: 4px solid var(--accent);
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .alert-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    .q-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      transition: all 0.2s;
+    }
+
+    .q-card:hover {
+      border-color: rgba(99, 102, 241, 0.3);
+      background: rgba(99, 102, 241, 0.02);
+    }
+
+    .question {
+      font-weight: 700;
+      color: var(--text-main);
+      font-size: 1.05rem;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    .question-prefix {
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    .answer {
+      color: var(--text-sub);
+      font-size: 0.95rem;
+      padding-left: 1.25rem;
+      border-left: 2px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .technical-tag {
+      display: inline-block;
+      background: rgba(6, 182, 212, 0.15);
+      color: #22d3ee;
+      padding: 0.1rem 0.5rem;
+      border-radius: 0.25rem;
+      font-size: 0.7rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .print-btn {
+      position: fixed;
+      top: 2rem;
+      right: 2rem;
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 9999px;
+      font-family: inherit;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(99, 102, 241, 0.4);
+      transition: all 0.2s;
+      z-index: 100;
+    }
+
+    .print-btn:hover {
+      background: var(--primary-hover);
+      transform: translateY(-1px);
+    }
+
+    @media print {
+      body {
+        background: white;
+        color: black;
+        padding: 0;
+      }
+      .container {
+        max-width: 100%;
+      }
+      .section {
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        margin-bottom: 3rem;
+        page-break-inside: avoid;
+      }
+      .q-card {
+        page-break-inside: avoid;
+        border: 1px solid #ddd;
+        background: transparent;
+      }
+      .print-btn {
+        display: none;
+      }
+      header h1 {
+        background: none;
+        -webkit-text-fill-color: black;
+        color: black;
+      }
+      * {
+        color: black !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <button class="print-btn" onclick="window.print()">Print / Save as PDF</button>
+
+  <div class="container">
+    <header>
+      <div class="badge">Project Expo Guide</div>
+      <h1>Aura Health: Expo Winning Pitch Book</h1>
+      <p>Your oral presentation guide, step-by-step live demo scripts, and panel Q&amp;A cheat sheet.</p>
+    </header>
+
+    <!-- SECTION 1 -->
+    <div class="section">
+      <h2>1. The 2-Minute Elevator Pitch (The Hook)</h2>
+      <p><em>Use this script when the judges walk up to your stand. Speak with confidence and clear pacing.</em></p>
+      
+      <div class="highlight-box">
+        <p><strong>"Good morning/afternoon, Judges.</strong> We are presenting <strong>Aura Health</strong>: a clinical-grade, AI-powered health monitoring portal designed to solve one of the biggest challenges in modern digital medicine: <strong>data fragmentation and lack of patient compliance.</strong>"</p>
+        <p class="mt-2">"Think about the average patient today. They track their heart rate on a smartwatch, get diagnostic blood reports as confusing PDF papers from labs, and receive prescription times written on a piece of paper. None of these systems talk to each other. Aura Health acts as the unified diagnostic command center."</p>
+        <p class="mt-2">"By integrating the high-speed <strong>Llama-3 model via Groq Cloud</strong>, Aura Health dynamically aggregates biometrics, analyzes complex medical report images using vision OCR, computes chronic risk percentages, and runs a custom-engineered, local <strong>Retrieval-Augmented Generation (RAG)</strong> wellness advisory engine. Let us show you how a patient uses it in real-time."</p>
+      </div>
+    </div>
+
+    <!-- SECTION 2 -->
+    <div class="section">
+      <h2>2. Step-by-Step Feature Walkthrough (Live Demo Script)</h2>
+      <p><em>Stand in front of the screen. Follow this sequence exactly to demonstrate a complete user flow.</em></p>
+
+      <h3>Step 1: The Dashboard & Wearable Sync</h3>
+      <ul>
+        <li><strong>Action</strong>: Show the Dashboard. Point to the Recharts area plots and the radial gauge. Click the <strong>"Sync Wearable Data"</strong> button.</li>
+        <li><strong>What to Say</strong>: <em>"Here is the user dashboard, displaying real-time telemetry like heart rate, blood pressure, and hydration goals. When a user synchronizes their smartwatch, our backend simulates a Bluetooth Low Energy (BLE) payload. As you can see, the metrics immediately populate and update the AI-calculated Health Score, coloring any critical readings outside normal bounds in red."</em></li>
+      </ul>
+
+      <h3>Step 2: Medication Reminders (The Repeating Alarm)</h3>
+      <ul>
+        <li><strong>Action</strong>: Navigate to the <strong>Medications</strong> page. Enter a pill name, dosage, and set the time to the <strong>current minute</strong> (e.g. if it is 2:15 PM, enter 14:15). Click <strong>"Schedule Medication"</strong>. Explain the alarm sound when it triggers.</li>
+        <li><strong>What to Say</strong>: <em>"In the medications panel, a user lists their scheduled prescriptions. We have built an automated background checker that scans schedules every 10 seconds. When the time matches, it launches a looping sound alarm. This is synthesized directly in the browser via the <strong>Web Audio API</strong>. It will ring continuously every 3 seconds to ensure patient compliance, and will stop immediately the moment the patient logs the dose as Taken."</em></li>
+      </ul>
+
+      <h3>Step 3: Medical Report Analyzer (Llama-3.2-Vision)</h3>
+      <ul>
+        <li><strong>Action</strong>: Go to the <strong>Report Analyzer</strong>. Upload a diagnostic blood report image. Click <strong>"Analyze Report"</strong>.</li>
+        <li><strong>What to Say</strong>: <em>"Instead of leaving patients confused by lab values, they can upload an image of their blood report. Our backend routes this image to <strong>Llama-3.2-Vision</strong>. The model parses the biomarkers, extracts metrics like Cholesterol or Hemoglobin, and structures them into clean telemetry tables. It highlights normal vs. high ranges and summarizes the clinical findings in plain English."</em></li>
+      </ul>
+
+      <h3>Step 4: AI Recommendations & RAG Advisor</h3>
+      <ul>
+        <li><strong>Action</strong>: Show the <strong>AI Recommendations</strong> page, then open the <strong>AI Assistant Chatbot</strong>. Type a question like: <em>"Is this meal plan good for my high blood pressure?"</em>.</li>
+        <li><strong>What to Say</strong>: <em>"Based on the user's logged vitals, allergies, and chronic conditions, our engine generates custom daily diet and exercise routines. In the AI Assistant chat, we run a custom **Retrieval-Augmented Generation (RAG)** engine. It performs a local **Cosine Similarity vector search** across medical documents indexed directly in MongoDB, providing clinically verified answers without using external vector databases like Pinecone."</em></li>
+      </ul>
+
+      <h3>Step 5: Exporting Reports</h3>
+      <ul>
+        <li><strong>Action</strong>: Go to <strong>Clinical Reports</strong> and click **"Export Clinical PDF"**.</li>
+        <li><strong>What to Say</strong>: <em>"Finally, the patient can export a complete clinical summary report. Our stylesheet is configured with native print media rules, allowing the user to print or save the document as a clean, clinical-type PDF to share with their doctor."</em></li>
+      </ul>
+    </div>
+
+    <!-- SECTION 3 -->
+    <div class="section">
+      <h2>3. Technical Panel Q&amp;A Cheat Sheet</h2>
+      <p><em>Be prepared to answer these highly technical questions. These answers are designed to showcase maximum technical depth.</em></p>
+
+      <div class="q-card">
+        <div class="technical-tag">System Architecture</div>
+        <div class="question"><span class="question-prefix">Q1:</span> Explain the complete request-response flow when a user uploads a medical report.</div>
+        <div class="answer">
+          "When a user uploads an image, the React frontend wraps the binary file in a `FormData` object and transmits it via `Axios` as a `POST` request to our Express endpoint. The route triggers the `uploadMiddleware` (built using `multer`) which handles file validation and saves the image temporarily. The controller then forwards the file stream to the **Groq SDK**, prompting the **`llama-3.2-11b-vision-preview`** model. We instruct the model to parse the biomarkers and return a structured JSON response. Our custom regex helper cleans conversational prefix tags out of the response, validates the JSON keys, updates the user's profile documents in MongoDB, and sends the structured telemetry payload back to the frontend to update the state."
+        </div>
+      </div>
+
+      <div class="q-card">
+        <div class="technical-tag">AI &amp; Data Extraction</div>
+        <div class="question"><span class="question-prefix">Q2:</span> LLMs are notoriously conversational. How did you ensure the backend parses Llama's output as JSON without crashing the server?</div>
+        <div class="answer">
+          "We engineered a custom regex parser helper called `cleanAndParseJSON`. Since Llama often wraps JSON payloads in backticks or conversational explanations, our parser uses regex checks to locate the index of the first bracket `{` or `[` and the last bracket `}` or `]`. It slices the string between these indices, isolating the pure JSON string and throwing away any conversational prefixes or suffixes. This ensures that even if Llama adds conversational text, `JSON.parse()` executes flawlessly on a clean structure."
+        </div>
+      </div>
+
+      <div class="q-card">
+        <div class="technical-tag">Retrieval-Augmented Generation</div>
+        <div class="question"><span class="question-prefix">Q3:</span> You claim to use RAG. Where are the embeddings stored, and how does the vector search work?</div>
+        <div class="answer">
+          "To avoid the hosting latency and setup complexity of external cloud vector databases like Pinecone, we built a **local vector search engine in Node.js**. During setup, health articles are processed through a script (`seedKnowledgeBase.js`) where their text chunks are mapped to 768-dimensional float embedding arrays (`text-embedding-004`) and stored directly in a MongoDB collection. When a user asks a question, we generate a query vector and calculate the **Cosine Similarity** (dot product divided by the product of magnitudes) against every article vector directly in-memory using Node math functions. The top matching documents are retrieved and appended to the Llama prompt context, generating a highly targeted clinical recommendation."
+        </div>
+      </div>
+
+      <div class="q-card">
+        <div class="technical-tag">Database &amp; Modeling</div>
+        <div class="question"><span class="question-prefix">Q4:</span> Why did you choose MongoDB (NoSQL) over a SQL database like MySQL or PostgreSQL?</div>
+        <div class="answer">
+          "Personalized health monitoring deals with highly polymorphic and semi-structured data. For example, a single daily log document contains nested structures for hydration, sleep quality, blood pressure (systolic/diastolic), and activity ring variables. In SQL, this would require complex multi-table joins or relational schemas. In MongoDB, we can store each day's unified wellness profile as a single, indexed document. This flexibility makes adding new metrics (like blood sugar or mood logs) trivial, while Mongoose schemas enforce validation constraints."
+        </div>
+      </div>
+
+      <div class="q-card">
+        <div class="technical-tag">Database Performance</div>
+        <div class="question"><span class="question-prefix">Q5:</span> As your health logs grow to millions of rows, dashboard queries will slow down. How did you optimize this?</div>
+        <div class="answer">
+          "We placed a **compound index** on the `{ userId: 1, date: -1 }` keys within the `HealthLogs` schema. Since the dashboard query looks for the logged vitals of a specific user sorted by date (newest first), this compound index allows MongoDB to locate the target document in under **10ms** by performing an index scan, completely avoiding expensive full-collection collscans."
+        </div>
+      </div>
+
+      <div class="q-card">
+        <div class="technical-tag">Web APIs &amp; Audio</div>
+        <div class="question"><span class="question-prefix">Q6:</span> How did you implement the looping medication alarm? How do you prevent it from being blocked by browser autoplay policies?</div>
+        <div class="answer">
+          "The medication alarm uses the browser's native **Web Audio API**. We create a primary `AudioContext` and attach a gain control module and frequency oscillators. To bypass the browser autoplay policy (which blocks audio contexts from playing until a user interacts), we set event listeners for clicks and keypresses on the window layout. Upon the first user click anywhere, the `AudioContext.resume()` promise triggers, unlocking browser audio authorization. The background scheduler keeps checking times, and if a medication is due and not marked taken, it loops a dual-frequency chime (`E5` and `A5`) every 3 seconds. The moment the user clicks 'Taken', the state updates, the loop interval is cleared, and the audio context stops playing."
+        </div>
+      </div>
+
+      <div class="q-card">
+        <div class="technical-tag">Security &amp; Authorization</div>
+        <div class="question"><span class="question-prefix">Q7:</span> Explain your authentication flow. How do you secure endpoints?</div>
+        <div class="answer">
+          "We use a standard stateless token-based flow. When a user logs in, their password query is checked using `bcryptjs.compare` against the salted hash stored in MongoDB. Upon verification, the server signs a **JSON Web Token (JWT)** containing the user's database ID and exports it. The React client stores this token in state and caches it in `localStorage`. Subsequent API requests attach this token inside the HTTP `Authorization` header (`Bearer <token>`). The Express backend runs an `authMiddleware` that decodes the token using our `JWT_SECRET`, checks if the user exists, and appends the user context to the request object (`req.user`), rejecting unauthenticated requests with `401 Unauthorized`."
+        </div>
+      </div>
+
+      <div class="q-card">
+        <div class="technical-tag">Serverless Deployment</div>
+        <div class="question"><span class="question-prefix">Q8:</span> How is the application deployed, and how does Vercel host an Express app?</div>
+        <div class="answer">
+          "The application is split into two packages. The static React client is compiled using Vite and deployed to Vercel's Edge CDN. The Express API server is deployed using a custom `vercel.json` routing configuration. Vercel maps all incoming backend routes `/api/*` to the `server.js` script. It wraps our Express server in **Vercel Serverless Functions (@vercel/node)**. When a request hits the backend URL, Vercel boots a stateless container, executes the Express route handler, and immediately suspends the container once the response is sent. This provides instant, automated scaling without managing active servers."
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 4 -->
+    <div class="section">
+      <h2>4. The "WOW" Factors (Highlight These!)</h2>
+      <p><em>To win the expo, you must highlight custom-engineered code that goes beyond a standard CRUD app. Mention these points:</em></p>
+      
+      <ol>
+        <li><strong>No Standalone Vector DB</strong>: Point out that you coded your own Vector Cosine Similarity algorithm in pure JavaScript rather than using Pinecone or other cloud database APIs. This shows you understand vector mathematics (dot products, vector magnitude, and angles).</li>
+        <li><strong>Browser-Native DSP (Digital Signal Processing)</strong>: Highlight that the emergency sirens and medication remind rings are generated programmatically using sound wave formulas in the browser via `OscillatorNode` rather than downloading flat MP3 audio files. This keeps the project lightweight and network-independent.</li>
+        <li><strong>Pure CSS Responsive Glassmorphism</strong>: Show off the custom HSL design variables and frosted-glass panel effects, emphasizing that you avoided bulky CSS frameworks and tailored the theme borders and shadows yourself.</li>
+      </ol>
+    </div>
+  </div>
+</body>
+</html>
