@@ -63,10 +63,56 @@ const PublicEmergencyProfile = () => {
 
   return (
     <div className="min-h-screen w-screen bg-slate-950 text-slate-100 p-6 flex flex-col justify-center items-center font-sans">
+      
+      {/* Dynamic CSS Overrides for PDF printout generation */}
+      <style>{`
+        @media print {
+          body, .min-h-screen {
+            background: #ffffff !important;
+            color: #000000 !important;
+            padding: 0 !important;
+          }
+          .no-print {
+            display: none !important;
+          }
+          .glass-card-print {
+            border: 2px solid #cbd5e1 !important;
+            background: #ffffff !important;
+            color: #000000 !important;
+            box-shadow: none !important;
+            backdrop-filter: none !important;
+            padding: 2rem !important;
+            border-radius: 1rem !important;
+            width: 100% !important;
+          }
+          h2, h3, h4, span, p, div {
+            color: #0f172a !important;
+          }
+          .bg-slate-950\\/50, .bg-slate-950\\/40, .bg-slate-900\\/60, .bg-red-500\\/10, .bg-amber-500\\/10 {
+            background: #f8fafc !important;
+            border-color: #cbd5e1 !important;
+          }
+          .border-slate-800, .border-slate-800\\/80, .border-slate-800\\/40 {
+            border-color: #cbd5e1 !important;
+          }
+        }
+      `}</style>
+
       <div className="max-w-2xl w-full space-y-6">
         
-        {/* Banner Alert */}
-        <div className="flex items-center gap-3 p-4 rounded-2xl bg-red-500/10 border border-red-500/35 text-red-400">
+        {/* Print / Save Trigger (Hidden on PDF) */}
+        <div className="flex justify-between items-center gap-4 p-4 rounded-2xl bg-slate-900/40 border border-slate-800/80 no-print">
+          <span className="text-xs text-slate-400 font-medium">Need a physical copy?</span>
+          <button 
+            onClick={() => window.print()}
+            className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-xl text-xs font-semibold shadow-lg shadow-red-600/20 transition-all flex items-center gap-1.5"
+          >
+            Save as PDF / Print
+          </button>
+        </div>
+
+        {/* Banner Alert (Hidden on PDF) */}
+        <div className="flex items-center gap-3 p-4 rounded-2xl bg-red-500/10 border border-red-500/35 text-red-400 no-print">
           <ShieldAlert size={24} className="animate-pulse flex-shrink-0" />
           <div>
             <h3 className="font-bold text-sm">EMERGENCY MEDICAL CARD</h3>
@@ -75,7 +121,7 @@ const PublicEmergencyProfile = () => {
         </div>
 
         {/* Primary Health Profile */}
-        <GlassCard className="p-8 space-y-6 border-slate-800/80 bg-slate-900/60 backdrop-blur-lg">
+        <GlassCard className="p-8 space-y-6 border-slate-800/80 bg-slate-900/60 backdrop-blur-lg glass-card-print">
           
           {/* Header Details */}
           <div className="flex flex-col sm:flex-row items-center gap-4 pb-6 border-b border-slate-800">

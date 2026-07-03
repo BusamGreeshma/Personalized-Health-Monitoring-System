@@ -228,7 +228,7 @@ Contacts: ${profile.emergencyContacts?.map(c => `${c.name} (${c.phone})`).join('
 
             <div className="my-6 p-4 rounded-2xl bg-white border border-slate-200 flex items-center justify-center shadow-inner">
               <QRCodeSVG
-                value={`${window.location.origin}/public-emergency/${user?._id}`}
+                value={`https://aura-health-six.vercel.app/public-emergency/${user?._id}`}
                 size={144}
                 bgColor={"#ffffff"}
                 fgColor={"#0f172a"}
