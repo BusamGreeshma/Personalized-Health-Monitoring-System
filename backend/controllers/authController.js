@@ -173,3 +173,18 @@ exports.resetPassword = async (req, res) => {
     res.status(500).json({ success: false, message: error.message });
   }
 };
+
+// @desc    Get public emergency profile (Unauthenticated)
+// @route   GET /api/auth/public-profile/:userId
+// @access  Public
+exports.getPublicEmergencyProfile = async (req, res) => {
+  try {
+    const user = await User.findById(req.params.userId).select('username profile');
+    if (!user) {
+      return res.status(404).json({ success: false, message: 'Emergency profile not found' });
+    }
+    res.json({ success: true, data: user });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+};

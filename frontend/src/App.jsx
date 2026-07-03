@@ -29,6 +29,7 @@ import EmergencyModule from './pages/EmergencyModule';
 import ReportsPage from './pages/ReportsPage';
 import AdminDashboard from './pages/AdminDashboard';
 import Profile from './pages/Profile';
+import PublicEmergencyProfile from './pages/PublicEmergencyProfile';
 
 // Protected Route Wrapper
 const ProtectedRoute = ({ children }) => {
@@ -92,6 +93,7 @@ function App() {
               <Route path="/landing" element={<LandingPage />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
+              <Route path="/public-emergency/:userId" element={<PublicEmergencyProfile />} />
 
               {/* Protected Workspace Pages */}
               <Route path="/" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />

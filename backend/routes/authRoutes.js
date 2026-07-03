@@ -6,7 +6,8 @@ const {
   getProfile,
   updateProfile,
   forgotPassword,
-  resetPassword
+  resetPassword,
+  getPublicEmergencyProfile
 } = require('../controllers/authController');
 const { protect } = require('../middleware/authMiddleware');
 
@@ -14,6 +15,7 @@ router.post('/register', register);
 router.post('/login', login);
 router.post('/forgot-password', forgotPassword);
 router.post('/reset-password', resetPassword);
+router.get('/public-profile/:userId', getPublicEmergencyProfile);
 
 router.route('/profile')
   .get(protect, getProfile)
