@@ -134,14 +134,13 @@ const EmergencyModule = () => {
   const compileEmergencyPayload = () => {
     if (!user) return 'AURA EMERGENCY MEDICAL PROFILE';
     const profile = user.profile || {};
-    const payload = `Name: ${user.username}
+    return `Name: ${user.username}
 Age: ${profile.age}
 Gender: ${profile.gender}
 Height: ${profile.height}cm, Weight: ${profile.weight}kg
 Conditions: ${profile.diseases?.join(', ') || 'None'}
 Allergies: ${profile.allergies?.join(', ') || 'None'}
 Contacts: ${profile.emergencyContacts?.map(c => `${c.name} (${c.phone})`).join(', ') || 'None'}`;
-    return encodeURIComponent(payload);
   };
 
   // Render QR Code from public API
@@ -227,13 +226,12 @@ Contacts: ${profile.emergencyContacts?.map(c => `${c.name} (${c.phone})`).join('
               </p>
             </div>
 
-            <div className="my-6 p-4 rounded-2xl bg-white dark:bg-slate-950 border border-slate-200 dark:border-slate-900 flex items-center justify-center">
+            <div className="my-6 p-4 rounded-2xl bg-white border border-slate-200 flex items-center justify-center shadow-inner">
               <QRCodeSVG
-                value={decodeURIComponent(compileEmergencyPayload())}
+                value={compileEmergencyPayload()}
                 size={144}
-                bgColor={"transparent"}
-                fgColor={"currentColor"}
-                className="text-slate-800 dark:text-slate-200"
+                bgColor={"#ffffff"}
+                fgColor={"#0f172a"}
                 level={"M"}
               />
             </div>
