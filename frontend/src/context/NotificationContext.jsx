@@ -199,6 +199,12 @@ export const NotificationProvider = ({ children }) => {
     return timeStr;
   };
 
+  const timeToMinutes = (timeStr) => {
+    if (!timeStr || !timeStr.includes(':')) return 0;
+    const [hrs, mins] = timeStr.split(':').map(Number);
+    return hrs * 60 + mins;
+  };
+
   // Background time checker for scheduled meds
   useEffect(() => {
     if (!user || medications.length === 0) return;
@@ -219,7 +225,10 @@ export const NotificationProvider = ({ children }) => {
 
         med.times.forEach(time => {
           const normalizedTime = normalizeTimeTo24h(time);
-          if (normalizedTime === currentTime) {
+          const schedMin = timeToMinutes(normalizedTime);
+          const currentMin = timeToMinutes(currentTime);
+
+          if (schedMin <= currentMin) {
             // Check if this specific dose is logged as taken or missed today
             const log = med.logs.find(l => l.date === todayStr && l.time === time);
             const isDone = log?.status === 'taken' || log?.status === 'missed';
@@ -228,18 +237,21 @@ export const NotificationProvider = ({ children }) => {
               const alarmKey = `${med._id}-${time}`;
               currentActive.push(alarmKey);
 
-              const key = `${med._id}-${time}-${todayStr}`;
-              if (!firedAlerts.has(key)) {
-                firedAlerts.add(key);
-                const list = Array.from(firedAlerts).slice(-100);
-                localStorage.setItem('firedMedAlerts', JSON.stringify(list));
+              // Only show the user notification toast banner at the exact start minute
+              if (normalizedTime === currentTime) {
+                const key = `${med._id}-${time}-${todayStr}`;
+                if (!firedAlerts.has(key)) {
+                  firedAlerts.add(key);
+                  const list = Array.from(firedAlerts).slice(-100);
+                  localStorage.setItem('firedMedAlerts', JSON.stringify(list));
 
-                // Trigger alert sound & banner toast!
-                addNotification(
-                  'Medication Reminder',
-                  `Time to take your ${med.name} (${med.dosage}) dose.`,
-                  'medication'
-                );
+                  // Trigger alert sound & banner toast!
+                  addNotification(
+                    'Medication Reminder',
+                    `Time to take your ${med.name} (${med.dosage}) dose.`,
+                    'medication'
+                  );
+                }
               }
             }
           }
